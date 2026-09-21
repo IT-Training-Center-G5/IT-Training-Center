@@ -1,13 +1,754 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>it-training-center</title>
-  </head>
-  <body>
-    <h1 class="text-3xl font-bold">It Training Center</h1>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Training Center Websites</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f5ff',
+              100: '#e0ebff',
+              200: '#bae0ff',
+              500: '#2563eb',
+              600: '#1d4ed8',
+              700: '#1e40af',
+              800: '#1e3a8a',
+              900: '#0f2a4a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
+  <header class="bg-white/90 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4">
+        <a href="#" class="flex items-center gap-3 shrink-0 group">
+          <div
+            class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-xl shadow-sm group-hover:bg-brand-600 group-hover:text-white transition-all">
+            <!-- <i class="fa-solid fa-graduation-cap"></i> -->
+            <img src="./pic3.png" alt="">
+          </div>
+          <div>
+            <div class="font-black text-slate-900 tracking-tight text-lg leading-tight">IT Training Center
+            </div>
+            <div class="text-[11px] font-semibold text-slate-400 tracking-wider">Learn · Build · Grow</div>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600">
+          <a href="#home" class="text-brand-600 font-bold border-b-2 border-brand-600 pb-0.5">Home</a>
+          <a href="#courses" class="hover:text-brand-600 transition-colors">Courses</a>
+          <a href="#about" class="hover:text-brand-600 transition-colors">About Us</a>
+          <a href="#contact" class="hover:text-brand-600 transition-colors">Contact Us</a>
+        </nav>
+
+        <div class="hidden md:flex items-center flex-1 max-w-xs xl:max-w-sm mx-4">
+          <div class="relative w-full">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-400">
+              <i class="fa-solid fa-magnifying-glass text-sm"></i>
+            </span>
+            <input type="text" placeholder="Search courses, skills, tracks..."
+              class="w-full pl-10 pr-4 py-2 bg-slate-100 hover:bg-slate-200/70 focus:bg-white text-xs sm:text-sm text-slate-700 placeholder-slate-400 rounded-xl outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all border border-transparent">
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 sm:gap-4 shrink-0">
+          <button
+            class="relative p-2.5 text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-full transition-all"
+            aria-label="Notifications">
+            <i class="fa-regular fa-bell text-lg"></i>
+            <span class="absolute top-2 right-2.5 w-2.5 h-2.5 bg-red-500 rounded-full ring-2 ring-white"></span>
+          </button>
+          <div class="flex items-center gap-2 cursor-pointer p-1 rounded-full hover:bg-slate-100 transition-all">
+            <img src="./pic1.jpg" alt="User Profile"
+              class="w-10 h-10 rounded-full object-cover ring-2 ring-white shadow-sm">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <main class="space-y-20 lg:space-y-28 py-8 sm:py-12">
+    <section id="home" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 space-y-6 sm:space-y-7">
+          <div>
+            <span
+              class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-50 text-brand-600 text-xs font-bold tracking-wide uppercase border border-brand-100/80 shadow-xs">
+              <i class="fa-solid fa-circle-check text-brand-500 text-sm"></i>
+              BETTER SKILLS · BRIGHTER FUTURE
+            </span>
+          </div>
+          <div class="space-y-2">
+            <p class="text-xs sm:text-sm font-extrabold tracking-widest text-brand-600 uppercase">
+              WELCOME TO IT TRAINING CENTER
+            </p>
+            <h1 class="text-4xl sm:text-5xl lg:text-[54px] font-black text-slate-900 tracking-tight leading-[1.12]">
+              Your Future in Tech <span class="text-brand-600">Starts Here</span>
+            </h1>
+          </div>
+          <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl">
+            Learn in-demand IT skills, get hands-on project experience, and build a rewarding career in
+            technology with dedicated industry mentors guiding your path.
+          </p>
+          <div class="flex flex-wrap items-center gap-4 pt-1">
+            <a href="#courses"
+              class="inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm sm:text-base rounded-xl shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+              <span>Explore Courses</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+            <a href="#contact"
+              class="inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 bg-brand-50 hover:bg-brand-100 text-brand-600 font-bold text-sm sm:text-base rounded-xl border border-brand-100 transition-all">
+              <span>Contact Us</span>
+              <i class="fa-regular fa-comment-dots"></i>
+            </a>
+          </div>
+          <div class="pt-8 border-t border-slate-200/80 grid grid-cols-3 gap-4 max-w-lg">
+            <div>
+              <div class="text-2xl sm:text-3xl font-black text-slate-900">94%</div>
+              <div class="text-xs sm:text-sm font-medium text-slate-500 mt-0.5">Job Placement</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-black text-slate-900">1,200+</div>
+              <div class="text-xs sm:text-sm font-medium text-slate-500 mt-0.5">Graduates</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-black text-slate-900">100%</div>
+              <div class="text-xs sm:text-sm font-medium text-slate-500 mt-0.5">Hands-On Labs</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 flex justify-center lg:justify-end">
+          <div class="relative w-full max-w-lg lg:max-w-none">
+            <div
+              class="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-300/70 border border-slate-100 bg-slate-900">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200"
+                alt="Students in IT Lab"
+                class="w-full object-cover object-center transform hover:scale-105 transition-transform duration-700">
+
+              <div
+                class="absolute top-4 right-4 bg-slate-900/85 backdrop-blur-md text-white px-4 py-2.5 rounded-2xl border border-white/10 shadow-lg flex items-center gap-2.5">
+                <i class="fa-solid fa-star text-cyan-400 text-sm"></i>
+                <div>
+                  <div class="text-xs font-bold text-white leading-tight">Rated 4.9/5</div>
+                  <div class="text-[10px] text-slate-300">by 850+ tech alumni</div>
+                </div>
+              </div>
+              <div
+                class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <span class="relative flex h-3 w-3 shrink-0">
+                    <span
+                      class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                  </span>
+                  <div>
+                    <div class="text-xs font-bold text-slate-900">New Cohort Enrolling Now</div>
+                    <div class="text-[11px] text-slate-500 font-medium">Evening & Weekend tracks
+                      open</div>
+                  </div>
+                </div>
+                <span
+                  class="inline-flex items-center justify-center px-3 py-1.5 rounded-full bg-cyan-100 text-cyan-700 font-black text-[10px] tracking-wider uppercase shrink-0">
+                  OCT INTAKE
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+        <div
+          class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center group">
+          <div
+            class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center text-lg mb-3 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 text-xs sm:text-sm mb-1">Expert Instructors</h3>
+          <p class="text-[11px] text-slate-500 font-medium leading-tight">Learn from industry leaders</p>
+        </div>
+        <div
+          class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center group">
+          <div
+            class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center text-lg mb-3 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 text-xs sm:text-sm mb-1">Practical Projects</h3>
+          <p class="text-[11px] text-slate-500 font-medium leading-tight">Build real-world apps</p>
+        </div>
+
+        <div
+          class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center group">
+          <div
+            class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center text-lg mb-3 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 text-xs sm:text-sm mb-1">Job Support</h3>
+          <p class="text-[11px] text-slate-500 font-medium leading-tight">Find your dream tech job</p>
+        </div>
+
+        <div
+          class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center group">
+          <div
+            class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center text-lg mb-3 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+            <i class="fa-solid fa-user-group"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 text-xs sm:text-sm mb-1">Flexible Learning</h3>
+          <p class="text-[11px] text-slate-500 font-medium leading-tight">Day, evening & weekend</p>
+        </div>
+
+        <div
+          class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center group">
+          <div
+            class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center text-lg mb-3 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 text-xs sm:text-sm mb-1">Certified Courses</h3>
+          <p class="text-[11px] text-slate-500 font-medium leading-tight">Recognized credentials</p>
+        </div>
+
+        <div
+          class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center group">
+          <div
+            class="w-11 h-11 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center text-lg mb-3 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 text-xs sm:text-sm mb-1">Student Support</h3>
+          <p class="text-[11px] text-slate-500 font-medium leading-tight">We are here for you 24/7</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-xs font-black tracking-widest text-brand-600 uppercase">OUR COURSES</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-1">Popular Courses
+          </h2>
+          <p class="text-slate-500 text-sm sm:text-base mt-1">Choose the course that fits your goals and start
+            learning today!</p>
+        </div>
+        <a href="#"
+          class="inline-flex items-center gap-2 text-brand-600 hover:text-brand-700 font-bold text-sm group shrink-0">
+          <span>View All Courses</span>
+          <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+        </a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          class="bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col group">
+          <div
+            class="h-44 from-blue-500 to-blue-700 p-6 flex flex-col justify-between relative overflow-hidden text-white">
+            <div
+              class="flex justify-center items-center h-20 text-4xl opacity-90 group-hover:scale-110 transition-transform">
+            </div>
+            <img src="https://i.pinimg.com/736x/4d/41/92/4d419261d85d864ac377766817d18414.jpg" alt="">
+            <div class="flex justify-center">
+              <span
+                class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[11px] font-semibold tracking-wide text-white">
+                HTML · CSS · JS · React
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2.5 py-0.5 rounded-md bg-blue-50 text-blue-600 font-bold text-[11px]">Frontend
+                  Track</span>
+                <span class="text-xs text-slate-400 font-medium">3 Months</span>
+              </div>
+              <h3 class="text-xl font-extrabold text-slate-900 group-hover:text-brand-600 transition-colors">
+                Web Development</h3>
+              <p class="text-slate-500 text-xs sm:text-sm mt-2 leading-relaxed">
+                Learn HTML5, modern CSS, JavaScript, responsive frameworks, and full-stack basics to
+                build real production web applications.
+              </p>
+            </div>
+            <div class="pt-5 mt-4 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-xs font-semibold text-slate-500">In-Person & Online</span>
+              <a href="#"
+                class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-800">
+                Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col group">
+          <div
+            class="h-44 from-teal-400 to-cyan-600 p-6 flex flex-col justify-between relative overflow-hidden text-white">
+            <div
+              class="flex justify-center items-center h-20 text-4xl opacity-90 group-hover:scale-110 transition-transform">
+            </div>
+            <img src="https://i.pinimg.com/1200x/24/87/8a/24878a862b2211244d439ffbe2688280.jpg" alt="">
+            <div class="flex justify-center">
+              <span
+                class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[11px] font-semibold tracking-wide text-white">
+                Python 3 · Django · Automation
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2.5 py-0.5 rounded-md bg-teal-50 text-teal-600 font-bold text-[11px]">Backend
+                  & AI</span>
+                <span class="text-xs text-slate-400 font-medium">2.5 Months</span>
+              </div>
+              <h3 class="text-xl font-extrabold text-slate-900 group-hover:text-teal-600 transition-colors">
+                Python Programming</h3>
+              <p class="text-slate-500 text-xs sm:text-sm mt-2 leading-relaxed">
+                Go from zero to hero with Python syntax, scripting, automation, REST API integration,
+                and hands-on portfolio milestones.
+              </p>
+            </div>
+            <div class="pt-5 mt-4 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-xs font-semibold text-emerald-600">Beginner Friendly</span>
+              <a href="#"
+                class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-800">
+                Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col group">
+          <div
+            class="h-44 from-emerald-600 to-emerald-800 p-6 flex flex-col justify-between relative overflow-hidden text-white">
+            <div
+              class="flex justify-center items-center h-20 text-4xl opacity-90 group-hover:scale-110 transition-transform">
+            </div>
+            <img src="https://i.pinimg.com/1200x/27/fa/ee/27faeecdfb3d655ddb8d8a07f0cbdb0a.jpg" alt="">
+            <div class="flex justify-center">
+              <span
+                class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[11px] font-semibold tracking-wide text-white">
+                MySQL · PostgreSQL · Relational
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2.5 py-0.5 rounded-md bg-emerald-50 text-emerald-600 font-bold text-[11px]">Data
+                  Systems</span>
+                <span class="text-xs text-slate-400 font-medium">2 Months</span>
+              </div>
+              <h3 class="text-xl font-extrabold text-slate-900 group-hover:text-emerald-600 transition-colors">
+                Database (MySQL)</h3>
+              <p class="text-slate-500 text-xs sm:text-sm mt-2 leading-relaxed">
+                Design scalable entity schemas, master complex SQL queries, transaction management,
+                indexing, and enterprise data normalization.
+              </p>
+            </div>
+            <div class="pt-5 mt-4 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-xs font-semibold text-slate-500">Database Admin</span>
+              <a href="#"
+                class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-800">
+                Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col group">
+          <div
+            class="h-44 from-sky-600 to-blue-900 p-6 flex flex-col justify-between relative overflow-hidden text-white">
+            <div
+              class="flex justify-center items-center h-20 text-4xl opacity-90 group-hover:scale-110 transition-transform">
+            </div>
+            <img src="https://i.pinimg.com/736x/65/e4/d2/65e4d2598db852deadf65705b7017e4b.jpg" alt="">
+            <div class="flex justify-center">
+              <span
+                class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[11px] font-semibold tracking-wide text-white">
+                Hardware · Win/Linux · Helpdesk
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2.5 py-0.5 rounded-md bg-sky-50 text-sky-600 font-bold text-[11px]">Operations</span>
+                <span class="text-xs text-slate-400 font-medium">2 Months</span>
+              </div>
+              <h3 class="text-xl font-extrabold text-slate-900 group-hover:text-sky-600 transition-colors">
+                IT Support & Admin</h3>
+              <p class="text-slate-500 text-xs sm:text-sm mt-2 leading-relaxed">
+                Master PC assembly, OS deployment, hardware diagnostics, enterprise Active Directory
+                support, and day-to-day user administration.
+              </p>
+            </div>
+            <div class="pt-5 mt-4 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-xs font-semibold text-emerald-600">High Job Demand</span>
+              <a href="#"
+                class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-800">
+                Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col group">
+          <div
+            class="h-44 from-blue-600 to-indigo-900 p-6 flex flex-col justify-between relative overflow-hidden text-white">
+            <div
+              class="flex justify-center items-center h-20 text-4xl opacity-90 group-hover:scale-110 transition-transform">
+            </div>
+            <img src="https://i.pinimg.com/1200x/4f/99/2c/4f992cf6d1ed8b70b47ad218a49dd046.jpg" alt="">
+            <div class="flex justify-center">
+              <span
+                class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[11px] font-semibold tracking-wide text-white">
+                Cisco · Subnetting · Routing
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span
+                  class="px-2.5 py-0.5 rounded-md bg-indigo-50 text-indigo-600 font-bold text-[11px]">Infrastructure</span>
+                <span class="text-xs text-slate-400 font-medium">3 Months</span>
+              </div>
+              <h3 class="text-xl font-extrabold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                Computer Networking</h3>
+              <p class="text-slate-500 text-xs sm:text-sm mt-2 leading-relaxed">
+                Configure enterprise switches, routers, VLAN segments, DHCP, NAT and firewall perimeter
+                defenses according to CCNA core standards.
+              </p>
+            </div>
+            <div class="pt-5 mt-4 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-xs font-semibold text-slate-500">Hands-On Labs</span>
+              <a href="#"
+                class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-800">
+                Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col group">
+          <div
+            class="h-44 from-slate-700 to-slate-900 p-6 flex flex-col justify-between relative overflow-hidden text-white">
+            <div
+              class="flex justify-center items-center h-20 text-4xl opacity-90 group-hover:scale-110 transition-transform">
+            </div>
+            <img src="https://i.pinimg.com/736x/9b/9e/f1/9b9ef1043d760fa1a7053fa135bae638.jpg" alt="">
+            <div class="flex justify-center">
+              <span
+                class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[11px] font-semibold tracking-wide text-white">
+                Ethical Hacking · Defense · SOC
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span
+                  class="px-2.5 py-0.5 rounded-md bg-purple-50 text-purple-600 font-bold text-[11px]">Security</span>
+                <span class="text-xs text-slate-400 font-medium">3.5 Months</span>
+              </div>
+              <h3 class="text-xl font-extrabold text-slate-900 group-hover:text-purple-600 transition-colors">
+                Cybersecurity Fundamentals</h3>
+              <p class="text-slate-500 text-xs sm:text-sm mt-2 leading-relaxed">
+                Understand penetration testing concepts, vulnerability scanning, malware defense, system
+                hardening, and online threats response.
+              </p>
+            </div>
+            <div class="pt-5 mt-4 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-xs font-semibold text-slate-500">Certification Prep</span>
+              <a href="#"
+                class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-800">
+                Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 grid grid-cols-2 gap-4 sm:gap-5">
+          <div class="rounded-3xl overflow-hidden shadow-md h-48 sm:h-60 border border-slate-100">
+            <img src="./pic2.png"
+              alt="Student coding at desk" class="w-full h-full object-cover">
+          </div>
+          <div class="bg-indigo-50/80 p-5 sm:p-6 rounded-3xl border border-indigo-100/80 flex flex-col justify-center">
+            <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center text-lg mb-3">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <h4 class="font-extrabold text-slate-900 text-base mb-1">Gov Accredited</h4>
+            <p class="text-xs text-slate-600 leading-relaxed font-medium">All diplomas aligned with standard
+              national tech frameworks.</p>
+          </div>
+          <div class="bg-brand-600 text-white p-5 sm:p-6 rounded-3xl shadow-lg flex flex-col justify-center">
+            <div class="w-10 h-10 rounded-xl bg-white/20 text-white flex items-center justify-center text-lg mb-3">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <h4 class="font-extrabold text-white text-base mb-1">Learn · Practice · Succeed</h4>
+            <p class="text-xs text-blue-100 leading-relaxed font-normal">Our 3-pillar learning pedagogy
+              guaranteed to produce job-ready confidence.</p>
+          </div>
+          <div class="rounded-3xl overflow-hidden shadow-md h-48 sm:h-60 border border-slate-100">
+            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800"
+              alt="Team mentorship" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 space-y-6">
+          <div>
+            <span class="text-xs font-black tracking-widest text-brand-600 uppercase">ABOUT US</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-1">What is IT
+              Training Center?</h2>
+          </div>
+
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            IT Training Center is a premier technology education and talent accelerator based in Phnom Penh,
+            Cambodia. We offer intensive, industry-crafted courses designed to equip university students,
+            engineers, and career switchers with tangible, highly compensated technical capabilities.
+          </p>
+
+          <ul class="space-y-3.5">
+            <li class="flex items-start gap-3">
+              <span
+                class="w-6 h-6 rounded-full bg-brand-600 text-white flex items-center justify-center text-xs shrink-0 mt-0.5 shadow-sm">
+                <i class="fa-solid fa-check"></i>
+              </span>
+              <span class="text-xs sm:text-sm font-semibold text-slate-800">Modern and practical
+                curriculum updated quarterly with tech employers</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span
+                class="w-6 h-6 rounded-full bg-brand-600 text-white flex items-center justify-center text-xs shrink-0 mt-0.5 shadow-sm">
+                <i class="fa-solid fa-check"></i>
+              </span>
+              <span class="text-xs sm:text-sm font-semibold text-slate-800">Experienced instructors
+                actively working as senior engineers and tech leads</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span
+                class="w-6 h-6 rounded-full bg-brand-600 text-white flex items-center justify-center text-xs shrink-0 mt-0.5 shadow-sm">
+                <i class="fa-solid fa-check"></i>
+              </span>
+              <span class="text-xs sm:text-sm font-semibold text-slate-800">Hands-on projects, real client
+                briefs, and live hardware lab practice</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span
+                class="w-6 h-6 rounded-full bg-brand-600 text-white flex items-center justify-center text-xs shrink-0 mt-0.5 shadow-sm">
+                <i class="fa-solid fa-check"></i>
+              </span>
+              <span class="text-xs sm:text-sm font-semibold text-slate-800">Dedicated job placement
+                network partnering with 50+ local enterprises</span>
+            </li>
+          </ul>
+          <div class="pt-2">
+            <a href="#about"
+              class="inline-flex items-center gap-2 px-6 py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm rounded-xl shadow-md transition-all">
+              <span>Learn More About Us</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-us" class="bg-indigo-50/60 py-16 sm:py-20 border-y border-indigo-100/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
+          <span class="text-xs font-black tracking-widest text-brand-600 uppercase">WHY CHOOSE US</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Your Success is Our
+            Priority</h2>
+          <p class="text-slate-500 text-sm sm:text-base">We provide the best learning experience, guidance,
+            and resources to help you achieve your career aspirations.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-lg transition-all flex flex-col items-center text-center">
+            <div
+              class="w-14 h-14 rounded-2xl bg-indigo-100/70 text-brand-600 flex items-center justify-center text-xl mb-5">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-2">Hands-on Practice</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Work on real projects and build an impressive portfolio that stands out to recruiters.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-lg transition-all flex flex-col items-center text-center">
+            <div
+              class="w-14 h-14 rounded-2xl bg-cyan-100/70 text-cyan-600 flex items-center justify-center text-xl mb-5">
+              <i class="fa-solid fa-id-badge"></i>
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-2">Expert Instructors</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Learn industry best practices directly from certified working senior practitioners.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-lg transition-all flex flex-col items-center text-center">
+            <div
+              class="w-14 h-14 rounded-2xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-xl mb-5">
+              <i class="fa-solid fa-handshake"></i>
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-2">Job Placement Support</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              CV preparation, mock technical interviews, and direct referrals to top tech employers.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-lg transition-all flex flex-col items-center text-center">
+            <div
+              class="w-14 h-14 rounded-2xl bg-blue-100/70 text-blue-600 flex items-center justify-center text-xl mb-5">
+              <i class="fa-solid fa-shield-check"></i>
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-2">Trusted & Certified</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Earn accredited certifications that prove your competence to hiring managers globally.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="bg-white pt-16 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10">
+        <div class="lg:col-span-4 space-y-5">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-9 h-9 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-lg shadow-sm">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <span class="font-black text-slate-900 text-lg">IT Training Center</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">
+            Leading premier IT education and technical advancement institute in Cambodia. Empowering careers
+            through structured, hands-on, industry-recognized learning programs.
+          </p>
+
+          <div class="flex items-center gap-2.5 pt-1">
+            <a href="#"
+              class="w-9 h-9 rounded-full bg-slate-100 text-slate-600 hover:bg-brand-600 hover:text-white flex items-center justify-center text-xs transition-colors"
+              aria-label="Website">
+              <i class="fa-solid fa-globe"></i>
+            </a>
+            <a href="#"
+              class="w-9 h-9 rounded-full bg-slate-100 text-slate-600 hover:bg-brand-600 hover:text-white flex items-center justify-center text-xs transition-colors"
+              aria-label="Telegram">
+              <i class="fa-paper-plane fa-solid"></i>
+            </a>
+            <a href="#"
+              class="w-9 h-9 rounded-full bg-slate-100 text-slate-600 hover:bg-brand-600 hover:text-white flex items-center justify-center text-xs transition-colors"
+              aria-label="Community">
+              <i class="fa-solid fa-diagram-project"></i>
+            </a>
+            <a href="#"
+              class="w-9 h-9 rounded-full bg-slate-100 text-slate-600 hover:bg-brand-600 hover:text-white flex items-center justify-center text-xs transition-colors"
+              aria-label="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="lg:col-span-2 space-y-4">
+          <h4 class="font-extrabold text-slate-900 text-sm tracking-wide">Quick Links</h4>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-500 font-medium">
+            <li><a href="#home" class="hover:text-brand-600 transition-colors">Home</a></li>
+            <li><a href="#courses" class="hover:text-brand-600 transition-colors">Courses</a></li>
+            <li><a href="#about" class="hover:text-brand-600 transition-colors">About Us</a></li>
+            <li><a href="#" class="hover:text-brand-600 transition-colors">Events</a></li>
+            <li><a href="#contact" class="hover:text-brand-600 transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div class="lg:col-span-3 space-y-4">
+          <h4 class="font-extrabold text-slate-900 text-sm tracking-wide">Popular Courses</h4>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-500 font-medium">
+            <li><a href="#courses" class="hover:text-brand-600 transition-colors">Web Development</a></li>
+            <li><a href="#courses" class="hover:text-brand-600 transition-colors">Python Programming</a>
+            </li>
+            <li><a href="#courses" class="hover:text-brand-600 transition-colors">Database Engineering</a>
+            </li>
+            <li><a href="#courses" class="hover:text-brand-600 transition-colors">IT Support & Admin</a>
+            </li>
+            <li><a href="#courses" class="hover:text-brand-600 transition-colors">Cybersecurity
+                Fundamentals</a></li>
+            <li><a href="#courses" class="hover:text-brand-600 transition-colors">Computer Networking</a>
+            </li>
+          </ul>
+        </div>
+        <div class="lg:col-span-3 space-y-4">
+          <h4 class="font-extrabold text-slate-900 text-sm tracking-wide">Contact Us</h4>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-500 font-medium">
+            <li class="flex items-start gap-3">
+              <i class="fa-solid fa-phone text-brand-600 text-sm mt-0.5"></i>
+              <span>+855 12 345 678</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fa-solid fa-envelope text-brand-600 text-sm mt-0.5"></i>
+              <span>info@ittrainingcenter.com</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fa-solid fa-location-dot text-brand-600 text-sm mt-0.5"></i>
+              <span>Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fa-regular fa-clock text-brand-600 text-sm mt-0.5"></i>
+              <span>Mon - Sat: 8:00 AM - 8:30 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-indigo-50/70 border-t border-indigo-100 py-4">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 font-medium">
+        <div>
+          © 2025 IT Training Center. All rights reserved.
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-slate-800 transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-800 transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-slate-800 transition-colors">Student Portal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>
