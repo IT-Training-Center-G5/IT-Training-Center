@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Training Center - Courses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            200: '#bae0fd',
+                            500: '#0284c7',
+                            600: '#0265d2',
+                            700: '#0052b4',
+                            800: '#034393',
+                            900: '#093570',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f6f8fc;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
+    <header class="bg-white/90 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <div class="flex items-center space-x-3 shrink-0">
+                <div
+                    class="w-11 h-11 from-blue-700 to-sky-500 rounded-xl flex items-center justify-center text-white shadow-md shadow-blue-500/20">
+                    <img src="./pic3.png" alt="">
+                </div>
+                <div>
+                    <span class="font-extrabold text-slate-900 text-lg sm:text-xl tracking-tight block leading-none">IT
+                        Training Center</span>
+                    <span class="text-[11px] font-semibold text-slate-500 tracking-wider uppercase mt-1 block">Learn ·
+                        Build · Grow</span>
+                </div>
+            </div>
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                <a href="./index.html" class="hover:text-blue-600 transition-colors">Home</a>
+                <a href="./courses.html" class="text-blue-600 border-b-2 border-blue-600 pb-1 font-bold">Courses</a>
+                <a href="./about-us.html" class="hover:text-blue-600 transition-colors">About Us</a>
+                <a href="./contact-us.html" class="hover:text-blue-600 transition-colors">Contact Us</a>
+            </nav>
+            <div class="hidden md:flex flex-1 max-w-md mx-4 relative items-center">
+                <i class="fa-solid fa-magnifying-glass absolute left-4 text-slate-400 text-sm"></i>
+                <input type="text" id="globalSearch" placeholder="Search courses, skills, tracks..."
+                    class="w-full pl-10 pr-4 py-2.5 bg-slate-100/80 border border-slate-200/80 rounded-xl text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
+            </div>
+            <div class="flex items-center space-x-4 shrink-0">
+                <button onclick="toggleModal('notificationsModal')"
+                    class="relative p-2.5 rounded-full hover:bg-slate-100 text-slate-600 transition-colors">
+                    <i class="fa-regular fa-bell text-lg"></i>
+                    <span class="absolute top-2 right-2.5 w-2 h-2 bg-red-500 rounded-full ring-2 ring-white"></span>
+                </button>
+                <div class="flex items-center space-x-2 pl-2 border-l border-slate-200">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200"
+                        alt="User Profile" class="w-10 h-10 rounded-full object-cover ring-2 ring-blue-500/30">
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- HERO / DIRECTORY HEADER SECTION -->
+    <section class="from-blue-50/60 to-[#f4f7fc] pt-8 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Top Badges & Breadcrumb -->
+            <div class="flex flex-wrap items-center gap-3 text-xs font-semibold mb-5">
+                <span
+                    class="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-700 font-bold border border-blue-200/60 uppercase tracking-wide">
+                    <i class="fa-solid fa-ribbon mr-1.5 text-blue-600"></i> CATALOG 2025
+                </span>
+                <span
+                    class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 font-bold border border-emerald-200/60 uppercase tracking-wide">
+                    <i class="fa-solid fa-circle-check mr-1.5 text-emerald-600"></i> INDUSTRY CERTIFIED CURRICULUM
+                </span>
+                <span class="text-slate-400 hidden sm:inline">•</span>
+                <span class="text-slate-500 font-medium">Cambodia Tech Academy <i
+                        class="fa-solid fa-chevron-right text-[10px] mx-1 text-slate-400"></i> <span
+                        class="text-blue-600 font-semibold">Course Directory</span></span>
+            </div>
+
+            <!-- Main Title & Subtitle -->
+            <div class="max-w-4xl">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                    Explore Our Professional <span class="text-blue-600">IT Courses</span>
+                </h1>
+                <p class="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Choose the tech course that fits your career goals with practical labs, recognized certificates, and
+                    1-on-1 mentorship right here in Phnom Penh or live online.
+                </p>
+            </div>
+
+            <!-- SEARCH & FILTER CARD CONTAINER -->
+            <div class="mt-8 bg-white p-4 sm:p-6 rounded-2xl shadow-xl shadow-slate-200/60 border border-slate-100">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 mb-5">
+                    <div class="lg:col-span-5 relative">
+                        <i
+                            class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input type="text" id="courseSearchInput" oninput="filterCourses()"
+                            placeholder="Search courses by name, stack, or skill..."
+                            class="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:bg-white outline-none transition-all">
+                    </div>
+
+                    <!-- Level Dropdown -->
+                    <div class="lg:col-span-2">
+                        <select id="levelSelect" onchange="filterCourses()"
+                            class="w-full py-3 px-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium text-slate-700 outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="all">All Levels</option>
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Entry-Level">Entry-Level</option>
+                        </select>
+                    </div>
+
+                    <!-- Duration Dropdown -->
+                    <div class="lg:col-span-2">
+                        <select id="durationSelect" onchange="filterCourses()"
+                            class="w-full py-3 px-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium text-slate-700 outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="all">Any Duration</option>
+                            <option value="12 Weeks">12 Weeks</option>
+                            <option value="10 Weeks">10 Weeks</option>
+                            <option value="8 Weeks">8 Weeks</option>
+                            <option value="6 Weeks">6 Weeks</option>
+                        </select>
+                    </div>
+
+                    <!-- Mode Dropdown -->
+                    <div class="lg:col-span-3">
+                        <select id="modeSelect" onchange="filterCourses()"
+                            class="w-full py-3 px-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium text-slate-700 outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="all">Format: All Delivery Modes</option>
+                            <option value="Hybrid">Hybrid Schedule</option>
+                            <option value="Weekend">Weekend Intensive</option>
+                            <option value="Evening">Evening Batches</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Category Pills Filter -->
+                <div class="flex items-center space-x-2 overflow-x-auto pb-1 hide-scrollbar" id="categoryPillContainer">
+                    <button onclick="setCategory('all')" data-cat="all"
+                        class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap bg-blue-600 text-white transition-all shadow-sm">
+                        All Courses (<span id="totalCount">6</span>)
+                    </button>
+                    <button onclick="setCategory('web')" data-cat="web"
+                        class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">
+                        Web Development
+                    </button>
+                    <button onclick="setCategory('python')" data-cat="python"
+                        class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">
+                        Python & Data
+                    </button>
+                    <button onclick="setCategory('database')" data-cat="database"
+                        class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">
+                        Database Systems
+                    </button>
+                    <button onclick="setCategory('security')" data-cat="security"
+                        class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">
+                        Cybersecurity
+                    </button>
+                    <button onclick="setCategory('cloud')" data-cat="cloud"
+                        class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">
+                        Networking & Cloud
+                    </button>
+                    <button onclick="setCategory('support')" data-cat="support"
+                        class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">
+                        IT Support
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- COURSE CARDS SECTION -->
+    <section id="courses" class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Section Sub-header -->
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-2">
+            <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-blue-600">VERIFIED CAREER
+                    ACCELERATORS</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Available Cohorts & Specialized
+                    Tracks</h2>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-500 font-medium">Showing <span id="visibleCount"
+                    class="font-bold text-slate-800">6</span> industry programs</p>
+        </div>
+
+        <!-- Cards Grid -->
+        <div id="courseCardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Card 1: Full-Stack Web Development -->
+            <div class="course-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between"
+                data-category="web" data-level="Beginner" data-duration="12 Weeks" data-mode="Hybrid">
+                <div>
+                    <!-- Image Banner -->
+                    <div class="relative h-48 bg-slate-800 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800"
+                            alt="Web Development"
+                            class="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-500">
+                        <span
+                            class="absolute top-3 left-3 bg-blue-600 text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md">
+                            Most Popular
+                        </span>
+                        <span
+                            class="absolute bottom-3 right-3 bg-slate-900/80 backdrop-blur-md text-white text-xs font-medium px-2.5 py-1 rounded-lg">
+                            <i class="fa-regular fa-clock mr-1"></i> 12 Weeks
+                        </span>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[11px] font-bold text-blue-600 uppercase tracking-wider">FULL STACK
+                                TRACK</span>
+                            <span class="text-xs font-bold text-amber-500 flex items-center">
+                                <i class="fa-solid fa-star mr-1"></i> 4.9 <span
+                                    class="text-slate-400 font-normal ml-0.5">(120)</span>
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 leading-snug">Full-Stack Web Development</h3>
+                        <p class="text-xs text-slate-500 mt-2 line-clamp-2">
+                            Master modern HTML5, CSS3, JavaScript ES6+, responsive React components, RESTful APIs, and
+                            responsive mobile-first design.
+                        </p>
+
+                        <!-- Tech Skill Pills -->
+                        <div class="flex flex-wrap gap-1.5 mt-4">
+                            <span
+                                class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">HTML5
+                                & CSS3</span>
+                            <span
+                                class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">JavaScript
+                                ES6+</span>
+                            <span
+                                class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">React.js</span>
+                            <span
+                                class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">Tailwind</span>
+                        </div>
+
+                        <!-- Meta Info -->
+                        <div
+                            class="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-slate-100 text-xs text-slate-600 font-medium">
+                            <div class="flex items-center"><i class="fa-solid fa-graduation-cap text-blue-500 mr-2"></i>
+                                Beginner to Job-Ready</div>
+                            <div class="flex items-center"><i class="fa-solid fa-laptop-code text-emerald-500 mr-2"></i>
+                                Labs Included</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer & CTA -->
+                <div class="p-5 pt-0">
+                    <div class="flex items-center justify-between mb-3">
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-slate-400 block">FULL TUITION</span>
+                            <span class="text-xl font-extrabold text-blue-700">$240</span>
+                        </div>
+                        <span class="text-[11px] text-emerald-600 font-bold bg-emerald-50 px-2.5 py-1 rounded-md">
+                            <i class="fa-regular fa-circle-check mr-1"></i> 3 Installments Available
+                        </span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button
+                            onclick="openCourseModal('Full-Stack Web Development', '$240', '12 Weeks', 'Master frontend and backend web development using modern JavaScript frameworks.')"
+                            class="w-full py-2.5 px-3 border border-blue-200 text-blue-600 font-bold text-xs rounded-xl hover:bg-blue-50 transition-colors">
+                            <i class="fa-solid fa-download mr-1"></i> Syllabus
+                        </button>
+                        <button onclick="openEnrollModal('Full-Stack Web Development', '$240')"
+                            class="w-full py-2.5 px-3 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl transition-colors flex items-center justify-center">
+                            Enroll Now <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Python Programming & Automation -->
+            <div class="course-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between"
+                data-category="python" data-level="Beginner" data-duration="10 Weeks" data-mode="Hybrid">
+                <div>
+                    <!-- Image Banner -->
+                    <div class="relative h-48 bg-slate-800 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=800"
+                            alt="Python Programming"
+                            class="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-500">
+                        <span
+                            class="absolute top-3 left-3 bg-emerald-600 text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md">
+                            High Demand
+                        </span>
+                        <span
+                            class="absolute bottom-3 right-3 bg-slate-900/80 backdrop-blur-md text-white text-xs font-medium px-2.5 py-1 rounded-lg">
+                            <i class="fa-regular fa-clock mr-1"></i> 10 Weeks
+                        </span>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[11px] font-bold text-emerald-600 uppercase tracking-wider">SCRIPTING &
+                                DATA</span>
+                            <span class="text-xs font-bold text-amber-500 flex items-center">
+                                <i class="fa-solid fa-star mr-1"></i> 4.8 <span
+                                    class="text-slate-400 font-normal ml-0.5">(98)</span>
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 leading-snug">Python Programming & Automation</h3>
+                        <p class="text-xs text-slate-500 mt-2 line-clamp-2">
+                            Build real-world automation bots, handle spreadsheet data with Pandas, solve computational
+                            challenges, and automate scripts.
+                        </p>
+
+                        <!-- Tech Skill Pills -->
+                        <div class="flex flex-wrap gap-1.5 mt-4">
+                            <span
+                                class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">OOP</span>
+                            <span
+                                class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">Data
+                                Handling</span>
+                            <span
+                                class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">Automation
+                                Scripts</span>
+                            <span
+                                class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">Pandas</span>
+                        </div>
+
+                        <!-- Meta Info -->
+                        <div
+                            class="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-slate-100 text-xs text-slate-600 font-medium">
+                            <div class="flex items-center"><i class="fa-solid fa-graduation-cap text-blue-500 mr-2"></i>
+                                All Experience Levels</div>
+                            <div class="flex items-center"><i class="fa-solid fa-folder-closed text-amber-500 mr-2"></i>
+                                8 Projects</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer & CTA -->
+                <div class="p-5 pt-0">
+                    <div class="flex items-center justify-between mb-3">
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-slate-400 block">FULL TUITION</span>
+                            <span class="text-xl font-extrabold text-blue-700">$220</span>
+                        </div>
+                        <span class="text-[11px] text-emerald-600 font-bold bg-emerald-50 px-2.5 py-1 rounded-md">
+                            <i class="fa-regular fa-circle-check mr-1"></i> Hybrid Schedule
+                        </span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button
+                            onclick="openCourseModal('Python Programming & Automation', '$220', '10 Weeks', 'Learn core Python syntax, OOP, automation bots, and data manipulation with Pandas.')"
+                            class="w-full py-2.5 px-3 border border-blue-200 text-blue-600 font-bold text-xs rounded-xl hover:bg-blue-50 transition-colors">
+                            <i class="fa-solid fa-download mr-1"></i> Syllabus
+                        </button>
+                        <button onclick="openEnrollModal('Python Programming & Automation', '$220')"
+                            class="w-full py-2.5 px-3 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl transition-colors flex items-center justify-center">
+                            Enroll Now <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Database Systems (MySQL & PostgreSQL) -->
+            <div class="course-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between"
+                data-category="database" data-level="Intermediate" data-duration="8 Weeks" data-mode="Weekend">
+                <div>
+                    <!-- Image Banner -->
+                    <div class="relative h-48 bg-slate-800 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&q=80&w=800"
+                            alt="Database Systems"
+                            class="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-500">
+                        <span
+                            class="absolute top-3 left-3 bg-indigo-600 text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md">
+                            Engineering Core
+                        </span>
+                        <span
+                            class="absolute bottom-3 right-3 bg-slate-900/80 backdrop-blur-md text-white text-xs font-medium px-2.5 py-1 rounded-lg">
+                            <i class="fa-regular fa-clock mr-1"></i> 8 Weeks
+                        </span>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[11px] font-bold text-indigo-600 uppercase tracking-wider">DATA
+                                ARCHITECTURE</span>
+                            <span class="text-xs font-bold text-amber-500 flex items-center">
+                                <i class="fa-solid fa-star mr-1"></i> 4.9 <span
+                                    class="text-slate-400 font-normal ml-0.5">(86)</span>
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 leading-snug">Database Systems (MySQL & PostgreSQL)
+                        </h3>
+                        <p class="text-xs text-slate-500 mt-2 line-clamp-2">
+                            Design scalable relational schemas, write optimal indexing solutions, master JOIN
+                            operations, stored procedures, and triggers.
+                        </p>
+
+                        <!-- Tech Skill Pills -->
+                        <div class="flex flex-wrap gap-1.5 mt-4">
+                            <span
+                                class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">Relational
+                                Design</span>
+                            <span
+                                class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">Complex
+                                Queries</span>
+                            <span
+                                class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">PostgreSQL</span>
+                            <span
+                                class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">Indexing</span>
+                        </div>
+
+                        <!-- Meta Info -->
+                        <div
+                            class="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-slate-100 text-xs text-slate-600 font-medium">
+                            <div class="flex items-center"><i class="fa-solid fa-chart-line text-indigo-500 mr-2"></i>
+                                Intermediate Track</div>
+                            <div class="flex items-center"><i class="fa-solid fa-database text-purple-500 mr-2"></i> DBA
+                                Certified</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer & CTA -->
+                <div class="p-5 pt-0">
+                    <div class="flex items-center justify-between mb-3">
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-slate-400 block">FULL TUITION</span>
+                            <span class="text-xl font-extrabold text-blue-700">$190</span>
+                        </div>
+                        <span class="text-[11px] text-emerald-600 font-bold bg-emerald-50 px-2.5 py-1 rounded-md">
+                            <i class="fa-regular fa-circle-check mr-1"></i> Weekend Intensive
+                        </span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button
+                            onclick="openCourseModal('Database Systems (MySQL & PostgreSQL)', '$190', '8 Weeks', 'Master query optimization, relational database modeling, indexing, and PostgreSQL administration.')"
+                            class="w-full py-2.5 px-3 border border-blue-200 text-blue-600 font-bold text-xs rounded-xl hover:bg-blue-50 transition-colors">
+                            <i class="fa-solid fa-download mr-1"></i> Syllabus
+                        </button>
+                        <button onclick="openEnrollModal('Database Systems (MySQL & PostgreSQL)', '$190')"
+                            class="w-full py-2.5 px-3 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl transition-colors flex items-center justify-center">
+                            Enroll Now <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Cybersecurity Fundamentals -->
+            <div class="course-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between"
+                data-category="security" data-level="Intermediate" data-duration="12 Weeks" data-mode="Evening">
+                <div>
+                    <!-- Image Banner -->
+                    <div class="relative h-48 bg-slate-800 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"
+                            alt="Cybersecurity"
+                            class="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-500">
+                        <span
+                            class="absolute top-3 left-3 bg-rose-600 text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md">
+                            Top Career ROI
+                        </span>
+                        <span
+                            class="absolute bottom-3 right-3 bg-slate-900/80 backdrop-blur-md text-white text-xs font-medium px-2.5 py-1 rounded-lg">
+                            <i class="fa-regular fa-clock mr-1"></i> 12 Weeks
+                        </span>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[11px] font-bold text-rose-600 uppercase tracking-wider">SECURITY
+                                OPERATIONS</span>
+                            <span class="text-xs font-bold text-amber-500 flex items-center">
+                                <i class="fa-solid fa-star mr-1"></i> 4.9 <span
+                                    class="text-slate-400 font-normal ml-0.5">(114)</span>
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 leading-snug">Cybersecurity Fundamentals</h3>
+                        <p class="text-xs text-slate-500 mt-2 line-clamp-2">
+                            Learn threat analysis, penetration testing essentials, Wireshark packet capture, firewall
+                            hardening, and incident management.
+                        </p>
+
+                        <!-- Tech Skill Pills -->
+                        <div class="flex flex-wrap gap-1.5 mt-4">
+                            <span
+                                class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">Threat
+                                Defense</span>
+                            <span
+                                class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">Kali
+                                Linux</span>
+                            <span class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">SOC
+                                Analysis</span>
+                            <span
+                                class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">Network
+                                Sec</span>
+                        </div>
+
+                        <!-- Meta Info -->
+                        <div
+                            class="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-slate-100 text-xs text-slate-600 font-medium">
+                            <div class="flex items-center"><i class="fa-solid fa-shield-halved text-rose-500 mr-2"></i>
+                                Intermediate</div>
+                            <div class="flex items-center"><i class="fa-solid fa-flask text-teal-500 mr-2"></i>
+                                Sandboxed Labs</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer & CTA -->
+                <div class="p-5 pt-0">
+                    <div class="flex items-center justify-between mb-3">
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-slate-400 block">FULL TUITION</span>
+                            <span class="text-xl font-extrabold text-blue-700">$260</span>
+                        </div>
+                        <span class="text-[11px] text-emerald-600 font-bold bg-emerald-50 px-2.5 py-1 rounded-md">
+                            <i class="fa-regular fa-circle-check mr-1"></i> CompTIA Ready
+                        </span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button
+                            onclick="openCourseModal('Cybersecurity Fundamentals', '$260', '12 Weeks', 'Hands-on network security, penetration testing basics, SOC operations, and incident response.')"
+                            class="w-full py-2.5 px-3 border border-blue-200 text-blue-600 font-bold text-xs rounded-xl hover:bg-blue-50 transition-colors">
+                            <i class="fa-solid fa-download mr-1"></i> Syllabus
+                        </button>
+                        <button onclick="openEnrollModal('Cybersecurity Fundamentals', '$260')"
+                            class="w-full py-2.5 px-3 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl transition-colors flex items-center justify-center">
+                            Enroll Now <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: Networking & Infrastructure (Cisco CCNA) -->
+            <div class="course-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between"
+                data-category="cloud" data-level="Intermediate" data-duration="10 Weeks" data-mode="Hybrid">
+                <div>
+                    <!-- Image Banner -->
+                    <div class="relative h-48 bg-slate-800 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800"
+                            alt="Networking & Infrastructure"
+                            class="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-500">
+                        <span
+                            class="absolute top-3 left-3 bg-sky-600 text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md">
+                            Industry Standard
+                        </span>
+                        <span
+                            class="absolute bottom-3 right-3 bg-slate-900/80 backdrop-blur-md text-white text-xs font-medium px-2.5 py-1 rounded-lg">
+                            <i class="fa-regular fa-clock mr-1"></i> 10 Weeks
+                        </span>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[11px] font-bold text-sky-600 uppercase tracking-wider">CLOUD &
+                                HARDWARE</span>
+                            <span class="text-xs font-bold text-amber-500 flex items-center">
+                                <i class="fa-solid fa-star mr-1"></i> 4.7 <span
+                                    class="text-slate-400 font-normal ml-0.5">(73)</span>
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 leading-snug">Networking & Infrastructure (Cisco
+                            CCNA)</h3>
+                        <p class="text-xs text-slate-500 mt-2 line-clamp-2">
+                            Configure switches, routers, IPv4/IPv6 subnetting, VLAN trunking, NAT policies, and
+                            troubleshoot enterprise branch networks.
+                        </p>
+
+                        <!-- Tech Skill Pills -->
+                        <div class="flex flex-wrap gap-1.5 mt-4">
+                            <span
+                                class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">TCP/IP</span>
+                            <span
+                                class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">Cisco
+                                Routers</span>
+                            <span
+                                class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">Cloud
+                                Subnets</span>
+                            <span
+                                class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">VLAN</span>
+                        </div>
+
+                        <!-- Meta Info -->
+                        <div
+                            class="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-slate-100 text-xs text-slate-600 font-medium">
+                            <div class="flex items-center"><i class="fa-solid fa-server text-sky-500 mr-2"></i> Hardware
+                                Physical Labs</div>
+                            <div class="flex items-center"><i
+                                    class="fa-solid fa-network-wired text-indigo-500 mr-2"></i> CCNA Simulation</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer & CTA -->
+                <div class="p-5 pt-0">
+                    <div class="flex items-center justify-between mb-3">
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-slate-400 block">FULL TUITION</span>
+                            <span class="text-xl font-extrabold text-blue-700">$230</span>
+                        </div>
+                        <span class="text-[11px] text-emerald-600 font-bold bg-emerald-50 px-2.5 py-1 rounded-md">
+                            <i class="fa-regular fa-circle-check mr-1"></i> Hardware Access
+                        </span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button
+                            onclick="openCourseModal('Networking & Infrastructure (Cisco CCNA)', '$230', '10 Weeks', 'Comprehensive Cisco CCNA preparation covering switches, routing, VLANs, and cloud network topology.')"
+                            class="w-full py-2.5 px-3 border border-blue-200 text-blue-600 font-bold text-xs rounded-xl hover:bg-blue-50 transition-colors">
+                            <i class="fa-solid fa-download mr-1"></i> Syllabus
+                        </button>
+                        <button onclick="openEnrollModal('Networking & Infrastructure (Cisco CCNA)', '$230')"
+                            class="w-full py-2.5 px-3 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl transition-colors flex items-center justify-center">
+                            Enroll Now <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6: IT Support & Enterprise Helpdesk -->
+            <div class="course-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between"
+                data-category="support" data-level="Entry-Level" data-duration="6 Weeks" data-mode="Evening">
+                <div>
+                    <!-- Image Banner -->
+                    <div class="relative h-48 bg-slate-800 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&q=80&w=800"
+                            alt="IT Support"
+                            class="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-500">
+                        <span
+                            class="absolute top-3 left-3 bg-teal-600 text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md">
+                            Fast Career Entry
+                        </span>
+                        <span
+                            class="absolute bottom-3 right-3 bg-slate-900/80 backdrop-blur-md text-white text-xs font-medium px-2.5 py-1 rounded-lg">
+                            <i class="fa-regular fa-clock mr-1"></i> 6 Weeks
+                        </span>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[11px] font-bold text-teal-600 uppercase tracking-wider">SYSTEMS
+                                SUPPORT</span>
+                            <span class="text-xs font-bold text-amber-500 flex items-center">
+                                <i class="fa-solid fa-star mr-1"></i> 4.8 <span
+                                    class="text-slate-400 font-normal ml-0.5">(65)</span>
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 leading-snug">IT Support & Enterprise Helpdesk</h3>
+                        <p class="text-xs text-slate-500 mt-2 line-clamp-2">
+                            Diagnose Windows & macOS system faults, configure Active Directory domain users, administer
+                            MS 365, and manage SLA systems.
+                        </p>
+
+                        <!-- Tech Skill Pills -->
+                        <div class="flex flex-wrap gap-1.5 mt-4">
+                            <span
+                                class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">Hardware
+                                & OS</span>
+                            <span
+                                class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">Active
+                                Directory</span>
+                            <span class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">SLA
+                                Systems</span>
+                            <span
+                                class="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">Troubleshooting</span>
+                        </div>
+
+                        <!-- Meta Info -->
+                        <div
+                            class="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-slate-100 text-xs text-slate-600 font-medium">
+                            <div class="flex items-center"><i class="fa-solid fa-user-check text-teal-500 mr-2"></i>
+                                Entry-Level</div>
+                            <div class="flex items-center"><i class="fa-solid fa-briefcase text-blue-500 mr-2"></i>
+                                Internship Connect</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer & CTA -->
+                <div class="p-5 pt-0">
+                    <div class="flex items-center justify-between mb-3">
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-slate-400 block">FULL TUITION</span>
+                            <span class="text-xl font-extrabold text-blue-700">$160</span>
+                        </div>
+                        <span class="text-[11px] text-emerald-600 font-bold bg-emerald-50 px-2.5 py-1 rounded-md">
+                            <i class="fa-regular fa-circle-check mr-1"></i> Evening Batches
+                        </span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button
+                            onclick="openCourseModal('IT Support & Enterprise Helpdesk', '$160', '6 Weeks', 'Learn Active Directory, hardware repair, helpdesk ticket management, and enterprise IT troubleshooting.')"
+                            class="w-full py-2.5 px-3 border border-blue-200 text-blue-600 font-bold text-xs rounded-xl hover:bg-blue-50 transition-colors">
+                            <i class="fa-solid fa-download mr-1"></i> Syllabus
+                        </button>
+                        <button onclick="openEnrollModal('IT Support & Enterprise Helpdesk', '$160')"
+                            class="w-full py-2.5 px-3 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl transition-colors flex items-center justify-center">
+                            Enroll Now <i class="fa-solid fa-arrow-right ml-1.5 text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- No Results Fallback -->
+        <div id="noResults" class="hidden text-center py-16 bg-white rounded-2xl border border-slate-200 mt-6">
+            <i class="fa-solid fa-file-circle-xmark text-4xl text-slate-300 mb-3"></i>
+            <h3 class="text-lg font-bold text-slate-700">No matching courses found</h3>
+            <p class="text-xs text-slate-400 mt-1">Try adjusting your filters or search keywords.</p>
+            <button onclick="resetFilters()"
+                class="mt-4 px-4 py-2 bg-blue-600 text-white text-xs font-bold rounded-xl shadow-md hover:bg-blue-700">Reset
+                Filters</button>
+        </div>
+
+    </section>
+
+    <!-- THE IT TRAINING CENTER ADVANTAGE SECTION -->
+    <section id="advantage" class="py-14 bg-gradient-to-b from-[#f4f7fc] via-blue-50/40 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-xs font-bold uppercase tracking-wider text-blue-600">THE IT TRAINING CENTER
+                    ADVANTAGE</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Built to Turn Aspiring Learners into
+                    Hired Specialists</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Advantage Card 1 -->
+                <div
+                    class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                    <div>
+                        <div
+                            class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 text-xl">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">100% Practical Labs</h3>
+                        <p class="text-xs text-slate-500 mt-3 leading-relaxed">
+                            Every concept is matched with live server terminal work, hands-on git commits, and
+                            troubleshooting assignments rather than abstract slide theory.
+                        </p>
+                    </div>
+                    <a href="#courses"
+                        class="inline-flex items-center text-xs font-bold text-blue-600 mt-6 hover:underline">
+                        Production Grade Repos <i class="fa-solid fa-arrow-right ml-2 text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Advantage Card 2 -->
+                <div
+                    class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                    <div>
+                        <div
+                            class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6 text-xl">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">1-on-1 Mentorship & CV Help</h3>
+                        <p class="text-xs text-slate-500 mt-3 leading-relaxed">
+                            Get personalized code reviews, portfolio polish sessions, and mock tech interviews with
+                            senior engineers active in the local Cambodian tech ecosystem.
+                        </p>
+                    </div>
+                    <a href="#cta"
+                        class="inline-flex items-center text-xs font-bold text-emerald-600 mt-6 hover:underline">
+                        Interview Preparation <i class="fa-solid fa-arrow-right ml-2 text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Advantage Card 3 -->
+                <div
+                    class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                    <div>
+                        <div
+                            class="w-12 h-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-6 text-xl">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Recognized Certificate</h3>
+                        <p class="text-xs text-slate-500 mt-3 leading-relaxed">
+                            Earn a verifiable digital certificate with serial credential tracking endorsed by partner
+                            tech agencies, telcos, and banking systems across Phnom Penh.
+                        </p>
+                    </div>
+                    <a href="#courses"
+                        class="inline-flex items-center text-xs font-bold text-teal-600 mt-6 hover:underline">
+                        LinkedIn Verifiable <i class="fa-solid fa-arrow-right ml-2 text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CURRICULUM ROADMAPS SECTION -->
+    <section class="py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Header -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-end mb-10">
+            <div class="md:col-span-6">
+                <span class="text-xs font-bold uppercase tracking-wider text-blue-600">CURRICULUM ROADMAPS</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Structured Pathways to Tech
+                    Specialization</h2>
+            </div>
+            <div class="md:col-span-6 text-slate-500 text-xs sm:text-sm leading-relaxed md:text-right">
+                Unsure where to begin? Follow these progressive tracks designed to navigate you step-by-step from core
+                syntax to high-demand corporate placement.
+            </div>
+        </div>
+
+        <!-- 4 Track Columns Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+            <!-- Track 01 -->
+            <div class="bg-blue-50/50 rounded-2xl p-5 border border-blue-100 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-blue-600 text-white text-[11px] font-extrabold px-2.5 py-1 rounded-md">Track
+                            01</span>
+                        <i class="fa-solid fa-code text-blue-600 text-lg"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base leading-snug">Web & Application Development</h3>
+                    <p class="text-[11px] text-slate-500 mt-1 mb-4">Target Role: Junior Full-Stack Developer, UI/UX
+                        Integrator.</p>
+
+                    <!-- Steps -->
+                    <div class="space-y-2.5">
+                        <div
+                            class="bg-white p-3 rounded-xl border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center">
+                            <span
+                                class="w-5 h-5 rounded-full bg-blue-100 text-blue-700 text-[10px] font-bold flex items-center justify-center mr-2.5">1</span>
+                            Web Dev Fundamentals
+                        </div>
+                        <div
+                            class="bg-white p-3 rounded-xl border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center">
+                            <span
+                                class="w-5 h-5 rounded-full bg-blue-100 text-blue-700 text-[10px] font-bold flex items-center justify-center mr-2.5">2</span>
+                            React.js & Modern State
+                        </div>
+                        <div
+                            class="bg-white p-3 rounded-xl border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center">
+                            <span
+                                class="w-5 h-5 rounded-full bg-blue-100 text-blue-700 text-[10px] font-bold flex items-center justify-center mr-2.5">3</span>
+                            Node.js API & Postgres
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-3 border-t border-blue-100/80 text-center">
+                    <span class="text-[11px] font-bold text-slate-500">Est. Timeline: <span class="text-slate-800">4 – 6
+                            Months</span></span>
+                </div>
+            </div>
+
+            <!-- Track 02 -->
+            <div class="bg-emerald-50/50 rounded-2xl p-5 border border-emerald-100 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-emerald-700 text-white text-[11px] font-extrabold px-2.5 py-1 rounded-md">Track
+                            02</span>
+                        <i class="fa-solid fa-chart-diagram text-emerald-600 text-lg"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base leading-snug">Data Engineering & Python</h3>
+                    <p class="text-[11px] text-slate-500 mt-1 mb-4">Target Role: Data Analyst, Backend Scripting
+                        Engineer.</p>
+
+                    <!-- Steps -->
+                    <div class="space-y-2.5">
+                        <div
+                            class="bg-white p-3 rounded-xl border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center">
+                            <span
+                                class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold flex items-center justify-center mr-2.5">1</span>
+                            Python Core & Automation
+                        </div>
+                        <div
+                            class="bg-white p-3 rounded-xl border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center">
+                            <span
+                                class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold flex items-center justify-center mr-2.5">2</span>
+                            Relational Databases & SQL
+                        </div>
+                        <div
+                            class="bg-white p-3 rounded-xl border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center">
+                            <span
+                                class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold flex items-center justify-center mr-2.5">3</span>
+                            Data Pipelines & BI Reports
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-3 border-t border-emerald-100/80 text-center">
+                    <span class="text-[11px] font-bold text-slate-500">Est. Timeline: <span class="text-slate-800">4
+                            Months</span></span>
+                </div>
+            </div>
+
+            <!-- Track 03 -->
+            <div class="bg-sky-50/50 rounded-2xl p-5 border border-sky-100 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-sky-700 text-white text-[11px] font-extrabold px-2.5 py-1 rounded-md">Track
+                            03</span>
+                        <i class="fa-solid fa-network-wired text-sky-600 text-lg"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base leading-snug">Infrastructure & Networking</h3>
+                    <p class="text-[11px] text-slate-500 mt-1 mb-4">Target Role: Network Administrator, Systems
+                        Engineer.</p>
+
+                    <!-- Steps -->
+                    <div class="space-y-2.5">
+                        <div
+                            class="bg-white p-3 rounded-xl border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center">
+                            <span
+                                class="w-5 h-5 rounded-full bg-sky-100 text-sky-800 text-[10px] font-bold flex items-center justify-center mr-2.5">1</span>
+                            IT Support Essentials
+                        </div>
+                        <div
+                            class="bg-white p-3 rounded-xl border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center">
+                            <span
+                                class="w-5 h-5 rounded-full bg-sky-100 text-sky-800 text-[10px] font-bold flex items-center justify-center mr-2.5">2</span>
+                            Cisco CCNA Switching/Routing
+                        </div>
+                        <div
+                            class="bg-white p-3 rounded-xl border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center">
+                            <span
+                                class="w-5 h-5 rounded-full bg-sky-100 text-sky-800 text-[10px] font-bold flex items-center justify-center mr-2.5">3</span>
+                            Cloud & Linux Admin
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-3 border-t border-sky-100/80 text-center">
+                    <span class="text-[11px] font-bold text-slate-500">Est. Timeline: <span class="text-slate-800">5
+                            Months</span></span>
+                </div>
+            </div>
+
+            <!-- Track 04 -->
+            <div class="bg-indigo-50/50 rounded-2xl p-5 border border-indigo-100 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-indigo-900 text-white text-[11px] font-extrabold px-2.5 py-1 rounded-md">Track
+                            04</span>
+                        <i class="fa-solid fa-shield-halved text-indigo-700 text-lg"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base leading-snug">Cyber Defense & Security</h3>
+                    <p class="text-[11px] text-slate-500 mt-1 mb-4">Target Role: SOC Analyst, Security Administrator.
+                    </p>
+
+                    <!-- Steps -->
+                    <div class="space-y-2.5">
+                        <div
+                            class="bg-white p-3 rounded-xl border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center">
+                            <span
+                                class="w-5 h-5 rounded-full bg-indigo-100 text-indigo-800 text-[10px] font-bold flex items-center justify-center mr-2.5">1</span>
+                            Enterprise Network Protocol
+                        </div>
+                        <div
+                            class="bg-white p-3 rounded-xl border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center">
+                            <span
+                                class="w-5 h-5 rounded-full bg-indigo-100 text-indigo-800 text-[10px] font-bold flex items-center justify-center mr-2.5">2</span>
+                            Security Analysis & Kali Labs
+                        </div>
+                        <div
+                            class="bg-white p-3 rounded-xl border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center">
+                            <span
+                                class="w-5 h-5 rounded-full bg-indigo-100 text-indigo-800 text-[10px] font-bold flex items-center justify-center mr-2.5">3</span>
+                            Threat Defense & Hardening
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-3 border-t border-indigo-100/80 text-center">
+                    <span class="text-[11px] font-bold text-slate-500">Est. Timeline: <span class="text-slate-800">6
+                            Months</span></span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONSULTATION CTA BANNER -->
+    <section id="cta" class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+            class="relative bg-gradient-to-r from-blue-600 via-sky-600 to-teal-700 rounded-3xl p-8 sm:p-12 text-white shadow-2xl overflow-hidden">
+            <!-- Background Decorative Accent -->
+            <div class="absolute -right-12 -top-12 w-80 h-80 bg-white/10 rounded-full blur-2xl pointer-events-none">
+            </div>
+
+            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-8">
+                    <span
+                        class="inline-flex items-center px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-xs font-bold mb-4">
+                        <i class="fa-solid fa-headset mr-2"></i> Free 15-Minute Technical Consultation
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight">
+                        Not Sure Which IT Specialization Fits Your Background?
+                    </h2>
+                    <p class="mt-3 text-blue-100 text-sm sm:text-base max-w-2xl leading-relaxed">
+                        Speak with our academic advisors and senior instructors in Phnom Penh. We evaluate your current
+                        skill set and recommend the highest yield training roadmap.
+                    </p>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="lg:col-span-4 flex flex-col gap-3 justify-center">
+                    <button onclick="toggleModal('consultationModal')"
+                        class="w-full bg-white hover:bg-slate-50 text-blue-700 font-extrabold text-sm py-3.5 px-6 rounded-2xl shadow-lg transition-all flex items-center justify-center space-x-2">
+                        <i class="fa-regular fa-calendar-check text-blue-600"></i>
+                        <span>Book Advisor Consultation</span>
+                    </button>
+
+                    <a href="https://t.me" target="_blank"
+                        class="w-full bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 text-white font-bold text-sm py-3.5 px-6 rounded-2xl transition-all flex items-center justify-center space-x-2">
+                        <i class="fa-paper-plane-o fa-solid fa-paper-plane"></i>
+                        <span>Quick Chat via Telegram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer id="footer" class="bg-white border-t border-slate-200 mt-16 pt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-12">
+
+                <!-- Col 1: Branding -->
+                <div class="lg:col-span-4">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <span class="font-extrabold text-slate-900 text-lg">IT Training Center</span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed pr-4">
+                        Leading premier IT education and technical advancement institute in Cambodia. Empowering careers
+                        through structured, hands-on, industry-recognized learning programs.
+                    </p>
+                    <div class="flex items-center space-x-3 mt-6">
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-slate-100 hover:bg-blue-100 hover:text-blue-600 flex items-center justify-center text-slate-500 text-xs transition-colors"><i
+                                class="fa-solid fa-globe"></i></a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-slate-100 hover:bg-blue-100 hover:text-blue-600 flex items-center justify-center text-slate-500 text-xs transition-colors"><i
+                                class="fa-paper-plane-o fa-solid fa-paper-plane"></i></a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-slate-100 hover:bg-blue-100 hover:text-blue-600 flex items-center justify-center text-slate-500 text-xs transition-colors"><i
+                                class="fa-solid fa-diagram-project"></i></a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-slate-100 hover:bg-blue-100 hover:text-blue-600 flex items-center justify-center text-slate-500 text-xs transition-colors"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="lg:col-span-2">
+                    <h4 class="font-bold text-slate-900 text-sm mb-4">Quick Links</h4>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-500">
+                        <li><a href="./index.html" class="hover:text-blue-600 transition-colors">Home</a></li>
+                        <li><a href="./courses.html" class="hover:text-blue-600 transition-colors">Courses</a></li>
+                        <li><a href="#advantage" class="hover:text-blue-600 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition-colors">Events</a></li>
+                        <li><a href="#footer" class="hover:text-blue-600 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Popular Courses -->
+                <div class="lg:col-span-3">
+                    <h4 class="font-bold text-slate-900 text-sm mb-4">Popular Courses</h4>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-500">
+                        <li><a href="#courses" onclick="setCategory('web')"
+                                class="hover:text-blue-600 transition-colors">Web Development</a></li>
+                        <li><a href="#courses" onclick="setCategory('python')"
+                                class="hover:text-blue-600 transition-colors">Python Programming</a></li>
+                        <li><a href="#courses" onclick="setCategory('database')"
+                                class="hover:text-blue-600 transition-colors">Database Engineering</a></li>
+                        <li><a href="#courses" onclick="setCategory('support')"
+                                class="hover:text-blue-600 transition-colors">IT Support & Admin</a></li>
+                        <li><a href="#courses" onclick="setCategory('security')"
+                                class="hover:text-blue-600 transition-colors">Cybersecurity Fundamentals</a></li>
+                        <li><a href="#courses" onclick="setCategory('cloud')"
+                                class="hover:text-blue-600 transition-colors">Computer Networking</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact Us -->
+                <div class="lg:col-span-3">
+                    <h4 class="font-bold text-slate-900 text-sm mb-4">Contact Us</h4>
+                    <ul class="space-y-3 text-xs text-slate-500">
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-solid fa-phone text-blue-600 w-4"></i>
+                            <span class="font-semibold text-slate-700">+855 12 345 678</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-regular fa-envelope text-blue-600 w-4"></i>
+                            <span>info@ittrainingcenter.com</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fa-solid fa-location-dot text-blue-600 w-4 mt-0.5"></i>
+                            <span>Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-regular fa-clock text-blue-600 w-4"></i>
+                            <span>Mon – Sat: 8:00 AM – 8:30 PM</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Bar -->
+            <div
+                class="border-t border-slate-100 py-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3">
+                <p>© 2025 IT Training Center. All rights reserved.</p>
+                <div class="flex items-center space-x-6 font-medium">
+                    <a href="#" class="hover:text-slate-600 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-600 transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-slate-600 transition-colors">Student Portal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS SECTION -->
+    <!-- 1. Consultation Modal -->
+    <div id="consultationModal"
+        class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative border border-slate-100">
+            <button onclick="toggleModal('consultationModal')"
+                class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="flex items-center space-x-3 mb-4">
+                <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center font-bold">
+                    <i class="fa-regular fa-calendar-check text-lg"></i>
+                </div>
+                <div>
+                    <h3 class="font-extrabold text-slate-900 text-lg">Book Consultation</h3>
+                    <p class="text-xs text-slate-500">Free 15-min tech advisor call</p>
+                </div>
+            </div>
+            <form onsubmit="handleFormSubmit(event, 'Consultation booked! An advisor will reach out to you shortly.')"
+                class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Full Name</label>
+                    <input type="text" required placeholder="e.g. Sokha Chan"
+                        class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Phone Number / Telegram</label>
+                    <input type="text" required placeholder="e.g. +855 12 000 000"
+                        class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Interested Topic</label>
+                    <select
+                        class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+                        <option>Web Development</option>
+                        <option>Python & Data</option>
+                        <option>Cybersecurity</option>
+                        <option>Cisco Networking</option>
+                        <option>General Career Advice</option>
+                    </select>
+                </div>
+                <button type="submit"
+                    class="w-full py-3 bg-blue-600 text-white font-bold text-sm rounded-xl hover:bg-blue-700 transition-colors shadow-md">
+                    Confirm Appointment
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 2. Course Details Modal -->
+    <div id="courseModal"
+        class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl relative border border-slate-100">
+            <button onclick="toggleModal('courseModal')"
+                class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="mb-4">
+                <span id="modalCourseDuration" class="text-xs font-bold text-blue-600 uppercase tracking-wider">12
+                    WEEKS</span>
+                <h3 id="modalCourseTitle" class="font-extrabold text-slate-900 text-xl mt-1">Course Title</h3>
+            </div>
+            <p id="modalCourseDesc" class="text-xs text-slate-600 leading-relaxed mb-6">Course description
+                placeholder...</p>
+
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 mb-6">
+                <h4 class="text-xs font-bold text-slate-800 mb-2">What you will learn:</h4>
+                <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside">
+                    <li>Hands-on practical capstone project</li>
+                    <li>Industry certification preparation</li>
+                    <li>Direct access to lab hardware & server environments</li>
+                    <li>Resume review & job interview preparation</li>
+                </ul>
+            </div>
+
+            <div class="flex items-center justify-between">
+                <div>
+                    <span class="text-[10px] text-slate-400 font-bold uppercase block">Tuition Fee</span>
+                    <span id="modalCoursePrice" class="text-xl font-extrabold text-blue-600">$240</span>
+                </div>
+                <button
+                    onclick="toggleModal('courseModal'); openEnrollModal(document.getElementById('modalCourseTitle').innerText, document.getElementById('modalCoursePrice').innerText);"
+                    class="px-6 py-2.5 bg-blue-600 text-white font-bold text-xs rounded-xl hover:bg-blue-700 shadow-md">
+                    Proceed to Enroll
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Notification Modal -->
+    <div id="notificationsModal"
+        class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl relative border border-slate-100">
+            <button onclick="toggleModal('notificationsModal')"
+                class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <h3 class="font-extrabold text-slate-900 text-lg mb-4 flex items-center">
+                <i class="fa-regular fa-bell text-blue-600 mr-2"></i> Notifications
+            </h3>
+            <div class="space-y-3">
+                <div class="p-3 bg-blue-50 rounded-xl text-xs border border-blue-100">
+                    <span class="font-bold text-blue-900 block">New Cohort Opening!</span>
+                    <span class="text-blue-700">Cybersecurity Fundamentals weekend batch starts Oct 15.</span>
+                </div>
+                <div class="p-3 bg-slate-50 rounded-xl text-xs border border-slate-100">
+                    <span class="font-bold text-slate-800 block">Early Bird Discount</span>
+                    <span class="text-slate-500">Get 10% off on all full-stack web tracks this month.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Banner -->
+    <div id="toast"
+        class="fixed bottom-5 right-5 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-2xl text-xs font-bold hidden z-50 flex items-center space-x-2">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+        <span id="toastMsg">Action completed successfully!</span>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        let currentCategory = 'all';
+
+        // Filter Category Function
+        function setCategory(category) {
+            currentCategory = category;
+
+            // Highlight Pill
+            const pills = document.querySelectorAll('.cat-btn');
+            pills.forEach(pill => {
+                if (pill.getAttribute('data-cat') === category) {
+                    pill.className = 'cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap bg-blue-600 text-white transition-all shadow-sm';
+                } else {
+                    pill.className = 'cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all';
+                }
+            });
+
+            filterCourses();
+        }
+
+        // Unified Filter Function
+        function filterCourses() {
+            const searchVal = document.getElementById('courseSearchInput').value.toLowerCase();
+            const globalVal = document.getElementById('globalSearch').value.toLowerCase();
+            const levelVal = document.getElementById('levelSelect').value;
+            const durationVal = document.getElementById('durationSelect').value;
+            const modeVal = document.getElementById('modeSelect').value;
+
+            const cards = document.querySelectorAll('.course-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const cat = card.getAttribute('data-category');
+                const level = card.getAttribute('data-level');
+                const duration = card.getAttribute('data-duration');
+                const mode = card.getAttribute('data-mode');
+                const textContent = card.innerText.toLowerCase();
+
+                const matchesCat = (currentCategory === 'all' || cat === currentCategory);
+                const matchesLevel = (levelVal === 'all' || level === levelVal);
+                const matchesDuration = (durationVal === 'all' || duration === durationVal);
+                const matchesMode = (modeVal === 'all' || mode === modeVal);
+                const matchesSearch = textContent.includes(searchVal) && textContent.includes(globalVal);
+
+                if (matchesCat && matchesLevel && matchesDuration && matchesMode && matchesSearch) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            document.getElementById('visibleCount').innerText = visibleCount;
+            document.getElementById('noResults').classList.toggle('hidden', visibleCount > 0);
+        }
+
+        // Global search input listener
+        document.getElementById('globalSearch').addEventListener('input', function () {
+            filterCourses();
+        });
+
+        function resetFilters() {
+            document.getElementById('courseSearchInput').value = '';
+            document.getElementById('globalSearch').value = '';
+            document.getElementById('levelSelect').value = 'all';
+            document.getElementById('durationSelect').value = 'all';
+            document.getElementById('modeSelect').value = 'all';
+            setCategory('all');
+        }
+
+        // Modal Helpers
+        function toggleModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.toggle('hidden');
+        }
+
+        function openCourseModal(title, price, duration, desc) {
+            document.getElementById('modalCourseTitle').innerText = title;
+            document.getElementById('modalCoursePrice').innerText = price;
+            document.getElementById('modalCourseDuration').innerText = duration;
+            document.getElementById('modalCourseDesc').innerText = desc;
+            toggleModal('courseModal');
+        }
+
+        function openEnrollModal(title, price) {
+            showToast(`Enrollment request for ${title} (${price}) initiated!`);
+        }
+
+        function handleFormSubmit(e, message) {
+            e.preventDefault();
+            toggleModal('consultationModal');
+            showToast(message);
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = message;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3500);
+        }
+    </script>
+</body>
+
+</html>
