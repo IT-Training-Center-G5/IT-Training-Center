@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Training Center - Courses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+    <!-- Header Navigation -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-blue-600 text-white p-2.5 rounded-xl shadow-md">
+                    <i class="fa-solid fa-graduation-cap text-xl"></i>
+                </div>
+                <div>
+                    <a href="index.html" class="text-xl font-bold text-slate-900 leading-none block">IT Training
+                        Center</a>
+                    <span class="text-xs text-slate-500 font-medium">Learn · Build · Grow</span>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
+                <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+                <a href="courses.html" class="text-blue-600 border-b-2 border-blue-600 pb-1">Courses</a>
+                <a href="about.html" class="hover:text-blue-600 transition">About Us</a>
+                <a href="contact.html" class="hover:text-blue-600 transition">Contact Us</a>
+            </nav>
+
+            <div class="hidden lg:flex items-center space-x-4">
+                <div class="relative">
+                    <i
+                        class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 text-sm"></i>
+                    <input type="text" placeholder="Search courses..."
+                        class="bg-slate-100 text-sm rounded-full pl-9 pr-4 py-2 w-64 focus:outline-none">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Course Hero Header -->
+    <section class="bg-blue-50/50 py-12 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-2 text-xs text-slate-500 font-semibold mb-4">
+                <span class="bg-blue-100 text-blue-700 px-2.5 py-1 rounded-md">CATALOG 2026</span>
+                <span>Cambodia Tech Academy &gt; Course Directory</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900">Explore Our Professional <span
+                    class="text-blue-600">IT Courses</span></h1>
+            <p class="text-slate-600 text-sm mt-2 max-w-2xl">
+                Choose the tech course that fits your career goals with practical labs, recognized certificates, and
+                mentorship right here in Phnom Penh or live online.
+            </p>
+
+            <!-- Filters -->
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 mt-8 flex flex-wrap gap-3">
+                <input type="text" placeholder="Search courses by name, stack, or skill..."
+                    class="bg-slate-100 text-xs px-4 py-2.5 rounded-xl border-none focus:ring-2 focus:ring-blue-500 flex-grow md:flex-grow-0 md:w-80">
+                <button class="bg-blue-600 text-white font-semibold text-xs px-5 py-2.5 rounded-xl">All Courses
+                    (6)</button>
+                <button class="bg-slate-100 text-slate-600 text-xs px-4 py-2.5 rounded-xl hover:bg-slate-200">Web
+                    Development</button>
+                <button class="bg-slate-100 text-slate-600 text-xs px-4 py-2.5 rounded-xl hover:bg-slate-200">Python &
+                    Data</button>
+                <button class="bg-slate-100 text-slate-600 text-xs px-4 py-2.5 rounded-xl hover:bg-slate-200">Database
+                    Systems</button>
+                <button
+                    class="bg-slate-100 text-slate-600 text-xs px-4 py-2.5 rounded-xl hover:bg-slate-200">Cybersecurity</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Grid -->
+    <section class="max-w-7xl m
+    x-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Card 1 -->
+            <div
+                class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition">
+                <div
+                    class="bg-gradient-to-r from-blue-600 to-indigo-600 h-40 flex items-center justify-center text-white text-3xl font-bold">
+                    &lt; / &gt;
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full">Frontend
+                            Track</span>
+                        <span class="text-xs text-slate-400 font-medium">3 Months</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Web Development</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                        Learn HTML5, modern CSS, JavaScript, responsive frameworks, and full-stack basics to build real
+                        production web applications.
+                    </p>
+                    <div class="flex items-center justify-between border-t border-slate-100 pt-4">
+                        <span class="text-sm font-extrabold text-blue-600">$240</span>
+                        <a href="contact.html" class="text-xs font-bold text-blue-600 hover:underline">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+                class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition">
+                <div
+                    class="bg-gradient-to-r from-teal-500 to-emerald-500 h-40 flex items-center justify-center text-white text-3xl font-bold">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full">Backend &
+                            AI</span>
+                        <span class="text-xs text-slate-400 font-medium">2.5 Months</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Python Programming</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                        Go from zero to hero with Python syntax, scripting, automation, REST API integration, and
+                        hands-on portfolio milestones.
+                    </p>
+                    <div class="flex items-center justify-between border-t border-slate-100 pt-4">
+                        <span class="text-sm font-extrabold text-blue-600">$220</span>
+                        <a href="contact.html" class="text-xs font-bold text-blue-600 hover:underline">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+                class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition">
+                <div
+                    class="bg-gradient-to-r from-emerald-600 to-green-600 h-40 flex items-center justify-center text-white text-3xl font-bold">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">Data
+                            Systems</span>
+                        <span class="text-xs text-slate-400 font-medium">2 Months</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Database (MySQL)</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                        Design scalable entity schemas, master complex SQL queries, transaction management, indexing,
+                        and enterprise data normalization.
+                    </p>
+                    <div class="flex items-centerjustify-between border-t border-slate-100 pt-4">
+                        <span class="text-sm font-extrabold text-blue-600">$190</span>
+                        <a href="contact.html" class="text-xs font-bold text-blue-600 hover:underline">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-20 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-400">
+            <p>© 2026 IT Training Center. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
