@@ -1,170 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Training Center - Home</title>
+    <title>IT Training Center - Your Future in Tech Starts Here</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-<<<<<<< Updated upstream
-=======
     <!-- Google Fonts Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
->>>>>>> Stashed changes
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<<<<<<< Updated upstream
-=======
-
 <body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen pb-20 md:pb-0">
->>>>>>> Stashed changes
 
-<body class="bg-slate-50 text-slate-800 font-sans">
-
-    <!-- Header Navigation -->
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <header class="bg-white sticky top-0 z-50 border-b border-slate-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-<<<<<<< Updated upstream
-            <div class="flex items-center space-x-3">
-                <div class="bg-blue-600 text-white p-2.5 rounded-xl shadow-md">
-                    <i class="fa-solid fa-graduation-cap text-xl"></i>
-                </div>
-                <div>
-                    <a href="index.html" class="text-xl font-bold text-slate-900 leading-none block">IT Training
-                        Center</a>
-                    <span class="text-xs text-slate-500 font-medium">Learn · Build · Grow</span>
-                </div>
-            </div>
-
-            <!-- Navigation Links -->
-            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
-                <a href="index.html" class="text-blue-600 border-b-2 border-blue-600 pb-1">Home</a>
-                <a href="courses.html" class="hover:text-blue-600 transition">Courses</a>
-                <a href="about.html" class="hover:text-blue-600 transition">About Us</a>
-                <a href="contact.html" class="hover:text-blue-600 transition">Contact Us</a>
-            </nav>
-
-            <div class="hidden lg:flex items-center space-x-4">
-                <div class="relative">
-                    <i
-                        class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 text-sm"></i>
-                    <input type="text" placeholder="Search courses, skills..."
-                        class="bg-slate-100 text-sm rounded-full pl-9 pr-4 py-2 w-64 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                </div>
-                <button class="text-slate-500 hover:text-slate-700 p-2"><i
-                        class="fa-regular fa-bell text-lg"></i></button>
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
-                    class="w-9 h-9 rounded-full object-cover border-2 border-slate-200" alt="Profile">
-=======
             <!-- Logo -->
             <div class="flex items-center space-x-3 cursor-pointer group" onclick="switchPage('home')">
-                <div
-                    class="bg-blue-600 group-hover:bg-blue-700 text-white p-2.5 rounded-xl flex items-center justify-center font-extrabold text-xl shadow-md transition transform group-hover:scale-105">
+                <div class="bg-blue-600 group-hover:bg-blue-700 text-white p-2.5 rounded-xl flex items-center justify-center font-extrabold text-xl shadow-md transition transform group-hover:scale-105">
                     <i class="fa-solid fa-graduation-cap"></i>
                 </div>
                 <div>
-                    <span class="text-xl font-bold tracking-tight text-slate-900 block leading-none">ITTC <span
-                            class="text-blue-600">Training Center</span></span>
+                    <span class="text-xl font-bold tracking-tight text-slate-900 block leading-none">ITTC <span class="text-blue-600">Training Center</span></span>
                     <span class="text-xs text-slate-500 font-medium">Professional IT Academy</span>
                 </div>
             </div>
 
             <!-- Desktop Navigation Links -->
             <nav class="hidden md:flex items-center space-x-8 font-medium text-slate-600">
-                <button onclick="switchPage('home')" id="nav-home"
-                    class="nav-link text-blue-600 font-semibold transition hover:text-blue-600 py-2 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-600">Home</button>
-                <button onclick="switchPage('courses')" id="nav-courses"
-                    class="nav-link transition hover:text-blue-600 py-2 relative hover:after:w-full after:transition-all after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600">Courses</button>
-                <button onclick="switchPage('about')" id="nav-about"
-                    class="nav-link transition hover:text-blue-600 py-2 relative hover:after:w-full after:transition-all after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600">About
-                    Us</button>
-                <button onclick="switchPage('contact')" id="nav-contact"
-                    class="nav-link transition hover:text-blue-600 py-2 relative hover:after:w-full after:transition-all after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600">Contact</button>
+                <button onclick="switchPage('home')" id="nav-home" class="nav-link text-blue-600 font-semibold transition hover:text-blue-600 py-2 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-600">Home</button>
+                <button onclick="switchPage('courses')" id="nav-courses" class="nav-link transition hover:text-blue-600 py-2 relative hover:after:w-full after:transition-all after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600">Courses</button>
+                <button onclick="switchPage('about')" id="nav-about" class="nav-link transition hover:text-blue-600 py-2 relative hover:after:w-full after:transition-all after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600">About Us</button>
+                <button onclick="switchPage('contact')" id="nav-contact" class="nav-link transition hover:text-blue-600 py-2 relative hover:after:w-full after:transition-all after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600">Contact</button>
             </nav>
 
             <!-- Header Action CTA -->
             <div class="hidden md:flex items-center space-x-4">
-                <button onclick="openConsultationModal()"
-                    class="text-blue-600 bg-blue-50 hover:bg-blue-100 font-semibold px-5 py-2.5 rounded-xl transition duration-200 transform hover:-translate-y-0.5">
+                <button onclick="openConsultationModal()" class="text-blue-600 bg-blue-50 hover:bg-blue-100 font-semibold px-5 py-2.5 rounded-xl transition duration-200 transform hover:-translate-y-0.5">
                     Free Consultation
                 </button>
-                <button onclick="switchPage('courses')"
-                    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-xl shadow-sm hover:shadow transition duration-200 transform hover:-translate-y-0.5">
+                <button onclick="switchPage('courses')" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-xl shadow-sm hover:shadow transition duration-200 transform hover:-translate-y-0.5">
                     Get Started
                 </button>
             </div>
 
             <!-- Mobile Menu Toggle -->
-            <button onclick="toggleMobileMenu()"
-                class="md:hidden text-slate-700 hover:text-blue-600 text-2xl focus:outline-none">
+            <button onclick="toggleMobileMenu()" class="md:hidden text-slate-700 hover:text-blue-600 text-2xl focus:outline-none">
                 <i class="fa-solid fa-bars" id="mobile-menu-icon"></i>
             </button>
         </div>
 
         <!-- Mobile Navigation Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
-            <button onclick="switchPage('home'); toggleMobileMenu();"
-                class="block w-full text-left px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-600">Home</button>
-            <button onclick="switchPage('courses'); toggleMobileMenu();"
-                class="block w-full text-left px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-600">Courses</button>
-            <button onclick="switchPage('about'); toggleMobileMenu();"
-                class="block w-full text-left px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-600">About
-                Us</button>
-            <button onclick="switchPage('contact'); toggleMobileMenu();"
-                class="block w-full text-left px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-600">Contact</button>
+            <button onclick="switchPage('home'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-600">Home</button>
+            <button onclick="switchPage('courses'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-600">Courses</button>
+            <button onclick="switchPage('about'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-600">About Us</button>
+            <button onclick="switchPage('contact'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-600">Contact</button>
             <div class="pt-2 flex flex-col space-y-2">
-                <button onclick="openConsultationModal(); toggleMobileMenu();"
-                    class="w-full text-center text-blue-600 bg-blue-50 hover:bg-blue-100 font-semibold py-2.5 rounded-xl transition">Free
-                    Consultation</button>
-                <button onclick="switchPage('courses'); toggleMobileMenu();"
-                    class="w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-xl transition">Get
-                    Started</button>
->>>>>>> Stashed changes
+                <button onclick="openConsultationModal(); toggleMobileMenu();" class="w-full text-center text-blue-600 bg-blue-50 hover:bg-blue-100 font-semibold py-2.5 rounded-xl transition">Free Consultation</button>
+                <button onclick="switchPage('courses'); toggleMobileMenu();" class="w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-xl transition">Get Started</button>
             </div>
         </div>
     </header>
 
-<<<<<<< Updated upstream
-    <!-- Hero Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
-=======
     <main class="flex-grow">
 
         <!-- ==================== HOME PAGE ==================== -->
         <section id="page-home" class="page-view animate-fade">
             <!-- Hero Section -->
-            <div
-                class="bg-gradient-to-br from-slate-900 via-blue-950 to-blue-900 text-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-                <div
-                    class="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]">
-                </div>
+            <div class="bg-gradient-to-br from-slate-900 via-blue-950 to-blue-900 text-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]"></div>
                 <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
                     <div class="lg:col-span-7 space-y-6">
-                        <div
-                            class="inline-flex items-center space-x-2 bg-blue-500/20 text-blue-300 px-4 py-1.5 rounded-full text-sm font-semibold border border-blue-400/30">
+                        <div class="inline-flex items-center space-x-2 bg-blue-500/20 text-blue-300 px-4 py-1.5 rounded-full text-sm font-semibold border border-blue-400/30">
                             <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
                             <span>Enrollment Open for 2026 Cohorts</span>
                         </div>
                         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-                            Your Future in Tech <span
-                                class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Starts
-                                Here</span>
+                            Your Future in Tech <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Starts Here</span>
                         </h1>
                         <p class="text-slate-300 text-lg sm:text-xl font-normal leading-relaxed max-w-2xl">
-                            Gain in-demand technical skills with Cambodia's premier IT training center. Learn from
-                            industry experts through hands-on bootcamps, real-world projects, and guaranteed career
-                            placement support.
+                            Gain in-demand technical skills with Cambodia's premier IT training center. Learn from industry experts through hands-on bootcamps, real-world projects, and guaranteed career placement support.
                         </p>
                         <div class="flex flex-wrap gap-4 pt-2">
-                            <button onclick="switchPage('courses')"
-                                class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-blue-500/25 transition duration-200 flex items-center space-x-3 text-lg transform hover:-translate-y-0.5">
+                            <button onclick="switchPage('courses')" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-blue-500/25 transition duration-200 flex items-center space-x-3 text-lg transform hover:-translate-y-0.5">
                                 <span>Explore All Subjects</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </button>
-                            <button onclick="openConsultationModal()"
-                                class="bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl backdrop-blur border border-white/20 transition duration-200 text-lg transform hover:-translate-y-0.5">
+                            <button onclick="openConsultationModal()" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl backdrop-blur border border-white/20 transition duration-200 text-lg transform hover:-translate-y-0.5">
                                 Book Free Advisory
                             </button>
                         </div>
@@ -185,10 +130,8 @@
                         </div>
                     </div>
                     <div class="lg:col-span-5">
-                        <div
-                            class="bg-gradient-to-br from-blue-600/30 to-indigo-600/20 p-2 rounded-3xl border border-blue-500/30 shadow-2xl backdrop-blur-md">
-                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
-                                alt="ITTC Students Lab" class="rounded-2xl w-full h-[380px] object-cover shadow-lg">
+                        <div class="bg-gradient-to-br from-blue-600/30 to-indigo-600/20 p-2 rounded-3xl border border-blue-500/30 shadow-2xl backdrop-blur-md">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="ITTC Students Lab" class="rounded-2xl w-full h-[380px] object-cover shadow-lg">
                         </div>
                     </div>
                 </div>
@@ -197,37 +140,29 @@
             <!-- Perks Bar -->
             <div class="bg-white border-b border-slate-200 py-8 shadow-sm">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                    <div class="flex flex-col items-center p-4 rounded-xl hover:bg-blue-50 transition cursor-pointer group"
-                        onclick="switchPage('courses')">
-                        <div
-                            class="w-12 h-12 bg-blue-100 group-hover:bg-blue-600 group-hover:text-white text-blue-600 rounded-xl flex items-center justify-center text-xl mb-3 shadow-sm transition">
+                    <div class="flex flex-col items-center p-4 rounded-xl hover:bg-blue-50 transition cursor-pointer group" onclick="switchPage('courses')">
+                        <div class="w-12 h-12 bg-blue-100 group-hover:bg-blue-600 group-hover:text-white text-blue-600 rounded-xl flex items-center justify-center text-xl mb-3 shadow-sm transition">
                             <i class="fa-solid fa-laptop-code"></i>
                         </div>
                         <h4 class="font-bold text-slate-900 group-hover:text-blue-600 transition">Practical Labs</h4>
                         <p class="text-xs text-slate-500 mt-1">Real-world coding environments</p>
                     </div>
-                    <div class="flex flex-col items-center p-4 rounded-xl hover:bg-blue-50 transition cursor-pointer group"
-                        onclick="switchPage('about')">
-                        <div
-                            class="w-12 h-12 bg-blue-100 group-hover:bg-blue-600 group-hover:text-white text-blue-600 rounded-xl flex items-center justify-center text-xl mb-3 shadow-sm transition">
+                    <div class="flex flex-col items-center p-4 rounded-xl hover:bg-blue-50 transition cursor-pointer group" onclick="switchPage('about')">
+                        <div class="w-12 h-12 bg-blue-100 group-hover:bg-blue-600 group-hover:text-white text-blue-600 rounded-xl flex items-center justify-center text-xl mb-3 shadow-sm transition">
                             <i class="fa-solid fa-chalkboard-user"></i>
                         </div>
                         <h4 class="font-bold text-slate-900 group-hover:text-blue-600 transition">Expert Mentors</h4>
                         <p class="text-xs text-slate-500 mt-1">Learn from industry leaders</p>
                     </div>
-                    <div class="flex flex-col items-center p-4 rounded-xl hover:bg-blue-50 transition cursor-pointer group"
-                        onclick="switchPage('contact')">
-                        <div
-                            class="w-12 h-12 bg-blue-100 group-hover:bg-blue-600 group-hover:text-white text-blue-600 rounded-xl flex items-center justify-center text-xl mb-3 shadow-sm transition">
+                    <div class="flex flex-col items-center p-4 rounded-xl hover:bg-blue-50 transition cursor-pointer group" onclick="switchPage('contact')">
+                        <div class="w-12 h-12 bg-blue-100 group-hover:bg-blue-600 group-hover:text-white text-blue-600 rounded-xl flex items-center justify-center text-xl mb-3 shadow-sm transition">
                             <i class="fa-solid fa-briefcase"></i>
                         </div>
                         <h4 class="font-bold text-slate-900 group-hover:text-blue-600 transition">Career Support</h4>
                         <p class="text-xs text-slate-500 mt-1">Resume & interview coaching</p>
                     </div>
-                    <div class="flex flex-col items-center p-4 rounded-xl hover:bg-blue-50 transition cursor-pointer group"
-                        onclick="openConsultationModal()">
-                        <div
-                            class="w-12 h-12 bg-blue-100 group-hover:bg-blue-600 group-hover:text-white text-blue-600 rounded-xl flex items-center justify-center text-xl mb-3 shadow-sm transition">
+                    <div class="flex flex-col items-center p-4 rounded-xl hover:bg-blue-50 transition cursor-pointer group" onclick="openConsultationModal()">
+                        <div class="w-12 h-12 bg-blue-100 group-hover:bg-blue-600 group-hover:text-white text-blue-600 rounded-xl flex items-center justify-center text-xl mb-3 shadow-sm transition">
                             <i class="fa-solid fa-award"></i>
                         </div>
                         <h4 class="font-bold text-slate-900 group-hover:text-blue-600 transition">Accredited Certs</h4>
@@ -243,8 +178,7 @@
                         <span class="text-blue-600 font-bold uppercase tracking-wider text-sm">Curriculum</span>
                         <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Popular IT Courses & Subjects</h2>
                     </div>
-                    <button onclick="switchPage('courses')"
-                        class="mt-4 md:mt-0 text-blue-600 hover:text-blue-800 font-bold flex items-center space-x-2 group">
+                    <button onclick="switchPage('courses')" class="mt-4 md:mt-0 text-blue-600 hover:text-blue-800 font-bold flex items-center space-x-2 group">
                         <span>View All IT Subjects</span>
                         <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
                     </button>
@@ -253,105 +187,70 @@
                 <!-- Course Grid with Hover states -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Course Card 1 -->
-                    <div
-                        class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group">
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80"
-                                alt="Web Development"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span
-                                class="absolute top-4 left-4 bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">Software
-                                Dev</span>
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80" alt="Web Development" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">Software Dev</span>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
                             <div>
-                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">
-                                    Full-Stack Web Development</h3>
-                                <p class="text-xs text-blue-600 font-semibold mt-0.5">React, Node.js, Express &
-                                    Databases</p>
+                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">Full-Stack Web Development</h3>
+                                <p class="text-xs text-blue-600 font-semibold mt-0.5">React, Node.js, Express & Databases</p>
                             </div>
                             <div class="flex items-center justify-between text-sm text-slate-500 font-medium">
-                                <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i>
-                                    6 Months</span>
-                                <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i>
-                                    Beginner</span>
+                                <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i> 6 Months</span>
+                                <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i> Beginner</span>
                             </div>
-                            <p class="text-slate-600 text-sm">Build dynamic web applications from scratch with modern
-                                frameworks and enterprise-grade tools.</p>
+                            <p class="text-slate-600 text-sm">Build dynamic web applications from scratch with modern frameworks and enterprise-grade tools.</p>
                             <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
                                 <span class="text-2xl font-extrabold text-slate-900">$850</span>
-                                <button onclick="openEnrollModal('Full-Stack Web Development')"
-                                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow-sm hover:shadow">Enroll
-                                    Now</button>
+                                <button onclick="openEnrollModal('Full-Stack Web Development')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow-sm hover:shadow">Enroll Now</button>
                             </div>
                         </div>
                     </div>
 
                     <!-- Course Card 2 -->
-                    <div
-                        class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group">
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80"
-                                alt="Data Science"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span
-                                class="absolute top-4 left-4 bg-cyan-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">Data
-                                & AI</span>
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Data Science" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-cyan-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">Data & AI</span>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
                             <div>
-                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">Data
-                                    Science & Analytics</h3>
-                                <p class="text-xs text-cyan-600 font-semibold mt-0.5">Python, Pandas, SQL & Machine
-                                    Learning</p>
+                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">Data Science & Analytics</h3>
+                                <p class="text-xs text-cyan-600 font-semibold mt-0.5">Python, Pandas, SQL & Machine Learning</p>
                             </div>
                             <div class="flex items-center justify-between text-sm text-slate-500 font-medium">
-                                <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i>
-                                    4 Months</span>
-                                <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i>
-                                    Intermediate</span>
+                                <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i> 4 Months</span>
+                                <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i> Intermediate</span>
                             </div>
-                            <p class="text-slate-600 text-sm">Master data visualization, statistical analysis, and
-                                machine learning algorithms to drive smart business decisions.</p>
+                            <p class="text-slate-600 text-sm">Master data visualization, statistical analysis, and machine learning algorithms to drive smart business decisions.</p>
                             <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
                                 <span class="text-2xl font-extrabold text-slate-900">$750</span>
-                                <button onclick="openEnrollModal('Data Science & Analytics')"
-                                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow-sm hover:shadow">Enroll
-                                    Now</button>
+                                <button onclick="openEnrollModal('Data Science & Analytics')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow-sm hover:shadow">Enroll Now</button>
                             </div>
                         </div>
                     </div>
 
                     <!-- Course Card 3 -->
-                    <div
-                        class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group">
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80"
-                                alt="Cybersecurity"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span
-                                class="absolute top-4 left-4 bg-emerald-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">Security</span>
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Cybersecurity" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">Security</span>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
                             <div>
-                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">
-                                    Cybersecurity Professional</h3>
-                                <p class="text-xs text-emerald-600 font-semibold mt-0.5">Ethical Hacking & Network
-                                    Defense</p>
+                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">Cybersecurity Professional</h3>
+                                <p class="text-xs text-emerald-600 font-semibold mt-0.5">Ethical Hacking & Network Defense</p>
                             </div>
                             <div class="flex items-center justify-between text-sm text-slate-500 font-medium">
-                                <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i>
-                                    5 Months</span>
-                                <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i>
-                                    All Levels</span>
+                                <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i> 5 Months</span>
+                                <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i> All Levels</span>
                             </div>
-                            <p class="text-slate-600 text-sm">Protect critical infrastructures and master ethical
-                                hacking techniques to secure enterprise networks.</p>
+                            <p class="text-slate-600 text-sm">Protect critical infrastructures and master ethical hacking techniques to secure enterprise networks.</p>
                             <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
                                 <span class="text-2xl font-extrabold text-slate-900">$800</span>
-                                <button onclick="openEnrollModal('Cybersecurity Professional')"
-                                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow-sm hover:shadow">Enroll
-                                    Now</button>
+                                <button onclick="openEnrollModal('Cybersecurity Professional')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow-sm hover:shadow">Enroll Now</button>
                             </div>
                         </div>
                     </div>
@@ -359,8 +258,7 @@
 
                 <!-- Interactive View All Subjects Button Box -->
                 <div class="mt-12 text-center">
-                    <button onclick="switchPage('courses')"
-                        class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-10 py-4 rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 inline-flex items-center space-x-3 text-lg">
+                    <button onclick="switchPage('courses')" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-10 py-4 rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 inline-flex items-center space-x-3 text-lg">
                         <i class="fa-solid fa-book-open"></i>
                         <span>Click to See All IT Subjects & Catalogs</span>
                         <i class="fa-solid fa-arrow-right"></i>
@@ -373,39 +271,29 @@
                 <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <span class="text-blue-600 font-bold uppercase tracking-wider text-sm">Why Choose Us</span>
-                        <h2 class="text-3xl font-extrabold text-slate-900 mt-1 mb-6">Empowering Cambodia's Next
-                            Generation of Tech Leaders</h2>
+                        <h2 class="text-3xl font-extrabold text-slate-900 mt-1 mb-6">Empowering Cambodia's Next Generation of Tech Leaders</h2>
                         <p class="text-slate-600 mb-8 leading-relaxed">
-                            Our immersive training methodology bridges the gap between academic theory and industry
-                            reality. We provide personalized mentorship, real-world project portfolios, and direct
-                            access to top tech employers in Phnom Penh and beyond.
+                            Our immersive training methodology bridges the gap between academic theory and industry reality. We provide personalized mentorship, real-world project portfolios, and direct access to top tech employers in Phnom Penh and beyond.
                         </p>
                         <div class="space-y-4">
                             <div class="flex items-start space-x-4">
-                                <div class="bg-blue-600 text-white p-2.5 rounded-lg mt-1"><i
-                                        class="fa-solid fa-check"></i></div>
+                                <div class="bg-blue-600 text-white p-2.5 rounded-lg mt-1"><i class="fa-solid fa-check"></i></div>
                                 <div>
-                                    <h4 class="font-bold text-slate-900 text-lg">Curriculum Crafted by Industry Experts
-                                    </h4>
-                                    <p class="text-slate-600 text-sm">Updated regularly to match current tech stack
-                                        demands.</p>
+                                    <h4 class="font-bold text-slate-900 text-lg">Curriculum Crafted by Industry Experts</h4>
+                                    <p class="text-slate-600 text-sm">Updated regularly to match current tech stack demands.</p>
                                 </div>
                             </div>
                             <div class="flex items-start space-x-4">
-                                <div class="bg-blue-600 text-white p-2.5 rounded-lg mt-1"><i
-                                        class="fa-solid fa-check"></i></div>
+                                <div class="bg-blue-600 text-white p-2.5 rounded-lg mt-1"><i class="fa-solid fa-check"></i></div>
                                 <div>
                                     <h4 class="font-bold text-slate-900 text-lg">Job Placement Assistance</h4>
-                                    <p class="text-slate-600 text-sm">Partnered with over 50 leading software companies
-                                        and corporations.</p>
+                                    <p class="text-slate-600 text-sm">Partnered with over 50 leading software companies and corporations.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80"
-                            alt="Computer Lab"
-                            class="rounded-2xl shadow-xl w-full h-[400px] object-cover border border-slate-300">
+                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Computer Lab" class="rounded-2xl shadow-xl w-full h-[400px] object-cover border border-slate-300">
                     </div>
                 </div>
             </div>
@@ -414,15 +302,11 @@
         <!-- ==================== COURSES PAGE ==================== -->
         <section id="page-courses" class="page-view hidden animate-fade">
             <!-- Header Banner -->
-            <div
-                class="bg-gradient-to-br from-slate-900 via-blue-950 to-blue-900 text-white py-16 px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-slate-900 via-blue-950 to-blue-900 text-white py-16 px-4 sm:px-6 lg:px-8">
                 <div class="max-w-7xl mx-auto text-center space-y-4">
-                    <span
-                        class="bg-blue-500/20 text-blue-300 px-4 py-1.5 rounded-full text-sm font-semibold border border-blue-400/30">Catalog</span>
-                    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">All IT Subjects & Professional
-                        Courses</h1>
-                    <p class="text-slate-300 text-lg max-w-2xl mx-auto">Explore our complete catalog of specialized
-                        tracks designed to get you hired fast.</p>
+                    <span class="bg-blue-500/20 text-blue-300 px-4 py-1.5 rounded-full text-sm font-semibold border border-blue-400/30">Catalog</span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">All IT Subjects & Professional Courses</h1>
+                    <p class="text-slate-300 text-lg max-w-2xl mx-auto">Explore our complete catalog of specialized tracks designed to get you hired fast.</p>
                 </div>
             </div>
 
@@ -431,26 +315,15 @@
                 <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
                     <div class="flex items-center space-x-3 w-full md:w-auto">
                         <div class="relative w-full md:w-80">
-                            <span
-                                class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400"><i
-                                    class="fa-solid fa-search"></i></span>
-                            <input type="text" id="course-search" onkeyup="filterCourses()"
-                                placeholder="Search subjects (e.g. Python, React...)"
-                                class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                            <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400"><i class="fa-solid fa-search"></i></span>
+                            <input type="text" id="course-search" onkeyup="filterCourses()" placeholder="Search subjects (e.g. Python, React...)" class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
                         </div>
                     </div>
                     <div class="flex items-center space-x-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0">
-                        <button onclick="filterCategory('all')" id="cat-all"
-                            class="cat-btn px-4 py-2 rounded-xl text-sm font-semibold bg-blue-600 text-white transition whitespace-nowrap shadow-sm">All
-                            Subjects</button>
-                        <button onclick="filterCategory('dev')" id="cat-dev"
-                            class="cat-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition whitespace-nowrap">Web
-                            & Mobile</button>
-                        <button onclick="filterCategory('data')" id="cat-data"
-                            class="cat-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition whitespace-nowrap">Data
-                            & AI</button>
-                        <button onclick="filterCategory('sec')" id="cat-sec"
-                            class="cat-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition whitespace-nowrap">Cybersecurity</button>
+                        <button onclick="filterCategory('all')" id="cat-all" class="cat-btn px-4 py-2 rounded-xl text-sm font-semibold bg-blue-600 text-white transition whitespace-nowrap shadow-sm">All Subjects</button>
+                        <button onclick="filterCategory('dev')" id="cat-dev" class="cat-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition whitespace-nowrap">Web & Mobile</button>
+                        <button onclick="filterCategory('data')" id="cat-data" class="cat-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition whitespace-nowrap">Data & AI</button>
+                        <button onclick="filterCategory('sec')" id="cat-sec" class="cat-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition whitespace-nowrap">Cybersecurity</button>
                     </div>
                 </div>
             </div>
@@ -459,210 +332,139 @@
             <div class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="full-course-grid">
                     <!-- Course 1 -->
-                    <div class="course-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group"
-                        data-category="dev">
+                    <div class="course-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group" data-category="dev">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80"
-                                alt="Web Dev"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span
-                                class="absolute top-4 left-4 bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">Software
-                                Dev</span>
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80" alt="Web Dev" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">Software Dev</span>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
                             <div>
-                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">
-                                    Full-Stack Web Development</h3>
-                                <p class="text-xs text-blue-600 font-semibold mt-0.5">React, Node.js, Express &
-                                    Databases</p>
+                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">Full-Stack Web Development</h3>
+                                <p class="text-xs text-blue-600 font-semibold mt-0.5">React, Node.js, Express & Databases</p>
                             </div>
                             <div class="flex items-center justify-between text-sm text-slate-500 font-medium">
-                                <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i>
-                                    6 Months</span>
-                                <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i>
-                                    Beginner</span>
+                                <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i> 6 Months</span>
+                                <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i> Beginner</span>
                             </div>
-                            <p class="text-slate-600 text-sm">Build dynamic web apps from scratch with modern frameworks
-                                and enterprise tools.</p>
+                            <p class="text-slate-600 text-sm">Build dynamic web apps from scratch with modern frameworks and enterprise tools.</p>
                             <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
                                 <span class="text-2xl font-extrabold text-slate-900">$850</span>
-                                <button onclick="openEnrollModal('Full-Stack Web Development')"
-                                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Enroll
-                                    Now</button>
+                                <button onclick="openEnrollModal('Full-Stack Web Development')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Enroll Now</button>
                             </div>
                         </div>
                     </div>
 
                     <!-- Course 2 -->
-                    <div class="course-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group"
-                        data-category="data">
+                    <div class="course-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group" data-category="data">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80"
-                                alt="Data Science"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span
-                                class="absolute top-4 left-4 bg-cyan-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">Data
-                                & AI</span>
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Data Science" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-cyan-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">Data & AI</span>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
                             <div>
-                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">Data
-                                    Science & Analytics</h3>
-                                <p class="text-xs text-cyan-600 font-semibold mt-0.5">Python, Pandas, SQL & Machine
-                                    Learning</p>
+                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">Data Science & Analytics</h3>
+                                <p class="text-xs text-cyan-600 font-semibold mt-0.5">Python, Pandas, SQL & Machine Learning</p>
                             </div>
                             <div class="flex items-center justify-between text-sm text-slate-500 font-medium">
-                                <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i>
-                                    4 Months</span>
-                                <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i>
-                                    Intermediate</span>
+                                <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i> 4 Months</span>
+                                <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i> Intermediate</span>
                             </div>
-                            <p class="text-slate-600 text-sm">Master data visualization, statistics, and ML algorithms
-                                to drive business decisions.</p>
+                            <p class="text-slate-600 text-sm">Master data visualization, statistics, and ML algorithms to drive business decisions.</p>
                             <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
                                 <span class="text-2xl font-extrabold text-slate-900">$750</span>
-                                <button onclick="openEnrollModal('Data Science & Analytics')"
-                                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Enroll
-                                    Now</button>
+                                <button onclick="openEnrollModal('Data Science & Analytics')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Enroll Now</button>
                             </div>
                         </div>
                     </div>
 
                     <!-- Course 3 -->
-                    <div class="course-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group"
-                        data-category="sec">
+                    <div class="course-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group" data-category="sec">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80"
-                                alt="Cybersecurity"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span
-                                class="absolute top-4 left-4 bg-emerald-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">Security</span>
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Cybersecurity" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">Security</span>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
                             <div>
-                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">
-                                    Cybersecurity Professional</h3>
-                                <p class="text-xs text-emerald-600 font-semibold mt-0.5">Ethical Hacking & Network
-                                    Defense</p>
+                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">Cybersecurity Professional</h3>
+                                <p class="text-xs text-emerald-600 font-semibold mt-0.5">Ethical Hacking & Network Defense</p>
                             </div>
                             <div class="flex items-center justify-between text-sm text-slate-500 font-medium">
-                                <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i>
-                                    5 Months</span>
-                                <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i>
-                                    All Levels</span>
+                                <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i> 5 Months</span>
+                                <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i> All Levels</span>
                             </div>
-                            <p class="text-slate-600 text-sm">Protect critical infrastructures and master ethical
-                                hacking techniques to secure enterprise networks.</p>
+                            <p class="text-slate-600 text-sm">Protect critical infrastructures and master ethical hacking techniques to secure enterprise networks.</p>
                             <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
                                 <span class="text-2xl font-extrabold text-slate-900">$800</span>
-                                <button onclick="openEnrollModal('Cybersecurity Professional')"
-                                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Enroll
-                                    Now</button>
+                                <button onclick="openEnrollModal('Cybersecurity Professional')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Enroll Now</button>
                             </div>
                         </div>
                     </div>
 
                     <!-- Course 4 -->
-                    <div class="course-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group"
-                        data-category="dev">
+                    <div class="course-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group" data-category="dev">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80"
-                                alt="Mobile App"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span
-                                class="absolute top-4 left-4 bg-indigo-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">Mobile
-                                Dev</span>
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80" alt="Mobile App" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-indigo-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">Mobile Dev</span>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
                             <div>
-                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">
-                                    Flutter Mobile App Development</h3>
-                                <p class="text-xs text-indigo-600 font-semibold mt-0.5">Cross-platform iOS & Android
-                                    apps</p>
+                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">Flutter Mobile App Development</h3>
+                                <p class="text-xs text-indigo-600 font-semibold mt-0.5">Cross-platform iOS & Android apps</p>
                             </div>
                             <div class="flex items-center justify-between text-sm text-slate-500 font-medium">
-                                <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i>
-                                    4 Months</span>
-                                <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i>
-                                    Beginner</span>
+                                <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i> 4 Months</span>
+                                <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i> Beginner</span>
                             </div>
-                            <p class="text-slate-600 text-sm">Build beautiful native mobile apps for both iOS and
-                                Android using Google's Flutter framework.</p>
+                            <p class="text-slate-600 text-sm">Build beautiful native mobile apps for both iOS and Android using Google's Flutter framework.</p>
                             <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
                                 <span class="text-2xl font-extrabold text-slate-900">$700</span>
-                                <button onclick="openEnrollModal('Flutter Mobile App Development')"
-                                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Enroll
-                                    Now</button>
+                                <button onclick="openEnrollModal('Flutter Mobile App Development')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Enroll Now</button>
                             </div>
                         </div>
                     </div>
 
                     <!-- Course 5 -->
-                    <div class="course-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group"
-                        data-category="data">
+                    <div class="course-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group" data-category="data">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80"
-                                alt="Cloud"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span
-                                class="absolute top-4 left-4 bg-amber-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">Cloud
-                                & DevOps</span>
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" alt="Cloud" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-amber-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">Cloud & DevOps</span>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
                             <div>
-                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">AWS
-                                    Cloud Computing & DevOps</h3>
-                                <p class="text-xs text-amber-600 font-semibold mt-0.5">Docker, Kubernetes, CI/CD & AWS
-                                </p>
+                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">AWS Cloud Computing & DevOps</h3>
+                                <p class="text-xs text-amber-600 font-semibold mt-0.5">Docker, Kubernetes, CI/CD & AWS</p>
                             </div>
                             <div class="flex items-center justify-between text-sm text-slate-500 font-medium">
-                                <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i>
-                                    4 Months</span>
-                                <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i>
-                                    Advanced</span>
+                                <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i> 4 Months</span>
+                                <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i> Advanced</span>
                             </div>
-                            <p class="text-slate-600 text-sm">Master cloud infrastructure, containerization, and
-                                automated deployment pipelines on Amazon Web Services.</p>
+                            <p class="text-slate-600 text-sm">Master cloud infrastructure, containerization, and automated deployment pipelines on Amazon Web Services.</p>
                             <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
                                 <span class="text-2xl font-extrabold text-slate-900">$900</span>
-                                <button onclick="openEnrollModal('AWS Cloud Computing & DevOps')"
-                                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Enroll
-                                    Now</button>
+                                <button onclick="openEnrollModal('AWS Cloud Computing & DevOps')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Enroll Now</button>
                             </div>
                         </div>
                     </div>
 
                     <!-- Course 6 -->
-                    <div class="course-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group"
-                        data-category="dev">
+                    <div class="course-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group" data-category="dev">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=600&q=80"
-                                alt="UI/UX"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span
-                                class="absolute top-4 left-4 bg-rose-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">UI/UX
-                                Design</span>
+                            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=600&q=80" alt="UI/UX" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-rose-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">UI/UX Design</span>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
                             <div>
-                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">UI/UX
-                                    Product Design Masterclass</h3>
-                                <p class="text-xs text-rose-600 font-semibold mt-0.5">Figma, Wireframing & User Research
-                                </p>
+                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">UI/UX Product Design Masterclass</h3>
+                                <p class="text-xs text-rose-600 font-semibold mt-0.5">Figma, Wireframing & User Research</p>
                             </div>
                             <div class="flex items-center justify-between text-sm text-slate-500 font-medium">
-                                <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i>
-                                    3 Months</span>
-                                <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i>
-                                    Beginner</span>
+                                <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i> 3 Months</span>
+                                <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i> Beginner</span>
                             </div>
-                            <p class="text-slate-600 text-sm">Learn user-centered design principles, create interactive
-                                prototypes in Figma, and build stunning design portfolios.</p>
+                            <p class="text-slate-600 text-sm">Learn user-centered design principles, create interactive prototypes in Figma, and build stunning design portfolios.</p>
                             <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
                                 <span class="text-2xl font-extrabold text-slate-900">$600</span>
-                                <button onclick="openEnrollModal('UI/UX Product Design Masterclass')"
-                                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Enroll
-                                    Now</button>
+                                <button onclick="openEnrollModal('UI/UX Product Design Masterclass')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Enroll Now</button>
                             </div>
                         </div>
                     </div>
@@ -673,16 +475,11 @@
         <!-- ==================== ABOUT PAGE ==================== -->
         <section id="page-about" class="page-view hidden animate-fade">
             <!-- Header Banner -->
-            <div
-                class="bg-gradient-to-br from-slate-900 via-blue-950 to-blue-900 text-white py-16 px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-slate-900 via-blue-950 to-blue-900 text-white py-16 px-4 sm:px-6 lg:px-8">
                 <div class="max-w-7xl mx-auto text-center space-y-4">
-                    <span
-                        class="bg-blue-500/20 text-blue-300 px-4 py-1.5 rounded-full text-sm font-semibold border border-blue-400/30">About
-                        ITTC</span>
-                    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">Shaping the Future of Tech in
-                        Cambodia</h1>
-                    <p class="text-slate-300 text-lg max-w-2xl mx-auto">Discover our mission, our world-class
-                        facilities, and the expert leaders driving our academy.</p>
+                    <span class="bg-blue-500/20 text-blue-300 px-4 py-1.5 rounded-full text-sm font-semibold border border-blue-400/30">About ITTC</span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">Shaping the Future of Tech in Cambodia</h1>
+                    <p class="text-slate-300 text-lg max-w-2xl mx-auto">Discover our mission, our world-class facilities, and the expert leaders driving our academy.</p>
                 </div>
             </div>
 
@@ -691,26 +488,17 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div>
                         <span class="text-blue-600 font-bold uppercase tracking-wider text-sm">Our Mission</span>
-                        <h2 class="text-3xl font-extrabold text-slate-900 mt-1 mb-6">Bridging the Tech Skills Gap in
-                            Southeast Asia</h2>
+                        <h2 class="text-3xl font-extrabold text-slate-900 mt-1 mb-6">Bridging the Tech Skills Gap in Southeast Asia</h2>
                         <p class="text-slate-600 leading-relaxed mb-4">
-                            Founded in Phnom Penh, IT Training Center (ITTC) was established with a singular vision: to
-                            empower ambitious individuals with cutting-edge technical capabilities that meet
-                            international industry standards.
+                            Founded in Phnom Penh, IT Training Center (ITTC) was established with a singular vision: to empower ambitious individuals with cutting-edge technical capabilities that meet international industry standards.
                         </p>
                         <p class="text-slate-600 leading-relaxed">
-                            Through rigorous project-based learning, mentorship from seasoned software engineers, and
-                            strong corporate partnerships, we transform beginners into confident tech professionals
-                            ready to innovate.
+                            Through rigorous project-based learning, mentorship from seasoned software engineers, and strong corporate partnerships, we transform beginners into confident tech professionals ready to innovate.
                         </p>
                     </div>
                     <div class="grid grid-cols-2 gap-4">
-                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=500&q=80"
-                            alt="Campus Life"
-                            class="rounded-2xl shadow-md w-full h-[240px] object-cover hover:opacity-95 transition">
-                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=500&q=80"
-                            alt="Lab"
-                            class="rounded-2xl shadow-md w-full h-[240px] object-cover mt-6 hover:opacity-95 transition">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=500&q=80" alt="Campus Life" class="rounded-2xl shadow-md w-full h-[240px] object-cover hover:opacity-95 transition">
+                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=500&q=80" alt="Lab" class="rounded-2xl shadow-md w-full h-[240px] object-cover mt-6 hover:opacity-95 transition">
                     </div>
                 </div>
             </div>
@@ -723,45 +511,29 @@
                         <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Learn From Industry Leaders</h2>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition text-center pb-6 group">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
-                                alt="Instructor"
-                                class="w-full h-56 object-cover mb-4 group-hover:scale-105 transition duration-300">
+                        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition text-center pb-6 group">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Instructor" class="w-full h-56 object-cover mb-4 group-hover:scale-105 transition duration-300">
                             <h3 class="font-bold text-slate-900 text-lg">Dr. Vannak Sok</h3>
                             <p class="text-blue-600 text-sm font-medium mb-3">Lead Full-Stack Architect</p>
-                            <p class="text-slate-500 text-xs px-4">Ex-Silicon Valley engineer with 12+ years building
-                                enterprise cloud solutions.</p>
+                            <p class="text-slate-500 text-xs px-4">Ex-Silicon Valley engineer with 12+ years building enterprise cloud solutions.</p>
                         </div>
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition text-center pb-6 group">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80"
-                                alt="Instructor"
-                                class="w-full h-56 object-cover mb-4 group-hover:scale-105 transition duration-300">
+                        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition text-center pb-6 group">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Instructor" class="w-full h-56 object-cover mb-4 group-hover:scale-105 transition duration-300">
                             <h3 class="font-bold text-slate-900 text-lg">Sreymom Chea</h3>
                             <p class="text-blue-600 text-sm font-medium mb-3">Data Science Lead</p>
-                            <p class="text-slate-500 text-xs px-4">Specialist in machine learning models and predictive
-                                analytics for banking.</p>
+                            <p class="text-slate-500 text-xs px-4">Specialist in machine learning models and predictive analytics for banking.</p>
                         </div>
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition text-center pb-6 group">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80"
-                                alt="Instructor"
-                                class="w-full h-56 object-cover mb-4 group-hover:scale-105 transition duration-300">
+                        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition text-center pb-6 group">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" alt="Instructor" class="w-full h-56 object-cover mb-4 group-hover:scale-105 transition duration-300">
                             <h3 class="font-bold text-slate-900 text-lg">Dara Vicheka</h3>
                             <p class="text-blue-600 text-sm font-medium mb-3">Cybersecurity Expert</p>
-                            <p class="text-slate-500 text-xs px-4">Certified Ethical Hacker (CEH) with extensive
-                                penetration testing experience.</p>
+                            <p class="text-slate-500 text-xs px-4">Certified Ethical Hacker (CEH) with extensive penetration testing experience.</p>
                         </div>
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition text-center pb-6 group">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80"
-                                alt="Instructor"
-                                class="w-full h-56 object-cover mb-4 group-hover:scale-105 transition duration-300">
+                        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition text-center pb-6 group">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80" alt="Instructor" class="w-full h-56 object-cover mb-4 group-hover:scale-105 transition duration-300">
                             <h3 class="font-bold text-slate-900 text-lg">Rithy Khem</h3>
                             <p class="text-blue-600 text-sm font-medium mb-3">Senior DevOps Engineer</p>
-                            <p class="text-slate-500 text-xs px-4">Expert in AWS architecture, Docker containerization,
-                                and CI/CD pipelines.</p>
+                            <p class="text-slate-500 text-xs px-4">Expert in AWS architecture, Docker containerization, and CI/CD pipelines.</p>
                         </div>
                     </div>
                 </div>
@@ -769,17 +541,13 @@
         </section>
 
         <!-- ==================== CONTACT PAGE ==================== -->
-        <!-- <section id="page-contact" class="page-view hidden animate-fade">
+        <section id="page-contact" class="page-view hidden animate-fade">
             <!-- Header Banner -->
-            <div
-                class="bg-gradient-to-br from-slate-900 via-blue-950 to-blue-900 text-white py-16 px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-slate-900 via-blue-950 to-blue-900 text-white py-16 px-4 sm:px-6 lg:px-8">
                 <div class="max-w-7xl mx-auto text-center space-y-4">
-                    <span
-                        class="bg-blue-500/20 text-blue-300 px-4 py-1.5 rounded-full text-sm font-semibold border border-blue-400/30">Contact
-                        Us</span>
+                    <span class="bg-blue-500/20 text-blue-300 px-4 py-1.5 rounded-full text-sm font-semibold border border-blue-400/30">Contact Us</span>
                     <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">Get in Touch with ITTC</h1>
-                    <p class="text-slate-300 text-lg max-w-2xl mx-auto">Have questions about our courses or schedule?
-                        Reach out to our team today.</p>
+                    <p class="text-slate-300 text-lg max-w-2xl mx-auto">Have questions about our courses or schedule? Reach out to our team today.</p>
                 </div>
             </div>
 
@@ -794,42 +562,29 @@
                             </div>
                             <div>
                                 <h3 class="text-2xl font-bold text-slate-900">Quick Inquiry & Consultation</h3>
-                                <p class="text-xs text-slate-500">Fill out this brief form and our technical program
-                                    counselor will call you within 1 business day.</p>
+                                <p class="text-xs text-slate-500">Fill out this brief form and our technical program counselor will call you within 1 business day.</p>
                             </div>
                         </div>
                         <form onsubmit="handleContactSubmit(event)" class="space-y-6">
                             <div>
-                                <label class="block text-sm font-semibold text-slate-700 mb-2">Your Full Name <span
-                                        class="text-red-500">*</span></label>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Your Full Name <span class="text-red-500">*</span></label>
                                 <div class="relative">
-                                    <span
-                                        class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400"><i
-                                            class="fa-solid fa-user"></i></span>
-                                    <input type="text" required placeholder="e.g. Chan Vanna"
-                                        class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400"><i class="fa-solid fa-user"></i></span>
+                                    <input type="text" required placeholder="e.g. Chan Vanna" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
                                 </div>
                             </div>
                             <div>
-                                <label class="block text-sm font-semibold text-slate-700 mb-2">Phone / Telegram Number
-                                    <span class="text-red-500">*</span></label>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Phone / Telegram Number <span class="text-red-500">*</span></label>
                                 <div class="relative">
-                                    <span
-                                        class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400"><i
-                                            class="fa-solid fa-phone"></i></span>
-                                    <input type="tel" required placeholder="012 345 678"
-                                        class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400"><i class="fa-solid fa-phone"></i></span>
+                                    <input type="tel" required placeholder="012 345 678" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
                                 </div>
                             </div>
                             <div>
-                                <label class="block text-sm font-semibold text-slate-700 mb-2">Interested IT Program
-                                    <span class="text-red-500">*</span></label>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Interested IT Program <span class="text-red-500">*</span></label>
                                 <div class="relative">
-                                    <span
-                                        class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400"><i
-                                            class="fa-solid fa-laptop"></i></span>
-                                    <select
-                                        class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm appearance-none">
+                                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400"><i class="fa-solid fa-laptop"></i></span>
+                                    <select class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm appearance-none">
                                         <option>Choose a specialized track...</option>
                                         <option>Full-Stack Web Development</option>
                                         <option>Data Science & Analytics</option>
@@ -838,19 +593,14 @@
                                         <option>AWS Cloud Computing & DevOps</option>
                                         <option>UI/UX Product Design Masterclass</option>
                                     </select>
-                                    <span
-                                        class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-slate-400"><i
-                                            class="fa-solid fa-chevron-down text-xs"></i></span>
+                                    <span class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-slate-400"><i class="fa-solid fa-chevron-down text-xs"></i></span>
                                 </div>
                             </div>
                             <div>
-                                <label class="block text-sm font-semibold text-slate-700 mb-2">Your Questions / Notes
-                                    (Optional)</label>
-                                <textarea rows="3" placeholder="Tell us about your background or preferred timetable..."
-                                    class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"></textarea>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Your Questions / Notes (Optional)</label>
+                                <textarea rows="3" placeholder="Tell us about your background or preferred timetable..." class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"></textarea>
                             </div>
-                            <button type="submit"
-                                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-md transition duration-200 flex items-center justify-center space-x-2">
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-md transition duration-200 flex items-center justify-center space-x-2">
                                 <span>Send Inquiry / Register Interest</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </button>
@@ -863,25 +613,21 @@
                             <h3 class="text-2xl font-bold text-slate-900">Contact Information</h3>
                             <div class="space-y-4">
                                 <div class="flex items-start space-x-4">
-                                    <div class="bg-blue-100 text-blue-600 p-3 rounded-xl mt-1"><i
-                                            class="fa-solid fa-location-dot"></i></div>
+                                    <div class="bg-blue-100 text-blue-600 p-3 rounded-xl mt-1"><i class="fa-solid fa-location-dot"></i></div>
                                     <div>
                                         <h4 class="font-bold text-slate-900">Our Location</h4>
-                                        <p class="text-slate-600 text-sm mt-0.5">Preah Monivong Blvd, Phnom Penh,
-                                            Cambodia</p>
+                                        <p class="text-slate-600 text-sm mt-0.5">Preah Monivong Blvd, Phnom Penh, Cambodia</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start space-x-4">
-                                    <div class="bg-blue-100 text-blue-600 p-3 rounded-xl mt-1"><i
-                                            class="fa-solid fa-envelope"></i></div>
+                                    <div class="bg-blue-100 text-blue-600 p-3 rounded-xl mt-1"><i class="fa-solid fa-envelope"></i></div>
                                     <div>
                                         <h4 class="font-bold text-slate-900">Email Address</h4>
                                         <p class="text-slate-600 text-sm mt-0.5">info@ittrainingcenter.com</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start space-x-4">
-                                    <div class="bg-blue-100 text-blue-600 p-3 rounded-xl mt-1"><i
-                                            class="fa-solid fa-phone"></i></div>
+                                    <div class="bg-blue-100 text-blue-600 p-3 rounded-xl mt-1"><i class="fa-solid fa-phone"></i></div>
                                     <div>
                                         <h4 class="font-bold text-slate-900">Phone Number</h4>
                                         <p class="text-slate-600 text-sm mt-0.5">+855 23 999 888 / +855 10 222 333</p>
@@ -891,8 +637,7 @@
                         </div>
 
                         <!-- Office Hours Box -->
-                        <div
-                            class="bg-gradient-to-br from-blue-900 to-slate-900 text-white p-8 rounded-3xl shadow-md space-y-4">
+                        <div class="bg-gradient-to-br from-blue-900 to-slate-900 text-white p-8 rounded-3xl shadow-md space-y-4">
                             <h3 class="text-xl font-bold">Center Operating Hours</h3>
                             <div class="space-y-2 text-sm text-slate-300">
                                 <div class="flex justify-between border-b border-slate-700 pb-2">
@@ -912,40 +657,33 @@
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
     </main>
 
     <!-- Mobile Bottom Navigation Bar -->
-    <nav
-        class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 z-50 shadow-lg flex justify-around items-center h-16 px-2">
-        <button onclick="switchPage('home')" id="mob-nav-home"
-            class="mob-nav-btn flex flex-col items-center justify-center flex-1 py-1 text-blue-600 font-bold transition">
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 z-50 shadow-lg flex justify-around items-center h-16 px-2">
+        <button onclick="switchPage('home')" id="mob-nav-home" class="mob-nav-btn flex flex-col items-center justify-center flex-1 py-1 text-blue-600 font-bold transition">
             <i class="fa-solid fa-house text-lg mb-0.5"></i>
             <span class="text-[11px] leading-tight">Home</span>
         </button>
-        <button onclick="switchPage('courses')" id="mob-nav-courses"
-            class="mob-nav-btn flex flex-col items-center justify-center flex-1 py-1 text-slate-500 hover:text-blue-600 transition">
+        <button onclick="switchPage('courses')" id="mob-nav-courses" class="mob-nav-btn flex flex-col items-center justify-center flex-1 py-1 text-slate-500 hover:text-blue-600 transition">
             <i class="fa-solid fa-book-open text-lg mb-0.5"></i>
             <span class="text-[11px] leading-tight">Courses</span>
         </button>
-        <button onclick="switchPage('about')" id="mob-nav-about"
-            class="mob-nav-btn flex flex-col items-center justify-center flex-1 py-1 text-slate-500 hover:text-blue-600 transition">
+        <button onclick="switchPage('about')" id="mob-nav-about" class="mob-nav-btn flex flex-col items-center justify-center flex-1 py-1 text-slate-500 hover:text-blue-600 transition">
             <i class="fa-solid fa-circle-info text-lg mb-0.5"></i>
             <span class="text-[11px] leading-tight">About Us</span>
         </button>
-        <button onclick="switchPage('contact')" id="mob-nav-contact"
-            class="mob-nav-btn flex flex-col items-center justify-center flex-1 py-1 text-slate-500 hover:text-blue-600 transition">
+        <button onclick="switchPage('contact')" id="mob-nav-contact" class="mob-nav-btn flex flex-col items-center justify-center flex-1 py-1 text-slate-500 hover:text-blue-600 transition">
             <i class="fa-solid fa-comments text-lg mb-0.5"></i>
             <span class="text-[11px] leading-tight">Contact</span>
         </button>
     </nav>
 
     <!-- Enrollment / Consultation Modal -->
-    <div id="action-modal"
-        class="fixed inset-0 z-[100] hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div id="action-modal" class="fixed inset-0 z-[100] hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
         <div class="bg-white w-full max-w-md rounded-3xl shadow-2xl p-8 relative my-auto animate-scale-up">
-            <button onclick="closeModal()"
-                class="absolute top-6 right-6 text-slate-400 hover:text-slate-600 text-xl font-bold">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-600 text-xl font-bold">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <div id="modal-title-area" class="mb-6">
@@ -955,22 +693,17 @@
             <form onsubmit="handleModalSubmit(event)" class="space-y-4">
                 <div>
                     <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Your Full Name</label>
-                    <input type="text" required placeholder="Sok Piseth"
-                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                    <input type="text" required placeholder="Sok Piseth" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
                 </div>
                 <div>
                     <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Email Address</label>
-                    <input type="email" required placeholder="piseth@example.com"
-                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                    <input type="email" required placeholder="piseth@example.com" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Phone / Telegram
-                        Number</label>
-                    <input type="tel" required placeholder="+855 12 345 678"
-                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Phone / Telegram Number</label>
+                    <input type="tel" required placeholder="+855 12 345 678" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
                 </div>
-                <button type="submit"
-                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl shadow transition mt-2">
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl shadow transition mt-2">
                     Confirm Submission
                 </button>
             </form>
@@ -978,250 +711,196 @@
     </div>
 
     <!-- Notification Toast Box -->
-    <div id="toast"
-        class="fixed bottom-24 sm:bottom-8 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:right-6 z-[110] hidden bg-slate-900 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center space-x-3 border border-slate-700 w-11/12 max-w-sm">
+    <div id="toast" class="fixed bottom-24 sm:bottom-8 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:right-6 z-[110] hidden bg-slate-900 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center space-x-3 border border-slate-700 w-11/12 max-w-sm">
         <i class="fa-solid fa-circle-check text-emerald-400 text-xl flex-shrink-0"></i>
->>>>>>> Stashed changes
         <div>
-            <span
-                class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-bold bg-blue-100 text-blue-700 mb-6">
-                <i class="fa-solid fa-circle-check"></i> BETTER SKILLS · BRIGHTER FUTURE
-            </span>
-            <p class="text-xs font-extrabold tracking-wider text-blue-600 uppercase mb-2">Welcome to IT Training Center
-            </p>
-            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-6">
-                Your Future in Tech <span class="text-blue-600">Starts Here</span>
-            </h1>
-            <p class="text-slate-600 text-base leading-relaxed mb-8">
-                Learn in-demand IT skills, get hands-on project experience, and build a rewarding career in technology
-                with dedicated industry mentors guiding your path.
-            </p>
-            <div class="flex flex-wrap gap-4 mb-12">
-                <a href="courses.html"
-                    class="bg-blue-600 text-white font-semibold px-6 py-3.5 rounded-xl shadow-lg shadow-blue-500/30 hover:bg-blue-700 transition flex items-center gap-2">
-                    Explore Courses <i class="fa-solid fa-arrow-right text-sm"></i>
-                </a>
-                <a href="contact.html"
-                    class="bg-slate-100 text-slate-700 font-semibold px-6 py-3.5 rounded-xl hover:bg-slate-200 transition flex items-center gap-2">
-                    Contact Us <i class="fa-regular fa-comment text-sm"></i>
-                </a>
-            </div>
-            <div class="grid grid-cols-3 gap-6 pt-6 border-t border-slate-200">
-                <div>
-                    <p class="text-3xl font-extrabold text-slate-900">94%</p>
-                    <p class="text-xs text-slate-500 font-medium">Job Placement</p>
-                </div>
-                <div>
-                    <p class="text-3xl font-extrabold text-slate-900">1,200+</p>
-                    <p class="text-xs text-slate-500 font-medium">Graduates</p>
-                </div>
-                <div>
-                    <p class="text-3xl font-extrabold text-slate-900">100%</p>
-                    <p class="text-xs text-slate-500 font-medium">Hands-On Labs</p>
-                </div>
-            </div>
+            <h4 class="font-bold text-sm" id="toast-title">Success!</h4>
+            <p class="text-xs text-slate-300" id="toast-desc">Your request has been submitted successfully.</p>
         </div>
-        <div class="relative">
-            <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80"
-                    alt="Students learning" class="w-full object-cover opacity-90">
-            </div>
-            <div
-                class="absolute -top-4 -right-4 bg-slate-900 text-white text-xs px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
-                <i class="fa-solid fa-star text-amber-400"></i>
-                <span><strong>Rated 4.9/5</strong> by 850+ tech alumni</span>
-            </div>
-            <div
-                class="absolute -bottom-6 left-6 right-6 bg-white rounded-2xl p-4 shadow-xl border border-slate-100 flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                    <span class="w-3 h-3 bg-emerald-500 rounded-full animate-ping"></span>
-                    <div>
-                        <p class="text-xs font-bold text-slate-800">New Cohort Enrolling Now</p>
-                        <p class="text-[11px] text-slate-500">Evening & Weekend tracks open</p>
-                    </div>
-                </div>
-                <span class="text-xs font-bold bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full">OCT INTAKE</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Key Features -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            <div class="bg-white p-5 rounded-2xl border border-slate-100 text-center shadow-sm">
-                <div
-                    class="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <i class="fa-solid fa-user-tie"></i>
-                </div>
-                <p class="font-bold text-xs text-slate-900">Expert Instructors</p>
-                <p class="text-[11px] text-slate-400 mt-1">Learn from industry leaders</p>
-            </div>
-            <div class="bg-white p-5 rounded-2xl border border-slate-100 text-center shadow-sm">
-                <div
-                    class="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <i class="fa-solid fa-laptop-code"></i>
-                </div>
-                <p class="font-bold text-xs text-slate-900">Practical Projects</p>
-                <p class="text-[11px] text-slate-400 mt-1">Build real-world apps</p>
-            </div>
-            <div class="bg-white p-5 rounded-2xl border border-slate-100 text-center shadow-sm">
-                <div
-                    class="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <i class="fa-solid fa-briefcase"></i>
-                </div>
-                <p class="font-bold text-xs text-slate-900">Job Support</p>
-                <p class="text-[11px] text-slate-400 mt-1">Find your dream tech job</p>
-            </div>
-            <div class="bg-white p-5 rounded-2xl border border-slate-100 text-center shadow-sm">
-                <div
-                    class="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <i class="fa-solid fa-clock"></i>
-                </div>
-                <p class="font-bold text-xs text-slate-900">Flexible Learning</p>
-                <p class="text-[11px] text-slate-400 mt-1">Day, evening & weekend</p>
-            </div>
-            <div class="bg-white p-5 rounded-2xl border border-slate-100 text-center shadow-sm">
-                <div
-                    class="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <i class="fa-solid fa-certificate"></i>
-                </div>
-                <p class="font-bold text-xs text-slate-900">Certified Courses</p>
-                <p class="text-[11px] text-slate-400 mt-1">Recognized credentials</p>
-            </div>
-            <div class="bg-white p-5 rounded-2xl border border-slate-100 text-center shadow-sm">
-                <div
-                    class="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <i class="fa-solid fa-headset"></i>
-                </div>
-                <p class="font-bold text-xs text-slate-900">Student Support</p>
-                <p class="text-[11px] text-slate-400 mt-1">We are here for you 24/7</p>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <!-- Footer -->
-<<<<<<< Updated upstream
-    <footer class="bg-white border-t border-slate-200 mt-20 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 pb-12">
-            <div>
-                <div class="flex items-center space-x-3 mb-4">
-                    <div class="bg-blue-600 text-white p-2 rounded-lg">
-=======
     <footer class="bg-slate-900 text-slate-400 pt-16 pb-16 md:pb-12 border-t border-slate-800">
-        <div
-            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-slate-800">
             <div class="space-y-4">
                 <div class="flex items-center space-x-3">
-                    <div
-                        class="bg-blue-600 text-white p-2 rounded-xl flex items-center justify-center font-bold text-lg">
->>>>>>> Stashed changes
+                    <div class="bg-blue-600 text-white p-2 rounded-xl flex items-center justify-center font-bold text-lg">
                         <i class="fa-solid fa-graduation-cap"></i>
                     </div>
-                    <span class="text-lg font-bold text-slate-900">IT Training Center</span>
+                    <span class="text-xl font-bold text-white tracking-tight">ITTC Academy</span>
                 </div>
-<<<<<<< Updated upstream
-                <p class="text-xs text-slate-500 leading-relaxed mb-4">
-                    Leading premier IT education and technical advancement institute in Cambodia. Empowering careers
-                    through structured, hands-on learning.
-=======
                 <p class="text-sm leading-relaxed text-slate-400">
-                    Empowering Cambodia's youth and professionals with world-class IT education, hands-on bootcamps, and
-                    career placement.
->>>>>>> Stashed changes
+                    Empowering Cambodia's youth and professionals with world-class IT education, hands-on bootcamps, and career placement.
                 </p>
-                <div class="flex space-x-3 text-slate-400">
-                    <a href="#"
-                        class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center hover:bg-blue-600 hover:text-white transition"><i
-                            class="fa-brands fa-facebook-f text-xs"></i></a>
-                    <a href="#"
-                        class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center hover:bg-blue-600 hover:text-white transition"><i
-                            class="fa-brands fa-telegram text-xs"></i></a>
-                    <a href="#"
-                        class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center hover:bg-blue-600 hover:text-white transition"><i
-                            class="fa-brands fa-youtube text-xs"></i></a>
+                <div class="flex space-x-4 text-lg">
+                    <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
             <div>
-<<<<<<< Updated upstream
-                <h4 class="text-sm font-bold text-slate-900 mb-4">Quick Links</h4>
-                <ul class="space-y-2 text-xs text-slate-600">
-                    <li><a href="index.html" class="hover:text-blue-600">Home</a></li>
-                    <li><a href="courses.html" class="hover:text-blue-600">Courses</a></li>
-                    <li><a href="about.html" class="hover:text-blue-600">About Us</a></li>
-                    <li><a href="contact.html" class="hover:text-blue-600">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-sm font-bold text-slate-900 mb-4">Popular Courses</h4>
-                <ul class="space-y-2 text-xs text-slate-600">
-                    <li><a href="courses.html" class="hover:text-blue-600">Web Development</a></li>
-                    <li><a href="courses.html" class="hover:text-blue-600">Python Programming</a></li>
-                    <li><a href="courses.html" class="hover:text-blue-600">Database Systems</a></li>
-                    <li><a href="courses.html" class="hover:text-blue-600">Cybersecurity Fundamentals</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-sm font-bold text-slate-900 mb-4">Contact Us</h4>
-                <ul class="space-y-3 text-xs text-slate-600">
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-blue-600"></i> +855 12 345 678
-                    </li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-blue-600"></i>
-                        info@ittrainingcenter.com</li>
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-location-dot text-blue-600 mt-0.5"></i>
-                        Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia</li>
-=======
                 <h4 class="text-white font-bold text-base mb-4">Quick Links</h4>
                 <ul class="space-y-2.5 text-sm">
                     <li><button onclick="switchPage('home')" class="hover:text-white transition">Home</button></li>
-                    <li><button onclick="switchPage('courses')" class="hover:text-white transition">All IT
-                            Subjects</button></li>
+                    <li><button onclick="switchPage('courses')" class="hover:text-white transition">All IT Subjects</button></li>
                     <li><button onclick="switchPage('about')" class="hover:text-white transition">About Us</button></li>
-                    <li><button onclick="switchPage('contact')" class="hover:text-white transition">Contact Us</button>
-                    </li>
+                    <li><button onclick="switchPage('contact')" class="hover:text-white transition">Contact Us</button></li>
                 </ul>
             </div>
             <div>
                 <h4 class="text-white font-bold text-base mb-4">Top Programs</h4>
                 <ul class="space-y-2.5 text-sm">
-                    <li><button onclick="switchPage('courses')" class="hover:text-white transition">Full-Stack Web
-                            Dev</button></li>
-                    <li><button onclick="switchPage('courses')" class="hover:text-white transition">Data Science &
-                            AI</button></li>
-                    <li><button onclick="switchPage('courses')"
-                            class="hover:text-white transition">Cybersecurity</button></li>
-                    <li><button onclick="switchPage('courses')" class="hover:text-white transition">Flutter Mobile
-                            App</button></li>
+                    <li><button onclick="switchPage('courses')" class="hover:text-white transition">Full-Stack Web Dev</button></li>
+                    <li><button onclick="switchPage('courses')" class="hover:text-white transition">Data Science & AI</button></li>
+                    <li><button onclick="switchPage('courses')" class="hover:text-white transition">Cybersecurity</button></li>
+                    <li><button onclick="switchPage('courses')" class="hover:text-white transition">Flutter Mobile App</button></li>
                 </ul>
             </div>
             <div>
                 <h4 class="text-white font-bold text-base mb-4">Contact Info</h4>
                 <ul class="space-y-2.5 text-sm">
-                    <li class="flex items-center space-x-2"><i
-                            class="fa-solid fa-location-dot text-blue-500"></i><span>Preah Monivong Blvd, Phnom
-                            Penh</span></li>
-                    <li class="flex items-center space-x-2"><i
-                            class="fa-solid fa-envelope text-blue-500"></i><span>info@ittrainingcenter.com</span></li>
-                    <li class="flex items-center space-x-2"><i class="fa-solid fa-phone text-blue-500"></i><span>+855 23
-                            999 888</span></li>
->>>>>>> Stashed changes
+                    <li class="flex items-center space-x-2"><i class="fa-solid fa-location-dot text-blue-500"></i><span>Preah Monivong Blvd, Phnom Penh</span></li>
+                    <li class="flex items-center space-x-2"><i class="fa-solid fa-envelope text-blue-500"></i><span>info@ittrainingcenter.com</span></li>
+                    <li class="flex items-center space-x-2"><i class="fa-solid fa-phone text-blue-500"></i><span>+855 23 999 888</span></li>
                 </ul>
             </div>
         </div>
-        <div
-<<<<<<< Updated upstream
-            class="border-t border-slate-100 pt-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400">
-            <p>© 2026 IT Training Center. All rights reserved.</p>
-            <div class="flex space-x-6 mt-4 md:mt-0">
-=======
-            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
             <p>&copy; 2026 IT Training Center (ITTC). All rights reserved.</p>
             <div class="flex space-x-6 mt-4 sm:mt-0">
->>>>>>> Stashed changes
                 <a href="#" class="hover:underline">Privacy Policy</a>
                 <a href="#" class="hover:underline">Terms of Service</a>
             </div>
         </div>
     </footer>
-</body>
 
+    <!-- Interactive Script -->
+    <script>
+        // Page Switching Logic with Active Navbar and Bottom Bar sync
+        function switchPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-view');
+            pages.forEach(p => p.classList.add('hidden'));
+
+            // Show selected page
+            const targetPage = document.getElementById('page-' + pageId);
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Update desktop navbar active styles
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('text-blue-600', 'font-semibold', 'after:w-full');
+                link.classList.add('text-slate-600');
+            });
+
+            const activeNav = document.getElementById('nav-' + pageId);
+            if (activeNav) {
+                activeNav.classList.remove('text-slate-600');
+                activeNav.classList.add('text-blue-600', 'font-semibold');
+            }
+
+            // Update mobile bottom nav active styles
+            const mobBtns = document.querySelectorAll('.mob-nav-btn');
+            mobBtns.forEach(btn => {
+                btn.classList.remove('text-blue-600', 'font-bold');
+                btn.classList.add('text-slate-500');
+            });
+
+            const activeMobBtn = document.getElementById('mob-nav-' + pageId);
+            if (activeMobBtn) {
+                activeMobBtn.classList.remove('text-slate-500');
+                activeMobBtn.classList.add('text-blue-600', 'font-bold');
+            }
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Modal Handling
+        function openConsultationModal() {
+            document.getElementById('modal-title').innerText = 'Book Free Consultation';
+            document.getElementById('modal-subtitle').innerText = 'Speak with our academic advisors to find the right path for your career.';
+            document.getElementById('action-modal').classList.remove('hidden');
+        }
+
+        function openEnrollModal(courseName) {
+            document.getElementById('modal-title').innerText = 'Enroll in ' + courseName;
+            document.getElementById('modal-subtitle').innerText = 'Fill in your details to secure your admission for the upcoming cohort.';
+            document.getElementById('action-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('action-modal').classList.add('hidden');
+        }
+
+        function handleModalSubmit(event) {
+            event.preventDefault();
+            closeModal();
+            showToast('Submission Successful!', 'We have received your request and will contact you shortly.');
+        }
+
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            showToast('Inquiry Received!', 'Thank you for reaching out. Our program counselor will call you within 1 business day.');
+            event.target.reset();
+        }
+
+        // Toast notification helper
+        function showToast(title, desc) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-title').innerText = title;
+            document.getElementById('toast-desc').innerText = desc;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+
+        // Course filtering by category
+        function filterCategory(category) {
+            // Update button styles
+            const buttons = document.querySelectorAll('.cat-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white', 'shadow-sm');
+                btn.classList.add('bg-slate-100', 'text-slate-600');
+            });
+            const activeBtn = document.getElementById('cat-' + category);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-slate-100', 'text-slate-600');
+                activeBtn.classList.add('bg-blue-600', 'text-white', 'shadow-sm');
+            }
+
+            // Filter cards
+            const cards = document.querySelectorAll('.course-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Search courses in real-time
+        function filterCourses() {
+            const query = document.getElementById('course-search').value.toLowerCase();
+            const cards = document.querySelectorAll('.course-card');
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
 </html>
