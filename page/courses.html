@@ -4,442 +4,792 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Training Center - Your Future in Tech Starts Here</title>
+    <title>LearnTech - Full-Stack Web Development</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: {
+                        brand: {
                             50: '#eff6ff',
                             100: '#dbeafe',
                             500: '#3b82f6',
                             600: '#2563eb',
                             700: '#1d4ed8',
-                            800: '#1e40af',
-                            900: '#1e3a8a',
+                            dark: '#081028',
                         }
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
                     }
                 }
             }
         }
     </script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
 </head>
 
-<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen pb-20 md:pb-0">
+<body class="bg-[#f3f6fc] text-slate-800 min-h-screen antialiased selection:bg-blue-500 selection:text-white">
 
-    <!-- ==================== COURSES PAGE ==================== -->
-    <section id="page-courses" class="page-view hidden animate-fade">
-        <!-- Header Banner -->
-        <div class="bg-gradient-to-br from-slate-900 via-blue-950 to-blue-900 text-white py-16 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-7xl mx-auto text-center space-y-4">
-                <span
-                    class="bg-blue-500/20 text-blue-300 px-4 py-1.5 rounded-full text-sm font-semibold border border-blue-400/30">Catalog</span>
-                <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">All IT Subjects & Professional
-                    Courses</h1>
-                <p class="text-slate-300 text-lg max-w-2xl mx-auto">Explore our complete catalog of specialized
-                    tracks designed to get you hired fast.</p>
-            </div>
-        </div>
-
-        <!-- Filter and Search Bar -->
-        <div class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6 lg:px-8 shadow-sm">
-            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-                <div class="flex items-center space-x-3 w-full md:w-auto">
-                    <div class="relative w-full md:w-80">
-                        <span
-                            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400"><i
-                                class="fa-solid fa-search"></i></span>
-                        <input type="text" id="course-search" onkeyup="filterCourses()"
-                            placeholder="Search subjects (e.g. Python, React...)"
-                            class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
-                    </div>
+    <!-- TOP NAVIGATION BAR (Visible when browsing catalog) -->
+    <nav id="top-nav" class="bg-white border-b border-slate-200 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="showCatalogPage()">
+                <div
+                    class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20">
+                    <i class="fa-solid fa-graduation-cap text-xl"></i>
                 </div>
-                <div class="flex items-center space-x-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0">
-                    <button onclick="filterCategory('all')" id="cat-all"
-                        class="cat-btn px-4 py-2 rounded-xl text-sm font-semibold bg-blue-600 text-white transition whitespace-nowrap shadow-sm">All
-                        Subjects</button>
-                    <button onclick="filterCategory('dev')" id="cat-dev"
-                        class="cat-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition whitespace-nowrap">Web
-                        & Mobile</button>
-                    <button onclick="filterCategory('data')" id="cat-data"
-                        class="cat-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition whitespace-nowrap">Data
-                        & AI</button>
-                    <button onclick="filterCategory('sec')" id="cat-sec"
-                        class="cat-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition whitespace-nowrap">Cybersecurity</button>
+                <div>
+                    <span class="font-bold text-lg leading-tight tracking-wide text-slate-900 block">LearnTech</span>
+                    <span class="text-[11px] text-slate-400 font-medium block -mt-1">Build Your Future</span>
                 </div>
             </div>
-        </div>
 
-        <!-- Full Course List Grid -->
-        <div class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="full-course-grid">
-                <!-- Course 1 -->
-                <div class="course-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group"
-                    data-category="dev">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80"
-                            alt="Web Dev"
-                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span
-                            class="absolute top-4 left-4 bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">Software
-                            Dev</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">
-                                Full-Stack Web Development</h3>
-                            <p class="text-xs text-blue-600 font-semibold mt-0.5">React, Node.js, Express &
-                                Databases</p>
-                        </div>
-                        <div class="flex items-center justify-between text-sm text-slate-500 font-medium">
-                            <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i>
-                                6 Months</span>
-                            <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i>
-                                Beginner</span>
-                        </div>
-                        <p class="text-slate-600 text-sm">Build dynamic web apps from scratch with modern frameworks
-                            and enterprise tools.</p>
-                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-2xl font-extrabold text-slate-900">$850</span>
-                            <button onclick="openEnrollModal('Full-Stack Web Development')"
-                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Enroll
-                                Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 2 -->
-                <div class="course-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group"
-                    data-category="data">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80"
-                            alt="Data Science"
-                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span
-                            class="absolute top-4 left-4 bg-cyan-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">Data
-                            & AI</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">Data
-                                Science & Analytics</h3>
-                            <p class="text-xs text-cyan-600 font-semibold mt-0.5">Python, Pandas, SQL & Machine
-                                Learning</p>
-                        </div>
-                        <div class="flex items-center justify-between text-sm text-slate-500 font-medium">
-                            <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i>
-                                4 Months</span>
-                            <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i>
-                                Intermediate</span>
-                        </div>
-                        <p class="text-slate-600 text-sm">Master data visualization, statistics, and ML algorithms
-                            to drive business decisions.</p>
-                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-2xl font-extrabold text-slate-900">$750</span>
-                            <button onclick="openEnrollModal('Data Science & Analytics')"
-                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Enroll
-                                Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 3 -->
-                <div class="course-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group"
-                    data-category="sec">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80"
-                            alt="Cybersecurity"
-                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span
-                            class="absolute top-4 left-4 bg-emerald-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">Security</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">
-                                Cybersecurity Professional</h3>
-                            <p class="text-xs text-emerald-600 font-semibold mt-0.5">Ethical Hacking & Network
-                                Defense</p>
-                        </div>
-                        <div class="flex items-center justify-between text-sm text-slate-500 font-medium">
-                            <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i>
-                                5 Months</span>
-                            <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i>
-                                All Levels</span>
-                        </div>
-                        <p class="text-slate-600 text-sm">Protect critical infrastructures and master ethical
-                            hacking techniques to secure enterprise networks.</p>
-                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-2xl font-extrabold text-slate-900">$800</span>
-                            <button onclick="openEnrollModal('Cybersecurity Professional')"
-                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Enroll
-                                Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 4 -->
-                <div class="course-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group"
-                    data-category="dev">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80"
-                            alt="Mobile App"
-                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span
-                            class="absolute top-4 left-4 bg-indigo-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">Mobile
-                            Dev</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">
-                                Flutter Mobile App Development</h3>
-                            <p class="text-xs text-indigo-600 font-semibold mt-0.5">Cross-platform iOS & Android
-                                apps</p>
-                        </div>
-                        <div class="flex items-center justify-between text-sm text-slate-500 font-medium">
-                            <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i>
-                                4 Months</span>
-                            <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i>
-                                Beginner</span>
-                        </div>
-                        <p class="text-slate-600 text-sm">Build beautiful native mobile apps for both iOS and
-                            Android using Google's Flutter framework.</p>
-                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-2xl font-extrabold text-slate-900">$700</span>
-                            <button onclick="openEnrollModal('Flutter Mobile App Development')"
-                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Enroll
-                                Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 5 -->
-                <div class="course-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group"
-                    data-category="data">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80"
-                            alt="Cloud"
-                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span
-                            class="absolute top-4 left-4 bg-amber-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">Cloud
-                            & DevOps</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">AWS
-                                Cloud Computing & DevOps</h3>
-                            <p class="text-xs text-amber-600 font-semibold mt-0.5">Docker, Kubernetes, CI/CD & AWS
-                            </p>
-                        </div>
-                        <div class="flex items-center justify-between text-sm text-slate-500 font-medium">
-                            <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i>
-                                4 Months</span>
-                            <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i>
-                                Advanced</span>
-                        </div>
-                        <p class="text-slate-600 text-sm">Master cloud infrastructure, containerization, and
-                            automated deployment pipelines on Amazon Web Services.</p>
-                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-2xl font-extrabold text-slate-900">$900</span>
-                            <button onclick="openEnrollModal('AWS Cloud Computing & DevOps')"
-                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Enroll
-                                Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 6 -->
-                <div class="course-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:border-blue-300 transition duration-300 flex flex-col group"
-                    data-category="dev">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=600&q=80"
-                            alt="UI/UX"
-                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span
-                            class="absolute top-4 left-4 bg-rose-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">UI/UX
-                            Design</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition">UI/UX
-                                Product Design Masterclass</h3>
-                            <p class="text-xs text-rose-600 font-semibold mt-0.5">Figma, Wireframing & User Research
-                            </p>
-                        </div>
-                        <div class="flex items-center justify-between text-sm text-slate-500 font-medium">
-                            <span class="flex items-center"><i class="fa-regular fa-clock mr-1.5 text-blue-600"></i>
-                                3 Months</span>
-                            <span class="flex items-center"><i class="fa-solid fa-signal mr-1.5 text-blue-600"></i>
-                                Beginner</span>
-                        </div>
-                        <p class="text-slate-600 text-sm">Learn user-centered design principles, create interactive
-                            prototypes in Figma, and build stunning design portfolios.</p>
-                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-2xl font-extrabold text-slate-900">$600</span>
-                            <button onclick="openEnrollModal('UI/UX Product Design Masterclass')"
-                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Enroll
-                                Now</button>
-                        </div>
-                    </div>
-                </div>
+            <div id="nav-user-area" class="flex items-center space-x-4">
+                <button onclick="openEnrollModal()"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-xl text-sm transition-all shadow-md shadow-blue-600/20">
+                    Enroll Now
+                </button>
             </div>
         </div>
-    </section>
-    <body>
-        
-    <!-- Mobile Bottom Navigation Bar -->
-    <nav
-        class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 z-50 shadow-lg flex justify-around items-center h-16 px-2">
-        <button onclick="switchPage('home')" id="mob-nav-home"
-            class="mob-nav-btn flex flex-col items-center justify-center flex-1 py-1 text-blue-600 font-bold transition">
-            <i class="fa-solid fa-house text-lg mb-0.5"></i>
-            <span class="text-[11px] leading-tight">Home</span>
-        </button>
-        <button onclick="switchPage('courses')" id="mob-nav-courses"
-            class="mob-nav-btn flex flex-col items-center justify-center flex-1 py-1 text-slate-500 hover:text-blue-600 transition">
-            <i class="fa-solid fa-book-open text-lg mb-0.5"></i>
-            <span class="text-[11px] leading-tight">Courses</span>
-        </button>
-        <button onclick="switchPage('about')" id="mob-nav-about"
-            class="mob-nav-btn flex flex-col items-center justify-center flex-1 py-1 text-slate-500 hover:text-blue-600 transition">
-            <i class="fa-solid fa-circle-info text-lg mb-0.5"></i>
-            <span class="text-[11px] leading-tight">About Us</span>
-        </button>
-        <button onclick="switchPage('contact')" id="mob-nav-contact"
-            class="mob-nav-btn flex flex-col items-center justify-center flex-1 py-1 text-slate-500 hover:text-blue-600 transition">
-            <i class="fa-solid fa-comments text-lg mb-0.5"></i>
-            <span class="text-[11px] leading-tight">Contact</span>
-        </button>
     </nav>
 
-    <!-- Enrollment / Consultation Modal -->
-    <div id="action-modal"
-        class="fixed inset-0 z-[100] hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-        <div class="bg-white w-full max-w-md rounded-3xl shadow-2xl p-8 relative my-auto animate-scale-up">
-            <button onclick="closeModal()"
-                class="absolute top-6 right-6 text-slate-400 hover:text-slate-600 text-xl font-bold">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div id="modal-title-area" class="mb-6">
-                <h3 id="modal-title" class="text-2xl font-bold text-slate-900">Enroll in Course</h3>
-                <p id="modal-subtitle" class="text-sm text-slate-500 mt-1">Fill in your details to secure your spot.
-                </p>
+    <!-- MAIN APP CONTAINER -->
+    <div id="app-container">
+
+        <!-- VIEW 1: COURSE CATALOG / LANDING PAGE -->
+        <section id="view-catalog" class="max-w-6xl mx-auto px-4 py-12">
+            <div class="text-center max-w-2xl mx-auto mb-10 space-y-3">
+                <span
+                    class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Featured
+                    Course</span>
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight font-playfair">Master
+                    Modern Software Engineering</h1>
+                <p class="text-slate-600 text-sm md:text-base">Join over 1,200+ students learning full-stack web
+                    development with production-ready projects and mentor guidance.</p>
             </div>
-            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
-                <div>
-                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Your Full Name</label>
-                    <input type="text" required placeholder="Sok Piseth"
-                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Email Address</label>
-                    <input type="email" required placeholder="piseth@example.com"
-                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Phone / Telegram
-                        Number</label>
-                    <input type="tel" required placeholder="+855 12 345 678"
-                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
-                </div>
-                <button type="submit"
-                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl shadow transition mt-2">
-                    Confirm Submission
-                </button>
-            </form>
-        </div>
-    </div>
 
-    <!-- Notification Toast Box -->
-    <div id="toast"
-        class="fixed bottom-24 sm:bottom-8 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:right-6 z-[110] hidden bg-slate-900 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center space-x-3 border border-slate-700 w-11/12 max-w-sm">
-        <i class="fa-solid fa-circle-check text-emerald-400 text-xl flex-shrink-0"></i>
-        <div>
-            <h4 class="font-bold text-sm" id="toast-title">Success!</h4>
-            <p class="text-xs text-slate-300" id="toast-desc">Your request has been submitted successfully.</p>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 pt-16 pb-16 md:pb-12 border-t border-slate-800">
-        <div
-            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-slate-800">
-            <div class="space-y-4">
-                <div class="flex items-center space-x-3">
-                    <div
-                        class="bg-blue-600 text-white p-2 rounded-xl flex items-center justify-center font-bold text-lg">
-                        <i class="fa-solid fa-graduation-cap"></i>
+            <!-- Course Card Component (Matching Pic 2) -->
+            <div
+                class="max-w-md mx-auto bg-white rounded-2xl border border-slate-200/90 shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+                <!-- Thumbnail Image with Badge -->
+                <div class="relative h-56 bg-slate-900 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop&q=80"
+                        alt="Code on laptop screen" class="w-full h-full object-cover opacity-85">
+                    <div class="absolute top-4 left-4">
+                        <span
+                            class="bg-blue-600/90 backdrop-blur-md text-white font-bold text-xs tracking-wider px-3 py-1.5 rounded-full uppercase shadow-lg">
+                            SOFTWARE DEV
+                        </span>
                     </div>
-                    <span class="text-xl font-bold text-white tracking-tight">ITTC Academy</span>
                 </div>
-                <p class="text-sm leading-relaxed text-slate-400">
-                    Empowering Cambodia's youth and professionals with world-class IT education, hands-on bootcamps,
-                    and
-                    career placement.
-                </p>
-                <div class="flex space-x-4 text-lg">
-                    <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-telegram"></i></a>
-                    <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-youtube"></i></a>
+
+                <!-- Card Body -->
+                <div class="p-6 space-y-5">
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 font-playfair tracking-tight leading-snug">
+                            Full-Stack Web Development
+                        </h2>
+                        <p class="text-blue-600 text-xs font-semibold mt-1">
+                            React, Node.js, Express &amp; Databases
+                        </p>
+                    </div>
+
+                    <!-- Meta Specs -->
+                    <div
+                        class="flex items-center justify-between text-slate-500 text-xs font-medium py-1 border-y border-slate-100">
+                        <span class="flex items-center space-x-1.5">
+                            <i class="fa-regular fa-clock text-blue-500 text-sm"></i>
+                            <span>6 Months</span>
+                        </span>
+                        <span class="flex items-center space-x-1.5">
+                            <i class="fa-solid fa-chart-simple text-blue-500 text-sm"></i>
+                            <span>Beginner</span>
+                        </span>
+                    </div>
+
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Build dynamic web applications from scratch with modern frameworks and enterprise-grade tools.
+                    </p>
+
+                    <!-- Price & CTA -->
+                    <div class="flex items-center justify-between pt-2">
+                        <div class="font-playfair text-2xl font-bold text-slate-900">
+                            $800
+                        </div>
+                        <button onclick="openEnrollModal()"
+                            class="bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-bold px-6 py-2.5 rounded-xl shadow-md shadow-blue-600/30 transition-all text-sm font-playfair">
+                            Enroll Now
+                        </button>
+                    </div>
                 </div>
             </div>
-            <div>
-                <h4 class="text-white font-bold text-base mb-4">Quick Links</h4>
-                <ul class="space-y-2.5 text-sm">
-                    <li><button onclick="switchPage('home')" class="hover:text-white transition">Home</button></li>
-                    <li><button onclick="switchPage('courses')" class="hover:text-white transition">All IT
-                            Subjects</button></li>
-                    <li><button onclick="switchPage('about')" class="hover:text-white transition">About Us</button>
-                    </li>
-                    <li><button onclick="switchPage('contact')" class="hover:text-white transition">Contact
-                            Us</button>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold text-base mb-4">Top Programs</h4>
-                <ul class="space-y-2.5 text-sm">
-                    <li><button onclick="switchPage('courses')" class="hover:text-white transition">Full-Stack Web
-                            Dev</button></li>
-                    <li><button onclick="switchPage('courses')" class="hover:text-white transition">Data Science &
-                            AI</button></li>
-                    <li><button onclick="switchPage('courses')"
-                            class="hover:text-white transition">Cybersecurity</button></li>
-                    <li><button onclick="switchPage('courses')" class="hover:text-white transition">Flutter Mobile
-                            App</button></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold text-base mb-4">Contact Info</h4>
-                <ul class="space-y-2.5 text-sm">
-                    <li class="flex items-center space-x-2"><i
-                            class="fa-solid fa-location-dot text-blue-500"></i><span>Preah Monivong Blvd, Phnom
-                            Penh</span></li>
-                    <li class="flex items-center space-x-2"><i
-                            class="fa-solid fa-envelope text-blue-500"></i><span>info@ittrainingcenter.com</span>
-                    </li>
-                    <li class="flex items-center space-x-2"><i class="fa-solid fa-phone text-blue-500"></i><span>+855 23
-                            999 888</span></li>
-                </ul>
+        </section>
+
+        <!-- VIEW 2: ENROLLMENT FORM MODAL (Matching Pic 3) -->
+        <div id="enroll-modal"
+            class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+            <div
+                class="bg-white rounded-3xl max-w-md w-full p-8 relative shadow-2xl transform scale-95 transition-all duration-300 border border-slate-100">
+                <!-- Close Button -->
+                <button onclick="closeEnrollModal()"
+                    class="absolute top-6 right-6 text-slate-400 hover:text-slate-700 transition-colors">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+
+                <!-- Modal Header -->
+                <div class="space-y-2 mb-6">
+                    <h3 class="text-2xl font-bold text-slate-900 font-playfair leading-tight">
+                        Enroll in Full-Stack Web Development
+                    </h3>
+                    <p class="text-slate-500 text-xs leading-relaxed">
+                        Fill in your details to secure your admission for the upcoming cohort.
+                    </p>
+                </div>
+
+                <!-- Registration Form -->
+                <form id="enrollment-form" onsubmit="handleRegistration(event)" class="space-y-4">
+                    <div>
+                        <label
+                            class="block text-[11px] font-bold tracking-wider text-slate-700 uppercase mb-1.5 font-playfair">
+                            YOUR FULL NAME
+                        </label>
+                        <input type="text" id="input-fullname" required placeholder="PHORS IM" value="PHORS IM"
+                            class="w-full px-4 py-3 bg-blue-50/60 border border-blue-400/80 rounded-xl text-slate-800 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+                    </div>
+
+                    <div>
+                        <label
+                            class="block text-[11px] font-bold tracking-wider text-slate-700 uppercase mb-1.5 font-playfair">
+                            EMAIL ADDRESS
+                        </label>
+                        <input type="email" id="input-email" required
+                            placeholder="phors.im@fellow.passerellesnumeriques.org"
+                            value="phors.im@fellow.passerellesnumeriques.org"
+                            class="w-full px-4 py-3 bg-blue-50/60 border border-slate-200 rounded-xl text-slate-800 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+                    </div>
+
+                    <div>
+                        <label
+                            class="block text-[11px] font-bold tracking-wider text-slate-700 uppercase mb-1.5 font-playfair">
+                            PHONE / TELEGRAM NUMBER
+                        </label>
+                        <input type="tel" id="input-phone" required placeholder="+855973107308" value="+855973107308"
+                            class="w-full px-4 py-3 bg-blue-50/60 border border-slate-200 rounded-xl text-slate-800 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+                    </div>
+
+                    <button type="submit"
+                        class="w-full mt-2 bg-blue-600 hover:bg-blue-700 active:scale-[0.98] text-white font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-blue-600/30 transition-all text-sm font-playfair">
+                        Confirm Submission
+                    </button>
+                </form>
             </div>
         </div>
-        <div
-            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
-            <p>&copy; 2026 IT Training Center (ITTC). All rights reserved.</p>
-            <div class="flex space-x-6 mt-4 sm:mt-0">
-                <a href="#" class="hover:underline">Privacy Policy</a>
-                <a href="#" class="hover:underline">Terms of Service</a>
-            </div>
+
+        <!-- VIEW 3: LMS DASHBOARD (Matching Pic 1) -->
+        <div id="view-dashboard" class="hidden flex-col md:flex-row min-h-screen">
+
+            <!-- LEFT SIDEBAR -->
+            <aside id="sidebar"
+                class="w-full md:w-64 bg-[#081028] text-white flex flex-col flex-shrink-0 z-30 justify-between">
+                <div>
+                    <!-- Brand Header -->
+                    <div class="p-6 flex items-center space-x-3.5">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
+                            <i class="fa-solid fa-graduation-cap text-xl"></i>
+                        </div>
+                        <div>
+                            <h1 class="font-bold text-lg leading-tight tracking-wide text-white">LearnTech</h1>
+                            <p class="text-xs text-slate-400 font-medium">Build Your Future</p>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Links -->
+                    <nav class="px-4 space-y-1 mt-2">
+                        <a href="#" onclick="setActiveNav(this); return false;"
+                            class="nav-item flex items-center space-x-3.5 px-4 py-3 rounded-xl text-slate-300 hover:bg-slate-800/60 hover:text-white transition-all font-medium text-sm">
+                            <i class="fa-solid fa-house w-5 text-center text-slate-400"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="#" onclick="setActiveNav(this); return false;"
+                            class="nav-item flex items-center space-x-3.5 px-4 py-3 rounded-xl bg-blue-600 text-white font-medium text-sm shadow-md shadow-blue-600/30">
+                            <i class="fa-solid fa-book-open w-5 text-center"></i>
+                            <span>My Courses</span>
+                        </a>
+                        <a href="#" onclick="setActiveNav(this); return false;"
+                            class="nav-item flex items-center space-x-3.5 px-4 py-3 rounded-xl text-slate-300 hover:bg-slate-800/60 hover:text-white transition-all font-medium text-sm">
+                            <i class="fa-solid fa-circle-play w-5 text-center text-slate-400"></i>
+                            <span>Video Library</span>
+                        </a>
+                        <a href="#" onclick="setActiveNav(this); return false;"
+                            class="nav-item flex items-center space-x-3.5 px-4 py-3 rounded-xl text-slate-300 hover:bg-slate-800/60 hover:text-white transition-all font-medium text-sm">
+                            <i class="fa-solid fa-file-lines w-5 text-center text-slate-400"></i>
+                            <span>Assignments</span>
+                        </a>
+                        <a href="#" onclick="setActiveNav(this); return false;"
+                            class="nav-item flex items-center space-x-3.5 px-4 py-3 rounded-xl text-slate-300 hover:bg-slate-800/60 hover:text-white transition-all font-medium text-sm">
+                            <i class="fa-solid fa-chart-line w-5 text-center text-slate-400"></i>
+                            <span>Progress</span>
+                        </a>
+                        <a href="#" onclick="resetRegistration(); return false;"
+                            class="nav-item flex items-center space-x-3.5 px-4 py-3 rounded-xl text-rose-400 hover:bg-rose-950/40 transition-all font-medium text-sm mt-4">
+                            <i class="fa-solid fa-arrow-right-from-bracket w-5 text-center"></i>
+                            <span>Reset Enrolment</span>
+                        </a>
+                    </nav>
+                </div>
+
+                <!-- Bottom Motivational Card -->
+                <div
+                    class="p-4 m-4 rounded-2xl bg-gradient-to-br from-blue-900/50 to-slate-900/80 border border-blue-500/20 backdrop-blur-sm relative overflow-hidden">
+                    <div class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center mb-3">
+                        <i class="fa-solid fa-code text-sm"></i>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed font-medium">
+                        Small steps<br>every day<br>lead to big results.
+                    </p>
+                    <div
+                        class="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl pointer-events-none">
+                    </div>
+                </div>
+            </aside>
+
+            <!-- DASHBOARD CONTENT AREA -->
+            <main class="flex-1 flex flex-col min-w-0 overflow-x-hidden">
+
+                <!-- HEADER BAR -->
+                <header
+                    class="bg-white/80 backdrop-blur-md border-b border-slate-200/80 px-6 py-3.5 flex items-center justify-between sticky top-0 z-20">
+                    <div class="relative w-full max-w-md">
+                        <i
+                            class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                        <input type="text" placeholder="Search for courses, lessons..."
+                            class="w-full pl-11 pr-4 py-2 bg-slate-100 border border-transparent rounded-full text-sm text-slate-700 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-blue-500/50 transition-all">
+                    </div>
+
+                    <div class="flex items-center space-x-5 ml-4">
+                        <button class="relative p-2 text-slate-500 hover:text-blue-600 transition-colors">
+                            <i class="fa-regular fa-bell text-lg"></i>
+                            <span
+                                class="absolute top-1.5 right-1.5 w-2 h-2 bg-rose-500 rounded-full ring-2 ring-white"></span>
+                        </button>
+
+                        <!-- Registered Profile Info Display -->
+                        <div class="flex items-center space-x-3 cursor-pointer group" onclick="resetRegistration()"
+                            title="Click to Switch Account">
+                            <img id="user-avatar"
+                                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+                                alt="Profile" class="w-9 h-9 rounded-full object-cover ring-2 ring-blue-500/30">
+                            <div class="hidden sm:block text-left">
+                                <span id="user-display-name"
+                                    class="text-xs font-bold text-slate-800 uppercase tracking-wider block">PHORS
+                                    IM</span>
+                                <span class="text-[10px] text-emerald-600 font-semibold flex items-center space-x-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                    <span>Enrolled Student</span>
+                                </span>
+                            </div>
+                            <i
+                                class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:text-slate-600"></i>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- DASHBOARD MAIN BODY -->
+                <div class="p-6 md:p-8 space-y-6 max-w-7xl mx-auto w-full">
+
+                    <!-- HERO COURSE PROGRESS BANNER -->
+                    <div
+                        class="relative bg-gradient-to-r from-[#071330] via-[#0c245c] to-[#0a4bbd] rounded-3xl p-6 md:p-8 text-white shadow-xl overflow-hidden">
+                        <div
+                            class="absolute right-6 top-1/2 -translate-y-1/2 hidden md:flex items-center space-x-3 pointer-events-none">
+                            <div
+                                class="relative w-60 h-36 bg-slate-900 rounded-xl border-4 border-slate-700 p-2.5 shadow-2xl flex flex-col justify-between">
+                                <div class="flex items-center space-x-1 border-b border-slate-800 pb-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+                                    <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                </div>
+                                <div class="font-mono text-[9px] text-cyan-300 space-y-0.5 opacity-90">
+                                    <p><span class="text-purple-400">import</span> React <span
+                                            class="text-purple-400">from</span> <span
+                                            class="text-emerald-300">'react'</span>;</p>
+                                    <p><span class="text-blue-400">function</span> <span
+                                            class="text-yellow-300">App</span>() {</p>
+                                    <p class="pl-2 text-slate-300">return &lt;<span
+                                            class="text-rose-400">LearnTech</span> /&gt;</p>
+                                    <p>}</p>
+                                </div>
+                                <div class="h-1 bg-blue-500/40 rounded-full w-full"></div>
+                            </div>
+                            <div class="flex flex-col space-y-2">
+                                <div
+                                    class="w-10 h-10 bg-slate-900/90 border border-slate-700/80 rounded-xl flex items-center justify-center text-cyan-400 text-lg shadow-lg">
+                                    <i class="fa-brands fa-react"></i>
+                                </div>
+                                <div
+                                    class="w-10 h-10 bg-slate-900/90 border border-slate-700/80 rounded-xl flex items-center justify-center text-emerald-400 text-lg shadow-lg">
+                                    <i class="fa-brands fa-node-js"></i>
+                                </div>
+                                <div
+                                    class="w-10 h-10 bg-slate-900/90 border border-slate-700/80 rounded-xl flex items-center justify-center text-blue-400 text-xs font-bold shadow-lg">
+                                    &lt;/&gt;
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative z-10 max-w-lg">
+                            <span
+                                class="inline-block bg-blue-500/40 text-blue-200 text-[11px] font-semibold px-3 py-1 rounded-full mb-3 backdrop-blur-sm">
+                                In Progress
+                            </span>
+                            <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-snug">
+                                Full-Stack Web Development
+                            </h2>
+                            <p class="text-slate-300 text-xs md:text-sm mt-2 leading-relaxed font-light">
+                                Build dynamic web applications from scratch with modern frameworks and enterprise-grade
+                                tools.
+                            </p>
+
+                            <div class="mt-6 pt-2">
+                                <div class="flex items-center justify-between text-xs text-slate-300 mb-2 font-medium">
+                                    <span id="progress-text">3 / 12 lessons completed</span>
+                                    <span id="progress-percent" class="font-bold text-white">25%</span>
+                                </div>
+                                <div class="w-full bg-slate-800/80 h-2 rounded-full overflow-hidden p-0.5">
+                                    <div id="progress-bar"
+                                        class="bg-gradient-to-r from-blue-400 to-cyan-300 h-full rounded-full transition-all duration-500"
+                                        style="width: 25%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LESSON CONTENT & PLAYER LAYOUT -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+
+                        <!-- LEFT: LESSON PLAYER & DESCRIPTION -->
+                        <div class="lg:col-span-2 space-y-6">
+
+                            <!-- Breadcrumb & Active Lesson Title -->
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-2 text-xs font-medium text-slate-400">
+                                    <a href="#" onclick="showCatalogPage(); return false;"
+                                        class="hover:text-blue-600 flex items-center space-x-1"><i
+                                            class="fa-solid fa-arrow-left text-[10px]"></i><span>My Courses</span></a>
+                                    <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                                    <span class="text-slate-600">Full-Stack Web Development</span>
+                                </div>
+
+                                <div class="flex items-start space-x-3">
+                                    <div
+                                        class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 shadow-md shadow-blue-600/30">
+                                        <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                                    </div>
+                                    <div>
+                                        <h3 id="current-lesson-heading"
+                                            class="text-lg md:text-xl font-bold text-slate-900 leading-snug">
+                                            Lesson 3: Setting Up the Development Environment
+                                        </h3>
+
+                                        <div
+                                            class="flex flex-wrap items-center gap-4 text-xs font-medium text-slate-500 mt-2">
+                                            <span class="flex items-center space-x-1.5"><i
+                                                    class="fa-regular fa-clock text-slate-400"></i><span
+                                                    id="current-lesson-duration">18 min</span></span>
+                                            <span class="flex items-center space-x-1.5"><i
+                                                    class="fa-solid fa-chart-simple text-slate-400"></i><span>Beginner</span></span>
+                                            <span class="flex items-center space-x-1.5"><i
+                                                    class="fa-regular fa-calendar text-slate-400"></i><span>Updated 25
+                                                    Sep 2026</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- VIDEO PLAYER FRAME -->
+                            <div
+                                class="relative bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 shadow-xl group aspect-video flex flex-col justify-between">
+                                <div
+                                    class="relative z-10 p-5 font-mono text-xs text-blue-300 flex items-start space-x-4">
+                                    <div
+                                        class="text-slate-600 select-none text-right pr-2 border-r border-slate-800 space-y-1">
+                                        1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10
+                                    </div>
+                                    <div class="space-y-1 leading-relaxed">
+                                        <p><span class="text-purple-400">import</span> React <span
+                                                class="text-purple-400">from</span> <span
+                                                class="text-emerald-400">'react'</span></p>
+                                        <br>
+                                        <p><span class="text-blue-400">function</span> <span
+                                                class="text-yellow-300">App</span>() {</p>
+                                        <p class="pl-4"><span class="text-purple-400">return</span> (</p>
+                                        <p class="pl-8 text-cyan-300">&lt;<span class="text-red-400">div</span> <span
+                                                class="text-amber-300">className</span>=<span
+                                                class="text-emerald-400">"app"</span>&gt;</p>
+                                        <p class="pl-12 text-white">&lt;<span class="text-red-400">h1</span>&gt;Hello,
+                                            Full Stack!&lt;/<span class="text-red-400">h1</span>&gt;</p>
+                                        <p class="pl-8 text-cyan-300">&lt;/<span class="text-red-400">div</span>&gt;</p>
+                                        <p class="pl-4">)</p>
+                                        <p>}</p>
+                                    </div>
+                                </div>
+
+                                <!-- Play Overlay Button -->
+                                <button onclick="toggleVideoPlay()"
+                                    class="absolute inset-0 m-auto w-16 h-16 rounded-full bg-blue-600/90 hover:bg-blue-600 text-white flex items-center justify-center shadow-2xl backdrop-blur-sm transform transition duration-300 hover:scale-105 z-20">
+                                    <i id="main-play-icon" class="fa-solid fa-play text-2xl ml-1"></i>
+                                </button>
+
+                                <!-- Player Bar Controls -->
+                                <div
+                                    class="relative z-20 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent p-4 space-y-2">
+                                    <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden cursor-pointer"
+                                        onclick="seekVideo(event)">
+                                        <div id="video-bar" class="bg-blue-500 h-full w-[26%] transition-all"></div>
+                                    </div>
+
+                                    <div class="flex items-center justify-between text-white text-xs pt-1">
+                                        <div class="flex items-center space-x-4">
+                                            <button onclick="toggleVideoPlay()"
+                                                class="hover:text-blue-400 transition-colors">
+                                                <i id="sub-play-icon" class="fa-solid fa-play"></i>
+                                            </button>
+                                            <button class="hover:text-blue-400 transition-colors">
+                                                <i class="fa-solid fa-volume-high"></i>
+                                            </button>
+                                            <span id="video-time-text"
+                                                class="text-slate-400 font-mono text-[11px]">04:32 / 18:00</span>
+                                        </div>
+
+                                        <div class="flex items-center space-x-3 text-slate-300 text-xs">
+                                            <button class="hover:text-white"><i class="fa-solid fa-gear"></i></button>
+                                            <button class="hover:text-white"><i class="fa-solid fa-expand"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Description -->
+                            <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm space-y-5">
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-sm flex items-center space-x-2 mb-2">
+                                        <i class="fa-regular fa-file-lines text-blue-600"></i>
+                                        <span>Lesson Description</span>
+                                    </h4>
+                                    <p id="lesson-desc-text" class="text-slate-600 text-sm leading-relaxed">
+                                        In this lesson, you will learn how to set up your development environment,
+                                        install Node.js, npm and Vite, and create your first React project.
+                                    </p>
+                                </div>
+
+                                <div class="flex flex-wrap items-center gap-3 pt-2">
+                                    <button onclick="toggleVideoPlay()"
+                                        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2.5 rounded-xl shadow-md shadow-blue-600/20 text-sm flex items-center space-x-2 transition-all">
+                                        <i class="fa-solid fa-play text-xs"></i>
+                                        <span>Watch Now</span>
+                                    </button>
+                                    <button onclick="showToast('Downloading course resources zip...')"
+                                        class="bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 font-semibold px-5 py-2.5 rounded-xl text-sm flex items-center space-x-2 transition-all">
+                                        <i class="fa-solid fa-download text-xs text-slate-500"></i>
+                                        <span>Download Resources</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- RIGHT: COURSE CONTENT SYLLABUS LIST -->
+                        <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm space-y-4">
+                            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                                <h3 class="font-bold text-slate-900 text-base">Course Content</h3>
+                                <span class="text-xs font-semibold text-slate-400">12 lessons</span>
+                            </div>
+
+                            <div id="syllabus-container"
+                                class="space-y-2 max-h-[600px] overflow-y-auto custom-scrollbar pr-1">
+                                <!-- Dynamic Rendered Lessons -->
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </main>
         </div>
-    </footer>
+
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast"
+        class="fixed bottom-5 right-5 bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center space-x-3 text-sm z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+        <span id="toast-msg">Notification</span>
+    </div>
+
+    <script>
+        // 12 Lessons Syllabus Data
+        const lessons = [
+            { id: 1, title: 'Introduction to Full-Stack Development', duration: '12 min', completed: true },
+            { id: 2, title: 'HTML, CSS & JavaScript Fundamentals', duration: '20 min', completed: true },
+            { id: 3, title: 'Setting Up the Development Environment', duration: '18 min', completed: false, desc: 'In this lesson, you will learn how to set up your development environment, install Node.js, npm and Vite, and create your first React project.' },
+            { id: 4, title: 'React Basics', duration: '22 min', completed: false, desc: 'Master JSX syntax, components structure, props, and standard React app organization.' },
+            { id: 5, title: 'State and Props in React', duration: '25 min', completed: false, desc: 'Learn interactive state management using useState hook and component communication.' },
+            { id: 6, title: 'Backend with Node.js & Express', duration: '28 min', completed: false, desc: 'Build scalable RESTful API endpoints using Node.js and Express framework.' },
+            { id: 7, title: 'Database with MongoDB', duration: '20 min', completed: false, desc: 'Store and query application data with MongoDB Atlas and Mongoose ORM.' },
+            { id: 8, title: 'API Integration', duration: '18 min', completed: false, desc: 'Connect React frontend clients to Express backend services with Axios.' },
+            { id: 9, title: 'Authentication & Authorization', duration: '24 min', completed: false, desc: 'Implement secure user signin, JWT tokens, and encrypted password storage.' },
+            { id: 10, title: 'Deploying to Production', duration: '16 min', completed: false, desc: 'Deploy web frontend and backend APIs live on cloud servers.' },
+            { id: 11, title: 'Project Build (Part 1)', duration: '30 min', completed: false, desc: 'Design microservices structure and construct capstone project APIs.' },
+            { id: 12, title: 'Project Build (Part 2)', duration: '32 min', completed: false, desc: 'Build responsive UI components and connect full-stack application pipeline.' }
+        ];
+
+        let activeLessonId = 3;
+        let isPlaying = false;
+        let currentUser = null;
+
+        // Initialize App State on Load
+        window.onload = function () {
+            checkEnrollmentState();
+        };
+
+        // Check if user is already enrolled
+        function checkEnrollmentState() {
+            const savedUser = localStorage.getItem('learntech_user');
+            if (savedUser) {
+                currentUser = JSON.parse(savedUser);
+                showDashboardPage();
+            } else {
+                showCatalogPage();
+            }
+        }
+
+        // Handle Registration Form Submission
+        function handleRegistration(e) {
+            e.preventDefault();
+
+            const fullName = document.getElementById('input-fullname').value.trim();
+            const email = document.getElementById('input-email').value.trim();
+            const phone = document.getElementById('input-phone').value.trim();
+
+            if (!fullName || !email) return;
+
+            currentUser = {
+                fullName: fullName,
+                email: email,
+                phone: phone,
+                enrolledAt: new Date().toISOString()
+            };
+
+            // Save user to state/localStorage
+            localStorage.setItem('learntech_user', JSON.stringify(currentUser));
+
+            closeEnrollModal();
+            showToast(`Welcome ${fullName}! Registration Successful.`);
+
+            // Transition smoothly to LMS Dashboard
+            setTimeout(() => {
+                showDashboardPage();
+            }, 300);
+        }
+
+        // Show Dashboard View
+        function showDashboardPage() {
+            document.getElementById('top-nav').classList.add('hidden');
+            document.getElementById('view-catalog').classList.add('hidden');
+            document.getElementById('view-dashboard').classList.remove('hidden');
+            document.getElementById('view-dashboard').classList.add('flex');
+
+            if (currentUser) {
+                document.getElementById('user-display-name').innerText = currentUser.fullName;
+            }
+
+            renderSyllabus();
+        }
+
+        // Show Catalog View
+        function showCatalogPage() {
+            document.getElementById('top-nav').classList.remove('hidden');
+            document.getElementById('view-catalog').classList.remove('hidden');
+            document.getElementById('view-dashboard').classList.add('hidden');
+            document.getElementById('view-dashboard').classList.remove('flex');
+        }
+
+        // Open Modal
+        function openEnrollModal() {
+            const modal = document.getElementById('enroll-modal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.children[0].classList.remove('scale-95');
+            modal.children[0].classList.add('scale-100');
+        }
+
+        // Close Modal
+        function closeEnrollModal() {
+            const modal = document.getElementById('enroll-modal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.children[0].classList.remove('scale-100');
+            modal.children[0].classList.add('scale-95');
+        }
+
+        // Render Syllabus List
+        function renderSyllabus() {
+            const container = document.getElementById('syllabus-container');
+            container.innerHTML = '';
+
+            let completedCount = 0;
+
+            lessons.forEach(lesson => {
+                const isActive = lesson.id === activeLessonId;
+                if (lesson.completed) completedCount++;
+
+                let iconHtml = '';
+                if (lesson.completed) {
+                    iconHtml = `<div class="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center text-[10px] flex-shrink-0">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>`;
+                } else if (isActive) {
+                    iconHtml = `<div class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] flex-shrink-0 shadow-sm">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>`;
+                } else {
+                    iconHtml = `<div class="w-5 h-5 rounded-full bg-slate-200 text-slate-400 flex items-center justify-center text-[10px] flex-shrink-0">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>`;
+                }
+
+                const itemHtml = `
+                    <div onclick="selectLesson(${lesson.id})" class="p-3 rounded-xl cursor-pointer transition-all border ${isActive ? 'bg-blue-50/80 border-blue-200 shadow-sm' : 'hover:bg-slate-50 border-transparent'} flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            ${iconHtml}
+                            <div>
+                                <h4 class="text-xs font-semibold ${isActive ? 'text-blue-700 font-bold' : 'text-slate-700'}">
+                                    ${lesson.id}. ${lesson.title}
+                                </h4>
+                                <span class="text-[11px] text-slate-400 flex items-center space-x-1 mt-0.5">
+                                    <i class="fa-regular fa-clock text-[9px]"></i>
+                                    <span>${lesson.duration}</span>
+                                </span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-[10px] ${isActive ? 'text-blue-500 transform rotate-180' : 'text-slate-300'} transition-transform"></i>
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', itemHtml);
+            });
+
+            // Update Header Progress Bar
+            const percent = Math.round((completedCount / lessons.length) * 100);
+            document.getElementById('progress-text').innerText = `${completedCount} / ${lessons.length} lessons completed`;
+            document.getElementById('progress-percent').innerText = `${percent}%`;
+            document.getElementById('progress-bar').style.width = `${percent}%`;
+        }
+
+        // Select Lesson Action
+        function selectLesson(id) {
+            activeLessonId = id;
+            const selected = lessons.find(l => l.id === id);
+            if (!selected) return;
+
+            document.getElementById('current-lesson-heading').innerText = `Lesson ${selected.id}: ${selected.title}`;
+            document.getElementById('current-lesson-duration').innerText = selected.duration;
+            document.getElementById('lesson-desc-text').innerText = selected.desc || 'In this lesson, you will master real-world full-stack development skills through structured hands-on modules.';
+            document.getElementById('video-time-text').innerText = `00:00 / ${selected.duration}`;
+
+            renderSyllabus();
+            showToast(`Loaded Lesson ${id}: ${selected.title}`);
+        }
+
+        // Toggle Video Play
+        function toggleVideoPlay() {
+            isPlaying = !isPlaying;
+            const mainIcon = document.getElementById('main-play-icon');
+            const subIcon = document.getElementById('sub-play-icon');
+
+            if (isPlaying) {
+                mainIcon.className = 'fa-solid fa-pause text-2xl';
+                subIcon.className = 'fa-solid fa-pause';
+                showToast('Playback started');
+            } else {
+                mainIcon.className = 'fa-solid fa-play text-2xl ml-1';
+                subIcon.className = 'fa-solid fa-play';
+                showToast('Playback paused');
+            }
+        }
+
+        // Timeline click simulation
+        function seekVideo(e) {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const pos = (e.clientX - rect.left) / rect.width;
+            document.getElementById('video-bar').style.width = `${pos * 100}%`;
+        }
+
+        // Reset user registration (logout)
+        function resetRegistration() {
+            localStorage.removeItem('learntech_user');
+            currentUser = null;
+            showCatalogPage();
+            showToast('Registration reset. You can register again.');
+        }
+
+        // Navbar active tab state
+        function setActiveNav(element) {
+            document.querySelectorAll('.nav-item').forEach(item => {
+                if (!item.classList.contains('text-rose-400')) {
+                    item.className = 'nav-item flex items-center space-x-3.5 px-4 py-3 rounded-xl text-slate-300 hover:bg-slate-800/60 hover:text-white transition-all font-medium text-sm';
+                }
+            });
+            element.className = 'nav-item flex items-center space-x-3.5 px-4 py-3 rounded-xl bg-blue-600 text-white font-medium text-sm shadow-md shadow-blue-600/30';
+        }
+
+        // Toast Helper
+        function showToast(text) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            toastMsg.innerText = text;
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 2500);
+        }
+    </script>
 </body>
 
 </html>
