@@ -4,128 +4,474 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Training Center - About Us</title>
+    <title>IT Training Center</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="google-site-verification" content="NUs0z4lpse6aPyemOvIoXD45K1vRh1wW2Qp7z5XdLX0" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body class="bg-slate-50 text-slate-800 font-sans">
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen pb-20 md:pb-0">
+
+    <header class="bg-white sticky top-0 z-50 border-b border-slate-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="bg-blue-600 text-white p-2.5 rounded-xl shadow-md">
-                    <i class="fa-solid fa-graduation-cap text-xl"></i>
+            <!-- Logo -->
+            <div class="flex items-center space-x-3 cursor-pointer group" onclick="switchPage('home')">
+                <div
+                    class="bg-blue-600 group-hover:bg-blue-700 text-white p-2.5 rounded-xl flex items-center justify-center font-extrabold text-xl shadow-md transition transform group-hover:scale-105">
+                    <i class="fa-solid fa-graduation-cap"></i>
                 </div>
                 <div>
-                    <a href="index.html" class="text-xl font-bold text-slate-900 leading-none block">IT Training
-                        Center</a>
-                    <span class="text-xs text-slate-500 font-medium">Learn · Build · Grow</span>
+                    <span class="text-xl font-bold tracking-tight text-slate-900 block leading-none">IT <span
+                            class="text-blue-600">Training Center</span></span>
+                    <span class="text-xs text-slate-500 font-medium">Professional IT Academy</span>
                 </div>
             </div>
 
-            <!-- Navigation Links -->
-            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
-                <a href="index.html" class="hover:text-blue-600 transition">Home</a>
-                <a href="courses.html" class="hover:text-blue-600 transition">Courses</a>
-                <a href="about.html" class="text-blue-600 border-b-2 border-blue-600 pb-1">About Us</a>
-                <a href="contact.html" class="hover:text-blue-600 transition">Contact Us</a>
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-slate-600">
+                <button onclick="switchPage('home')" id="nav-home"
+                    class="nav-link text-blue-600 font-semibold transition hover:text-blue-600 py-2 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-600">Home</button>
+                <button onclick="switchPage('courses')" id="nav-courses"
+                    class="nav-link transition hover:text-blue-600 py-2 relative hover:after:w-full after:transition-all after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600">Courses</button>
+                <button onclick="switchPage('about')" id="nav-about"
+                    class="nav-link transition hover:text-blue-600 py-2 relative hover:after:w-full after:transition-all after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600">About
+                    Us</button>
+                <button onclick="switchPage('contact')" id="nav-contact"
+                    class="nav-link transition hover:text-blue-600 py-2 relative hover:after:w-full after:transition-all after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600">Contact</button>
             </nav>
 
-            <div class="hidden lg:flex items-center space-x-4">
-                <a href="contact.html" class="bg-blue-600 text-white text-xs font-bold px-5 py-2.5 rounded-xl">Get In
-                    Touch</a>
+            <!-- Header Action CTA -->
+            <div class="hidden md:flex items-center space-x-4">
+                <button onclick="openConsultationModal()"
+                    class="text-blue-600 bg-blue-50 hover:bg-blue-100 font-semibold px-5 py-2.5 rounded-xl transition duration-200 transform hover:-translate-y-0.5">
+                    Free Consultation
+                </button>
+                <button o IM °×° PHORS WEP-A-2027🐼, [9/29/2026 8:31 AM] nclick="switchPage('courses')"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-xl shadow-sm hover:shadow transition duration-200 transform hover:-translate-y-0.5">
+                    Get Started
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button onclick="toggleMobileMenu()"
+                class="md:hidden text-slate-700 hover:text-blue-600 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars" id="mobile-menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <button onclick="switchPage('home'); toggleMobileMenu();"
+                class="block w-full text-left px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-600">Home</button>
+            <button onclick="switchPage('courses'); toggleMobileMenu();"
+                class="block w-full text-left px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-600">Courses</button>
+            <button onclick="switchPage('about'); toggleMobileMenu();"
+                class="block w-full text-left px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-600">About
+                Us</button>
+            <button onclick="switchPage('contact'); toggleMobileMenu();"
+                class="block w-full text-left px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-600">Contact</button>
+            <div class="pt-2 flex flex-col space-y-2">
+                <button onclick="openConsultationModal(); toggleMobileMenu();"
+                    class="w-full text-center text-blue-600 bg-blue-50 hover:bg-blue-100 font-semibold py-2.5 rounded-xl transition">Free
+                    Consultation</button>
+                <button onclick="switchPage('courses'); toggleMobileMenu();"
+                    class="w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-xl transition">Get
+                    Started</button>
             </div>
         </div>
     </header>
 
-    <!-- About Content -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid md:grid-cols-2 gap-12 items-center">
-        <div>
-            <span class="text-xs font-bold bg-blue-100 text-blue-700 px-3 py-1 rounded-full uppercase">ABOUT US · OUR
-                MISSION</span>
-            <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-4 mb-6">
-                Empowering Cambodia's Next Generation of <span class="text-blue-600">Tech Leaders</span>
-            </h1>
-            <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                Founded in Toul Kork, Phnom Penh, IT Training Center bridges the critical gap between academic theory
-                and real-world IT industry demand. We prepare aspiring developers, network architects, and cybersecurity
-                specialists with pragmatic, project-based engineering curricula.
-            </p>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100">
-                    <i class="fa-solid fa-circle-check text-blue-600 text-lg mt-0.5"></i>
-                    <div>
-                        <h4 class="text-xs font-bold text-slate-900">Modern Curriculum</h4>
-                        <p class="text-[11px] text-slate-500 mt-1">Aligned directly with global tech standards.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100">
-                    <i class="fa-solid fa-circle-check text-blue-600 text-lg mt-0.5"></i>
-                    <div>
-                        <h4 class="text-xs font-bold text-slate-900">Expert Instructors</h4>
-                        <p class="text-[11px] text-slate-500 mt-1">Led by veteran software engineers.</p>
-                    </div>
-                </div>
+    <!-- ==================== ABOUT PAGE ==================== -->
+    <section id="page-about" class="page-view hidden animate-fade">
+        <!-- Header Banner -->
+        <div class="bg-gradient-to-br from-slate-900 via-blue-950 to-blue-900 text-white py-16 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto text-center space-y-4">
+                <span
+                    class="bg-blue-500/20 text-blue-300 px-4 py-1.5 rounded-full text-sm font-semibold border border-blue-400/30">About
+                    ITTC</span>
+                <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">Shaping the Future of Tech in
+                    Cambodia</h1>
+                <p class="text-slate-300 text-lg max-w-2xl mx-auto">Discover our mission, our world-class
+                    facilities, and the expert leaders driving our academy.</p>
             </div>
         </div>
-        <div class="relative">
-            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&auto=format&fit=crop&q=80"
-                alt="Tech Center Lab" class="rounded-3xl shadow-xl">
-            <div
-                class="absolute bottom-4 left-4 bg-white/90 backdrop-blur p-3 rounded-2xl border border-white shadow-md flex items-center gap-3">
-                <i class="fa-solid fa-location-dot text-blue-600 text-xl"></i>
+
+        <!-- Vision & Mission -->
+        <div class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <p class="text-xs font-bold">Central Campus</p>
-                    <p class="text-[10px] text-slate-500">Toul Kork, Phnom Penh</p>
+                    <span class="text-blue-600 font-bold uppercase tracking-wider text-sm">Our Mission</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 mt-1 mb-6">Bridging the Tech Skills Gap in
+                        Southeast Asia</h2>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Founded in Phnom Penh, IT Training Center (ITTC) was established with a singular vision: to
+                        empower ambitious individuals with cutting-edge technical capabilities that meet
+                        international industry standards.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Through rigorous project-based learning, mentorship from seasoned software engineers, and
+                        strong corporate partnerships, we transform beginners into confident tech professionals
+                        ready to innovate.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=500&q=80"
+                        alt="Campus Life"
+                        class="rounded-2xl shadow-md w-full h-[240px] object-cover hover:opacity-95 transition">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=500&q=80"
+                        alt="Lab"
+                        class="rounded-2xl shadow-md w-full h-[240px] object-cover mt-6 hover:opacity-95 transition">
+                </div>
+            </div>
+        </div>
+
+        <!-- Meet Our Instructors -->
+        <div class="bg-slate-100 py-16 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-blue-600 font-bold uppercase tracking-wider text-sm">Expert Faculty</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Learn From Industry Leaders</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition text-center pb-6 group">
+                        <img src="https://i.pinimg.com/1200x/37/1a/57/371a573a64ba1dbdf7403e5f90226ce2.jpg"
+                            alt="Instructor"
+                            class="w-full h-56 object-cover mb-4 group-hover:scale-105 transition duration-300">
+                        <h3 class="font-bold text-slate-900 text-lg">Dr. Vannak Sok</h3>
+                        <p class="text-blue-600 text-sm font-medium mb-3">Lead Full-Stack Architect</p>
+                        <p class="text-slate-500 text-xs px-4">Ex-Silicon Valley engineer with 12+ years building
+                            enterprise cloud solutions.</p>
+                    </div>
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition text-center pb-6 group">
+                        <img src="./pic/pic2.png" alt="Instructor"
+                            class="w-full h-56 object-cover mb-4 group-hover:scale-105 transition duration-300">
+                        <h3 class="font-bold text-slate-900 text-lg">THORN Vanna</h3>
+                        <p class="text-blue-600 text-sm font-medium mb-3">Data Science Lead</p>
+                        <p class="text-slate-500 text-xs px-4">Specialist in machine learning models and predictive
+                            analytics for banking.</p>
+                    </div>
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition text-center pb-6 group">
+                        <img src="./pic/pic4.png" alt="Instructor"
+                            class="w-full h-56 object-cover mb-4 group-hover:scale-105 transition duration-300">
+                        <h3 class="font-bold text-slate-900 text-lg">CHHOUEN Dalin</h3>
+                        <p class="text-blue-600 text-sm font-medium mb-3">WEP Developer</p>
+                        <p class="text-slate-500 text-xs px-4">Certified Ethical Hacker (CEH) with extensive
+                            penetration testing experience.</p>
+                    </div>
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition text-center pb-6 group">
+                        <img src="https://i.pinimg.com/736x/58/d9/e7/58d9e7ed2a8794a422cb716cbc655750.jpg"
+                            alt="Instructor"
+                            class="w-full h-56 object-cover mb-4 group-hover:scale-105 transition duration-300">
+                        <h3 class="font-bold text-slate-900 text-lg">Rithy Khem</h3>
+                        <p class="text-blue-600 text-sm font-medium mb-3">Senior DevOps Engineer</p>
+                        <p class="text-slate-500 text-xs px-4">Expert in AWS architecture, Docker containerization,
+                            and CI/CD pipelines.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section class="bg-blue-50/50 py-16 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">WHY CHOOSE US</span>
-            <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mt-2 mb-12">Your Technical Career Is Our
-                Highest Priority</h2>
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav
+        class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 z-50 shadow-lg flex justify-around items-center h-16 px-2">
+        <button onclick="switchPage('home')" id="mob-nav-home"
+            class="mob-nav-btn flex flex-col items-center justify-center flex-1 py-1 text-blue-600 font-bold transition">
+            <i class="fa-solid fa-house text-lg mb-0.5"></i>
+            <span class="text-[11px] leading-tight">Home</span>
+        </button>
+        <button onclick="switchPage('courses')" id="mob-nav-courses"
+            class="mob-nav-btn flex flex-col items-center justify-center flex-1 py-1 text-slate-500 hover:text-blue-600 transition">
+            <i class="fa-solid fa-book-open text-lg mb-0.5"></i>
+            <span class="text-[11px] leading-tight">Courses</span>
+        </button>
+        <button onclick="switchPage('about')" id="mob-nav-about"
+            class="mob-nav-btn flex flex-col items-center justify-center flex-1 py-1 text-slate-500 hover:text-blue-600 transition">
+            <i class="fa-solid fa-circle-info text-lg mb-0.5"></i>
+            <span class="text-[11px] leading-tight">About Us</span>
+        </button>
+        <button onclick="switchPage('contact')" id="mob-nav-contact"
+            class="mob-nav-btn flex flex-col items-center justify-center flex-1 py-1 text-slate-500 hover:text-blue-600 transition">
+            <i class="fa-solid fa-comments text-lg mb-0.5"></i>
+            <span class="text-[11px] leading-tight">Contact</span>
+        </button>
+    </nav>
 
-            <div class="grid md:grid-cols-4 gap-6">
-                <div class="bg-white p-6 rounded-2xl border border-slate-100 text-left">
-                    <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-4"><i
-                            class="fa-solid fa-code"></i></div>
-                    <h3 class="text-sm font-bold text-slate-900 mb-2">Hands-on Practice</h3>
-                    <p class="text-xs text-slate-500">80% of class time is spent developing clean code and real apps.
-                    </p>
+    <!-- Enrollment / Consultation Modal -->
+    <div id="action-modal"
+        class="fixed inset-0 z-[100] hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white w-full max-w-md rounded-3xl shadow-2xl p-8 relative my-auto animate-scale-up">
+            <button onclick="closeModal()"
+                class="absolute top-6 right-6 text-slate-400 hover:text-slate-600 text-xl font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-title-area" class="mb-6">
+                <h3 id="modal-title" class="text-2xl font-bold text-slate-900">Enroll in Course</h3>
+                <p id="modal-subtitle" class="text-sm text-slate-500 mt-1">Fill in your details to secure your spot.</p>
+            </div>
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Your Full Name</label>
+                    <input type="text" required placeholder="Sok Piseth"
+                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
                 </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-100 text-left">
-                    <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-4"><i
-                            class="fa-solid fa-user-graduate"></i></div>
-                    <h3 class="text-sm font-bold text-slate-900 mb-2">Expert Instructors</h3>
-                    <p class="text-xs text-slate-500">Study directly under senior system architects and lead engineers.
-                    </p>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Email Address</label>
+                    <input type="email" required placeholder="piseth@example.com"
+                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
                 </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-100 text-left">
-                    <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-4"><i
-                            class="fa-solid fa-handshake"></i></div>
-                    <h3 class="text-sm font-bold text-slate-900 mb-2">Career Placement</h3>
-                    <p class="text-xs text-slate-500">Personalized mentoring from CV crafting to tech job referrals.</p>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Phone / Telegram
+                        Number</label>
+                    <input type="tel" required placeholder="+855 12 345 678"
+                        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
                 </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-100 text-left">
-                    <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-4"><i
-                            class="fa-solid fa-shield-halved"></i></div>
-                    <h3 class="text-sm font-bold text-slate-900 mb-2">Recognized Credential</h3>
-                    <p class="text-xs text-slate-500">Earn verified digital diplomas recognized by employers nationwide.
-                    </p>
+                <button type="submit"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl shadow transition mt-2">
+                    Confirm Submission
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Toast Box -->
+    <div id="toast"
+        class="fixed bottom-24 sm:bottom-8 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:right-6 z-[110] hidden bg-slate-900 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center space-x-3 border border-slate-700 w-11/12 max-w-sm">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-xl flex-shrink-0"></i>
+        <div>
+            <h4 class="font-bold text-sm" id="toast-title">Success!</h4>
+            <p class="text-xs text-slate-300" id="toast-desc">Your request has been submitted successfully.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 pt-16 pb-16 md:pb-12 border-t border-slate-800">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-slate-800">
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                    <div
+                        class="bg-blue-600 text-white p-2 rounded-xl flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <span class="text-xl font-bold text-white tracking-tight">IT Academy</span>
+                </div>
+                <p class="text-sm leading-relaxed text-slate-400">
+                    Empowering Cambodia's youth and professionals with world-class IT education, hands-on bootcamps, and
+                    career placement.
+                </p>
+                <div class="flex space-x-4 text-lg">
+                    <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
+            <div>
+                <h4 class="text-white font-bold text-base mb-4">Quick Links</h4>
+                <ul class="space-y-2.5 text-sm">
+                    <li><button onclick="switchPage('home')" class="hover:text-white transition">Home</button></li>
+                    <li><button onclick="switchPage('courses')" class="hover:text-white transition">All IT
+                            Subjects</button></li>
+                    <li><button onclick="switchPage('about')" class="hover:text-white transition">About Us</button></li>
+                    <li><button onclick="switchPage('contact')" class="hover:text-white transition">Contact Us</button>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold text-base mb-4">Top Programs</h4>
+                <ul class="space-y-2.5 text-sm">
+                    <li><button onclick="switchPage('courses')" class="hover:text-white transition">Full-Stack Web
+                            Dev</button></li>
+                    <li><button onclick="switchPage('courses')" class="hover:text-white transition">Data Science &
+                            AI</button></li>
+                    <li><button onclick="switchPage('courses')"
+                            class="hover:text-white transition">Cybersecurity</button></li>
+                    <li><button onclick="switchPage('courses')" class="hover:text-white transition">Flutter Mobile
+                            App</button></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold text-base mb-4">Contact Info</h4>
+                <ul class="space-y-2.5 text-sm">
+                    <li class="flex items-center space-x-2"><i
+                            class="fa-solid fa-location-dot text-blue-500"></i><span>Stueng Mean Chey, Phnom
+                            Penh</span></li>
+                    <li class="flex items-center space-x-2"><i
+                            class="fa-solid fa-envelope text-blue-500"></i><span>info@ittrainingcenter.com</span></li>
+                    <li class="flex items-center space-x-2"><i class="fa-solid fa-phone text-blue-500"></i><span>+855 23
+                            999 888</span></li>
+                </ul>
+            </div>
         </div>
-    </section>
-
-    <footer class="bg-white border-t border-slate-200 mt-20 pt-12 pb-8">
-        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-400">
-            <p>© 2026 IT Training Center. All rights reserved.</p>
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+            <p>&copy; 2026 IT Training Center (ITTC). All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 sm:mt-0">
+                <a href="#" class="hover:underline">Privacy Policy</a>
+                <a href="#" class="hover:underline">Terms of Service</a>
+            </div>
         </div>
     </footer>
 
+    <!-- Interactive Script -->
+    <script>
+        // Page Switching Logic with Active Navbar and Bottom Bar sync
+        function switchPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-view');
+            pages.forEach(p => p.classList.add('hidden'));
+
+            // Show selected page
+            const targetPage = document.getElementById('page-' + pageId);
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Update desktop navbar active styles
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('text-blue-600', 'font-semibold', 'after:w-full');
+                link.classList.add('text-slate-600');
+            });
+
+            const activeNav = document.getElementById('nav-' + pageId);
+            if (activeNav) {
+                activeNav.classList.remove('text-slate-600');
+                activeNav.classList.add('text-blue-600', 'font-semibold');
+            }
+
+            // Update mobile bottom nav active styles
+            const mobBtns = document.querySelectorAll('.mob-nav-btn');
+            mobBtns.forEach(btn => {
+                btn.classList.remove('text-blue-600', 'font-bold');
+                btn.classList.add('text-slate-500');
+            });
+
+            const activeMobBtn = document.getElementById('mob-nav-' + pageId);
+            if (activeMobBtn) {
+                activeMobBtn.classList.remove('text-slate-500');
+                activeMobBtn.classList.add('text-blue-600', 'font-bold');
+            }
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Modal Handling
+        function openConsultationModal() {
+            document.getElementById('modal-title').innerText = 'Book Free Consultation';
+            document.getElementById('modal-subtitle').innerText = 'Speak with our academic advisors to find the right path for your career.';
+            document.getElementById('action-modal').classList.remove('hidden');
+        }
+
+        function openEnrollModal(courseName) {
+            document.getElementById('modal-title').innerText = 'Enroll in ' + courseName;
+            document.getElementById('modal-subtitle').innerText = 'Fill in your details to secure your admission for the upcoming cohort.';
+            document.getElementById('action-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.get
+            ElementById('action-modal').classList.add('hidden');
+        }
+
+        function handleModalSubmit(event) {
+            event.preventDefault();
+            closeModal();
+            showToast('Submission Successful!', 'We have received your request and will contact you shortly.');
+        }
+
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            showToast('Inquiry Received!', 'Thank you for reaching out. Our program counselor will call you within 1 business day.');
+            event.target.reset();
+        }
+
+        // Toast notification helper
+        function showToast(title, desc) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-title').innerText = title;
+            document.getElementById('toast-desc').innerText = desc;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+
+        // Course filtering by category
+        function filterCategory(category) {
+            // Update button styles
+            const buttons = document.querySelectorAll('.cat-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white', 'shadow-sm');
+                btn.classList.add('bg-slate-100', 'text-slate-600');
+            });
+            const activeBtn = document.getElementById('cat-' + category);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-slate-100', 'text-slate-600');
+                activeBtn.classList.add('bg-blue-600', 'text-white', 'shadow-sm');
+            }
+
+            // Filter cards
+            const cards = document.querySelectorAll('.course-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Search courses in real-time
+        function filterCourses() {
+            const query = document.getElementById('course-search').value.toLowerCase();
+            const cards = document.querySelectorAll('.course-card');
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+    </script>
+
 </body>
+
 </html>
