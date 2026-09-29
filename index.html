@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="public/icon.png" type="image/x-icon">
     <script>
         tailwind.config = {
             theme: {
@@ -947,14 +948,28 @@
             menu.classList.toggle('hidden');
         }
 
+        const COURSE_LIVE_LINKS = {
+            'full-stack web development': 'https://www.youtube.com/embed/Hl7diL7SFw8',
+            'software dev': 'https://www.youtube.com/embed/3JluqTojuME',
+            'data science & analytics': 'https://www.youtube.com/embed/Ke90Tje7VS0',
+            'cybersecurity professional': 'https://www.youtube.com/embed/Hl7diL7SFw8',
+            'ui/ux product design masterclass': 'https://www.youtube.com/embed/3JluqTojuME',
+            'flutter mobile app development': 'https://www.youtube.com/embed/Ke90Tje7VS0',
+            'aws cloud computing & devops': 'https://www.youtube.com/embed/Ke90Tje7VS0'
+        };
+
+        let currentCourseName = '';
+
         // Modal Handling
         function openConsultationModal() {
+            currentCourseName = '';
             document.getElementById('modal-title').innerText = 'Book Free Consultation';
             document.getElementById('modal-subtitle').innerText = 'Speak with our academic advisors to find the right path for your career.';
             document.getElementById('action-modal').classList.remove('hidden');
         }
 
         function openEnrollModal(courseName) {
+            currentCourseName = courseName;
             document.getElementById('modal-title').innerText = 'Enroll in ' + courseName;
             document.getElementById('modal-subtitle').innerText = 'Fill in your details to secure your admission for the upcoming cohort.';
             document.getElementById('action-modal').classList.remove('hidden');
@@ -966,7 +981,15 @@
 
         function handleModalSubmit(event) {
             event.preventDefault();
+            const courseKey = (currentCourseName || '').toLowerCase().trim();
+            const liveLink = COURSE_LIVE_LINKS[courseKey];
             closeModal();
+
+            if (liveLink) {
+                window.location.href = liveLink;
+                return;
+            }
+
             showToast('Submission Successful!', 'We have received your request and will contact you shortly.');
         }
 
