@@ -1045,6 +1045,66 @@
         </div>
     </div>
 
+    <div id="success-modal"
+        class="fixed inset-0 z-[120] hidden bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-md rounded-3xl shadow-2xl p-8 text-center">
+            <div class="w-20 h-20 mx-auto bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-5">
+                <i class="fa-solid fa-check text-4xl"></i>
+            </div>
+            <h2 class="text-3xl font-extrabold text-slate-900">Enrollment Successful!</h2>
+            <p class="text-slate-500 mt-2">Welcome to IT Training Center</p>
+            <div class="mt-6 bg-slate-50 rounded-2xl p-5 text-left">
+                <p class="text-xs uppercase font-semibold text-slate-400">Student</p>
+                <p id="success-student-name" class="text-lg font-bold text-slate-900 mt-1"></p>
+                <p class="text-xs uppercase font-semibold text-slate-400 mt-4">Enrolled Course</p>
+                <p id="success-course-name" class="text-lg font-bold text-blue-600 mt-1"></p>
+            </div>
+            <button id="start-learning-btn" type="button"
+                class="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl shadow-lg transition">
+                <i class="fa-solid fa-play mr-2"></i>Start Learning
+            </button>
+            <button type="button" onclick="closeSuccessModal()" class="mt-3 text-sm text-slate-500 hover:text-slate-800">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <div id="learning-dashboard" class="fixed inset-0 z-[130] hidden bg-slate-50 overflow-y-auto">
+        <header class="bg-white border-b border-slate-200 sticky top-0 z-10">
+            <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+                <div>
+                    <p class="text-xs text-slate-400 font-semibold">IT TRAINING CENTER</p>
+                    <h2 class="font-bold text-slate-900">Learning Dashboard</h2>
+                </div>
+                <button type="button" onclick="closeLearningDashboard()" class="text-slate-500 hover:text-red-500 px-3 py-2">
+                    <i class="fa-solid fa-xmark mr-1"></i>Close
+                </button>
+            </div>
+        </header>
+        <main class="max-w-6xl mx-auto px-4 py-10">
+            <div class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-3xl p-8 text-white shadow-xl">
+                <p class="text-blue-200 text-sm font-semibold">WELCOME TO YOUR COURSE</p>
+                <h1 class="text-3xl sm:text-4xl font-extrabold mt-1">Hello, <span id="learning-student-name"></span>!</h1>
+                <p class="text-blue-100 mt-3">Your course is ready. Start with the video lesson below.</p>
+            </div>
+            <section class="mt-8">
+                <p class="text-sm text-blue-600 font-semibold uppercase">Your Course</p>
+                <h2 id="learning-course-name" class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1"></h2>
+                <div class="mt-6 bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <div class="p-5">
+                        <p class="text-xs text-blue-600 font-bold uppercase">Lesson 1</p>
+                        <h3 id="learning-video-title" class="text-xl font-bold text-slate-900 mt-1"></h3>
+                    </div>
+                    <div class="aspect-video bg-black">
+                        <iframe id="learning-video" class="w-full h-full" src="" title="Course video lesson"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
     <!-- Notification Toast Box -->
     <div id="toast"
         class="fixed bottom-24 sm:bottom-8 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:right-6 z-[110] hidden bg-slate-900 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center space-x-3 border border-slate-700 w-11/12 max-w-sm">
@@ -1173,14 +1233,17 @@
             menu.classList.toggle('hidden');
         }
 
-        const COURSE_LIVE_LINKS = {
-            'full-stack web development': 'https://www.youtube.com/embed/Hl7diL7SFw8',
-            'software dev': 'https://www.youtube.com/embed/3JluqTojuME',
-            'data science & analytics': 'https://www.youtube.com/embed/Ke90Tje7VS0',
-            'cybersecurity professional': 'https://www.youtube.com/embed/Hl7diL7SFw8',
-            'ui/ux product design masterclass': 'https://www.youtube.com/embed/3JluqTojuME',
-            'flutter mobile app development': 'https://www.youtube.com/embed/Ke90Tje7VS0',
-            'aws cloud computing & devops': 'https://www.youtube.com/embed/Ke90Tje7VS0'
+        const COURSE_VIDEO_IDS = {
+            'full-stack web development': 'Ubg3PenEdNw',
+            'software dev': 'Ubg3PenEdNw',
+            'data science & analytics': 'O2Q7RXVKbJI',
+            'cybersecurity professional': 'lpa8uy4DyMo',
+            'ui/ux product design masterclass': 'j6Ule7GXaRs',
+            'ui/ux design & wireframingt': 'j6Ule7GXaRs',
+            'flutter mobile app development': 'yye7rSsiV6k',
+            'mobile app development': 'yye7rSsiV6k',
+            'aws cloud computing & devops': '9oJySubZRSA',
+            'cloud devops & architecture': '9oJySubZRSA'
         };
 
         let currentCourseName = '';
@@ -1206,16 +1269,56 @@
 
         function handleModalSubmit(event) {
             event.preventDefault();
-            const courseKey = (currentCourseName || '').toLowerCase().trim();
-            const liveLink = COURSE_LIVE_LINKS[courseKey];
-            closeModal();
-
-            if (liveLink) {
-                window.location.href = liveLink;
+            if (!currentCourseName) {
+                closeModal();
+                showToast('Submission Successful!', 'We have received your request and will contact you shortly.');
+                event.target.reset();
                 return;
             }
 
-            showToast('Submission Successful!', 'We have received your request and will contact you shortly.');
+            const form = event.currentTarget;
+            const name = form.querySelector('input[type="text"]').value.trim();
+            const email = form.querySelector('input[type="email"]').value.trim();
+            const phone = form.querySelector('input[type="tel"]').value.trim();
+            const enrolledCourse = currentCourseName;
+
+            localStorage.setItem('studentName', name);
+            localStorage.setItem('studentEmail', email);
+            localStorage.setItem('studentPhone', phone);
+            localStorage.setItem('enrolledCourse', enrolledCourse);
+            localStorage.setItem('isEnrolled', 'true');
+
+            document.getElementById('success-student-name').textContent = name;
+            document.getElementById('success-course-name').textContent = enrolledCourse;
+            closeModal();
+            form.reset();
+            document.getElementById('success-modal').classList.remove('hidden');
+        }
+
+        document.getElementById('start-learning-btn').addEventListener('click', function () {
+            const studentName = localStorage.getItem('studentName') || 'Student';
+            const enrolledCourse = localStorage.getItem('enrolledCourse') || 'Full-Stack Web Development';
+            const courseVideoId = COURSE_VIDEO_IDS[enrolledCourse.toLowerCase().trim()]
+                || COURSE_VIDEO_IDS['full-stack web development'];
+
+            document.getElementById('learning-student-name').textContent = studentName;
+            document.getElementById('learning-course-name').textContent = enrolledCourse;
+            document.getElementById('learning-video-title').textContent = enrolledCourse + ' - Lesson 1';
+            document.getElementById('learning-video').src =
+                `https://www.youtube.com/embed/${courseVideoId}?autoplay=1&rel=0`;
+            document.getElementById('success-modal').classList.add('hidden');
+            document.getElementById('learning-dashboard').classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        });
+
+        function closeSuccessModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+        }
+
+        function closeLearningDashboard() {
+            document.getElementById('learning-dashboard').classList.add('hidden');
+            document.getElementById('learning-video').src = '';
+            document.body.classList.remove('overflow-hidden');
         }
 
         function handleContactSubmit(event) {

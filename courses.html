@@ -467,7 +467,7 @@
 
     <!-- ==================== ENROLLMENT SUCCESS MODAL ==================== -->
 
-    <div id="success-modal"
+    <div id="success-modal-preview"
         class="fixed inset-0 z-[120] hidden bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white w-full max-w-md rounded-3xl shadow-2xl p-8 text-center relative">
 
@@ -492,7 +492,7 @@
                     Student
                 </p>
 
-                <p id="success-student-name" class="text-lg font-bold text-slate-900 mt-1">
+                <p id="success-student-name-preview" class="text-lg font-bold text-slate-900 mt-1">
                     PHORS
                 </p>
 
@@ -500,7 +500,7 @@
                     Enrolled Course
                 </p>
 
-                <p id="success-course-name" class="text-lg font-bold text-blue-600 mt-1">
+                <p id="success-course-name-preview" class="text-lg font-bold text-blue-600 mt-1">
                     Full-Stack Web Development
                 </p>
 
@@ -575,7 +575,7 @@
     </div>
     <!-- LEARNING DASHBOARD -->
     <div id="learning-dashboard" class="fixed inset-0 z-[130] hidden bg-slate-50 overflow-y-auto">
-        <div class="space-y-4">
+        <div class="space-y-4 hidden">
 
             <!-- Lesson 1 -->
             <div class="bg-white rounded-2xl p-5 shadow-sm border">
@@ -1031,11 +1031,11 @@
             'aws cloud computing & devops': 'https://youtu.be/9oJySubZRSA?si=XXGkvDGqKUin_yKR'
         };
 
-        let currentCourseName = '';
+        let selectedCourse = '';
 
         // Modal Handling
         function openConsultationModal() {
-            currentCourseName = '';
+            selectedCourse = '';
             document.getElementById('modal-title').innerText = 'Book Free Consultation';
             document.getElementById('modal-subtitle').innerText = 'Speak with our academic advisors to find the right path for your career.';
             document.getElementById('action-modal').classList.remove('hidden');
@@ -1152,6 +1152,8 @@
 
             document.body.classList.add("overflow-hidden");
 
+            watchLesson(course || "Full-Stack Web Development");
+
         });
 
 
@@ -1184,9 +1186,24 @@
         ========================= */
 
         function watchLesson(lessonName) {
+            const course = localStorage.getItem("enrolledCourse") || "Full-Stack Web Development";
+            const videoUrl = COURSE_LIVE_LINKS[course.toLowerCase()]
+                || COURSE_LIVE_LINKS['full-stack web development'];
+            const parsedUrl = new URL(videoUrl);
+            const videoId = parsedUrl.hostname === 'youtu.be'
+                ? parsedUrl.pathname.slice(1)
+                : parsedUrl.pathname.match(/\/(?:live|embed)\/([^/]+)/)?.[1]
+                    || parsedUrl.searchParams.get('v');
 
-            alert("Opening " + lessonName + " video...");
+            document.getElementById('video-title').textContent = lessonName;
+            document.getElementById('lesson-video').src =
+                `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+            document.getElementById('video-modal').classList.remove('hidden');
+        }
 
+        function closeVideoModal() {
+            document.getElementById('video-modal').classList.add('hidden');
+            document.getElementById('lesson-video').src = '';
         }
 
     </script>
