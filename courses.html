@@ -33,6 +33,27 @@
         }
     </script>
 </head>
+<div id="video-modal" class="fixed inset-0 z-[200] hidden bg-black/70 flex items-center justify-center p-4">
+
+    <div class="bg-white rounded-2xl w-full max-w-4xl overflow-hidden">
+
+        <div class="flex justify-between items-center p-4 border-b">
+            <h2 id="video-title" class="text-xl font-bold">
+                Lesson
+            </h2>
+
+            <button onclick="closeVideoModal()" class="text-2xl text-slate-500">
+                ✕
+            </button>
+        </div>
+
+        <div class="aspect-video bg-black">
+            <iframe id="lesson-video" class="w-full h-full" src="" title="Lesson Video" allowfullscreen>
+            </iframe>
+        </div>
+
+    </div>
+</div>
 
 <body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen pb-20 md:pb-0">
 
@@ -300,7 +321,8 @@
                         <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80"
                             alt="Cloud"
                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <spanclass="absolute top-4 left-4 bg-amber-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase shadow">Cloud
+                        <spanclass="absolute top-4 left-4 bg-amber-600 text-white text-xs px-3 py-1 rounded-full
+                            font-semibold uppercase shadow">Cloud
                             & DevOps</span>
                     </div>
                     <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
@@ -402,28 +424,470 @@
                 <h3 id="modal-title" class="text-2xl font-bold text-slate-900">Enroll in Course</h3>
                 <p id="modal-subtitle" class="text-sm text-slate-500 mt-1">Fill in your details to secure your spot.</p>
             </div>
-            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+
+            <form id="enrollment-form" class="space-y-4">
+
                 <div>
-                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Your Full Name</label>
-                    <input type="text" required placeholder="Sok Piseth"
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">
+                        Your Full Name
+                    </label>
+
+                    <input id="student-name" type="text" required placeholder="PHORS IM"
                         class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
                 </div>
+
                 <div>
-                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Email Address</label>
-                    <input type="email" required placeholder="piseth@example.com"
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">
+                        Email Address
+                    </label>
+
+                    <input id="student-email" type="email" required placeholder="phors@example.com"
                         class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
                 </div>
+
                 <div>
-                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Phone / Telegram
-                        Number</label>
-                    <input type="tel" required placeholder="+855 12 345 678"
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">
+                        Phone / Telegram Number
+                    </label>
+
+                    <input id="student-phone" type="tel" required placeholder="+855 12 345 678"
                         class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
                 </div>
+
                 <button type="submit"
                     class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl shadow transition mt-2">
+                    <i class="fa-solid fa-check mr-2"></i>
                     Confirm Submission
                 </button>
+
             </form>
+        </div>
+    </div>
+
+    <!-- ==================== ENROLLMENT SUCCESS MODAL ==================== -->
+
+    <div id="success-modal"
+        class="fixed inset-0 z-[120] hidden bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-md rounded-3xl shadow-2xl p-8 text-center relative">
+
+            <!-- Success Icon -->
+            <div
+                class="w-20 h-20 mx-auto bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-5">
+                <i class="fa-solid fa-check text-4xl"></i>
+            </div>
+
+            <h2 class="text-3xl font-extrabold text-slate-900">
+                Enrollment Successful!
+            </h2>
+
+            <p class="text-slate-500 mt-2">
+                Welcome to IT Training Center 🎓
+            </p>
+
+            <!-- Student Name -->
+            <div class="mt-6 bg-slate-50 rounded-2xl p-5 text-left">
+
+                <p class="text-xs uppercase font-semibold text-slate-400">
+                    Student
+                </p>
+
+                <p id="success-student-name" class="text-lg font-bold text-slate-900 mt-1">
+                    PHORS
+                </p>
+
+                <p class="text-xs uppercase font-semibold text-slate-400 mt-4">
+                    Enrolled Course
+                </p>
+
+                <p id="success-course-name" class="text-lg font-bold text-blue-600 mt-1">
+                    Full-Stack Web Development
+                </p>
+
+            </div>
+
+            <!-- Start Learning -->
+            <button onclick="startLearning()"
+                class="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl shadow-lg transition">
+                <i class="fa-solid fa-play mr-2"></i>
+                Start Learning
+            </button>
+
+            <button onclick="closeSuccessModal()" class="mt-3 text-sm text-slate-500 hover:text-slate-800">
+                Maybe Later
+            </button>
+
+        </div>
+    </div>
+    <!-- SUCCESS MODAL -->
+    <div id="success-modal"
+        class="fixed inset-0 z-[120] hidden bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+
+        <div class="bg-white w-full max-w-md rounded-3xl shadow-2xl p-8 text-center">
+
+            <div
+                class="w-20 h-20 mx-auto bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-5">
+                <i class="fa-solid fa-check text-4xl"></i>
+            </div>
+
+            <h2 class="text-3xl font-extrabold text-slate-900">
+                Enrollment Successful!
+            </h2>
+
+            <p class="text-slate-500 mt-2">
+                Welcome to IT Training Center 🎓
+            </p>
+
+            <div class="mt-6 bg-slate-50 rounded-2xl p-5 text-left">
+
+                <p class="text-xs uppercase font-semibold text-slate-400">
+                    Student
+                </p>
+
+                <p id="success-student-name" class="text-lg font-bold text-slate-900 mt-1">
+                </p>
+
+                <p class="text-xs uppercase font-semibold text-slate-400 mt-4">
+                    Enrolled Course
+                </p>
+
+                <p id="success-course-name" class="text-lg font-bold text-blue-600 mt-1">
+                </p>
+
+            </div>
+
+            <button id="start-learning-btn" type="button"
+                class="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl shadow-lg transition">
+
+                <i class="fa-solid fa-play mr-2"></i>
+                Start Learning
+
+            </button>
+
+            <button type="button" onclick="closeSuccessModal()"
+                class="mt-3 text-sm text-slate-500 hover:text-slate-800">
+
+                Close
+
+            </button>
+
+        </div>
+    </div>
+    <!-- LEARNING DASHBOARD -->
+    <div id="learning-dashboard" class="fixed inset-0 z-[130] hidden bg-slate-50 overflow-y-auto">
+        <div class="space-y-4">
+
+            <!-- Lesson 1 -->
+            <div class="bg-white rounded-2xl p-5 shadow-sm border">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-blue-600 font-semibold">Lesson 1</p>
+                        <h3 class="text-lg font-bold text-slate-900">
+                            HTML Basics
+                        </h3>
+                        <p class="text-sm text-slate-500 mt-1">
+                            Learn HTML structure, headings, paragraphs and links.
+                        </p>
+                    </div>
+
+                    <button onclick="watchLesson('HTML Basics')"
+                        class="px-5 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700">
+                        🎥 Watch
+                    </button>
+                </div>
+            </div>
+
+            <!-- Lesson 2 -->
+            <div class="bg-white rounded-2xl p-5 shadow-sm border">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-blue-600 font-semibold">Lesson 2</p>
+                        <h3 class="text-lg font-bold text-slate-900">
+                            CSS Basics
+                        </h3>
+                        <p class="text-sm text-slate-500 mt-1">
+                            Learn colors, spacing, layouts and responsive design.
+                        </p>
+                    </div>
+
+                    <button onclick="watchLesson('CSS Basics')"
+                        class="px-5 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700">
+                        🎥 Watch
+                    </button>
+                </div>
+            </div>
+
+            <!-- Lesson 3 -->
+            <div class="bg-white rounded-2xl p-5 shadow-sm border">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-blue-600 font-semibold">Lesson 3</p>
+                        <h3 class="text-lg font-bold text-slate-900">
+                            JavaScript Basics
+                        </h3>
+                        <p class="text-sm text-slate-500 mt-1">
+                            Learn variables, functions, events and DOM.
+                        </p>
+                    </div>
+
+                    <button onclick="watchLesson('JavaScript Basics')"
+                        class="px-5 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700">
+                        🎥 Watch
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="min-h-screen">
+
+            <!-- Header -->
+            <header class="bg-white border-b border-slate-200 sticky top-0 z-10">
+
+                <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+
+                    <div class="flex items-center gap-3">
+
+                        <div class="bg-blue-600 text-white w-11 h-11 rounded-xl flex items-center justify-center">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+
+                        <div>
+                            <p class="text-xs text-slate-400 font-semibold">
+                                IT TRAINING CENTER
+                            </p>
+
+                            <h2 class="font-bold text-slate-900">
+                                Learning Dashboard
+                            </h2>
+                        </div>
+
+                    </div>
+
+                    <button onclick="closeLearningDashboard()" class="text-slate-500 hover:text-red-500 px-3 py-2">
+
+                        <i class="fa-solid fa-xmark"></i>
+                        Close
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- Content -->
+            <main class="max-w-6xl mx-auto px-4 py-10">
+
+                <!-- Welcome -->
+                <div class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-3xl p-8 text-white shadow-xl">
+
+                    <p class="text-blue-200 text-sm font-semibold">
+                        WELCOME BACK 👋
+                    </p>
+
+                    <h1 class="text-3xl sm:text-4xl font-extrabold mt-1">
+                        Hello, <span id="learning-student-name"></span>!
+                    </h1>
+
+                    <p class="text-blue-100 mt-3">
+                        Continue your learning journey.
+                    </p>
+
+                </div>
+
+
+                <!-- Course -->
+                <div class="mt-8">
+
+                    <p class="text-sm text-blue-600 font-semibold uppercase">
+                        Your Course
+                    </p>
+
+                    <h2 id="learning-course-name" class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
+                    </h2>
+
+                </div>
+
+
+                <!-- Progress -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 mt-6 shadow-sm">
+
+                    <div class="flex justify-between mb-3">
+
+                        <div>
+                            <p class="font-bold text-slate-900">
+                                Course Progress
+                            </p>
+
+                            <p class="text-sm text-slate-500">
+                                0 of 3 lessons completed
+                            </p>
+                        </div>
+
+                        <span class="text-blue-600 font-bold">
+                            0%
+                        </span>
+
+                    </div>
+
+                    <div class="w-full bg-slate-100 rounded-full h-3">
+
+                        <div class="bg-blue-600 h-3 rounded-full" style="width: 0%">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Lessons -->
+                <div class="mt-10">
+
+                    <h2 class="text-2xl font-extrabold text-slate-900">
+                        Course Lessons
+                    </h2>
+
+                    <p class="text-slate-500 text-sm mt-1">
+                        Learn step-by-step with video lessons.
+                    </p>
+
+
+                    <div class="space-y-4 mt-6">
+
+                        <!-- Lesson 1 -->
+                        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+
+                                <div class="flex items-center gap-4">
+
+                                    <div
+                                        class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center">
+                                        <i class="fa-solid fa-play"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <p class="text-xs text-blue-600 font-bold uppercase">
+                                            Lesson 1
+                                        </p>
+
+                                        <h3 class="font-bold text-lg">
+                                            HTML Basics
+                                        </h3>
+
+                                        <p class="text-sm text-slate-500">
+                                            Learn HTML structure and elements.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                                <button onclick="watchLesson('HTML Basics')"
+                                    class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl font-semibold">
+
+                                    <i class="fa-solid fa-play mr-2"></i>
+                                    Watch Lesson
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Lesson 2 -->
+                        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+
+                                <div class="flex items-center gap-4">
+
+                                    <div
+                                        class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center">
+                                        <i class="fa-solid fa-play"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <p class="text-xs text-indigo-600 font-bold uppercase">
+                                            Lesson 2
+                                        </p>
+
+                                        <h3 class="font-bold text-lg">
+                                            CSS Basics
+                                        </h3>
+
+                                        <p class="text-sm text-slate-500">
+                                            Learn styling and layouts.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                                <button onclick="watchLesson('CSS Basics')"
+                                    class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl font-semibold">
+
+                                    <i class="fa-solid fa-play mr-2"></i>
+                                    Watch Lesson
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Lesson 3 -->
+                        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+
+                                <div class="flex items-center gap-4">
+
+                                    <div
+                                        class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center">
+                                        <i class="fa-solid fa-play"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <p class="text-xs text-amber-600 font-bold uppercase">
+                                            Lesson 3
+                                        </p>
+
+                                        <h3 class="font-bold text-lg">
+                                            JavaScript Basics
+                                        </h3>
+
+                                        <p class="text-sm text-slate-500">
+                                            Learn JavaScript fundamentals.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                                <button onclick="watchLesson('JavaScript Basics')"
+                                    class="bg-amber-600 hover:bg-amber-700 text-white px-5 py-2.5 rounded-xl font-semibold">
+
+                                    <i class="fa-solid fa-play mr-2"></i>
+                                    Watch Lesson
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </main>
+
         </div>
     </div>
 
@@ -508,7 +972,7 @@
         </div>
     </footer>
 
-      <!-- Interactive Script -->
+    <!-- Interactive Script -->
     <script>
         // Page Switching Logic with Active Navbar and Bottom Bar sync
         function switchPage(pageId) {
@@ -563,79 +1027,158 @@
             document.getElementById('action-modal').classList.remove('hidden');
         }
 
+        /* =========================
+           OPEN ENROLLMENT
+        ========================= */
+
         function openEnrollModal(courseName) {
-            document.getElementById('modal-title').innerText = 'Enroll in ' + courseName;
-            document.getElementById('modal-subtitle').innerText = 'Fill in your details to secure your admission for the upcoming cohort.';
-            document.getElementById('action-modal').classList.remove('hidden');
+
+            selectedCourse = courseName;
+
+            document.getElementById("modal-title").textContent =
+                "Enroll in " + courseName;
+
+            document.getElementById("modal-subtitle").textContent =
+                "Fill in your details to start learning this course.";
+
+            document.getElementById("action-modal").classList.remove("hidden");
+
         }
+
+
+        /* =========================
+           CLOSE ENROLLMENT
+        ========================= */
 
         function closeModal() {
-            document.getElementById('action-modal').classList.add('hidden');
+
+            document.getElementById("action-modal").classList.add("hidden");
+
         }
 
-        function handleModalSubmit(event) {
+
+        /* =========================
+           SUBMIT ENROLLMENT
+        ========================= */
+
+        document.getElementById("enrollment-form").addEventListener("submit", function (event) {
+
             event.preventDefault();
-            closeModal();
-            showToast('Submission Successful!', 'We have received your request and will contact you shortly.');
-        }
 
-        function handleContactSubmit(event) {
-            event.preventDefault();
-            showToast('Inquiry Received!', 'Thank you for reaching out. Our program counselor will call you within 1 business day.');
-            event.target.reset();
-        }
 
-        // Toast notification helper
-        function showToast(title, desc) {
-            const toast = document.getElementById('toast');
-            document.getElementById('toast-title').innerText = title;
-            document.getElementById('toast-desc').innerText = desc;
-            toast.classList.remove('hidden');
-            setTimeout(() => {
-                toast.classList.add('hidden');
-            }, 4000);
-        }
+            const name = document.getElementById("student-name").value.trim();
 
-        // Course filtering by category
-        function filterCategory(category) {
-            // Update button styles
-            const buttons = document.querySelectorAll('.cat-btn');
-            buttons.forEach(btn => {
-                btn.classList.remove('bg-blue-600', 'text-white', 'shadow-sm');
-                btn.classList.add('bg-slate-100', 'text-slate-600');
-        });
-            const activeBtn = document.getElementById('cat-' + category);
-            if (activeBtn) {
-                activeBtn.classList.remove('bg-slate-100', 'text-slate-600');
-                activeBtn.classList.add('bg-blue-600', 'text-white', 'shadow-sm');
+            const email = document.getElementById("student-email").value.trim();
+
+            const phone = document.getElementById("student-phone").value.trim();
+
+
+            if (!name || !email || !phone || !selectedCourse) {
+
+                alert("Please complete all fields.");
+
+                return;
+
             }
 
-            // Filter cards
-            const cards = document.querySelectorAll('.course-card');
-            cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+
+            /* Save student information */
+
+            localStorage.setItem("studentName", name);
+
+            localStorage.setItem("studentEmail", email);
+
+            localStorage.setItem("studentPhone", phone);
+
+            localStorage.setItem("enrolledCourse", selectedCourse);
+
+            localStorage.setItem("isEnrolled", "true");
+
+
+            /* Put information into success screen */
+
+            document.getElementById("success-student-name").textContent = name;
+
+            document.getElementById("success-course-name").textContent = selectedCourse;
+
+
+            /* Close enrollment */
+
+            closeModal();
+
+
+            /* Show success */
+
+            document.getElementById("success-modal").classList.remove("hidden");
+
+        });
+
+
+        /* =========================
+           SUCCESS → START LEARNING
+        ========================= */
+
+        document.getElementById("start-learning-btn").addEventListener("click", function () {
+
+            const name = localStorage.getItem("studentName");
+
+            const course = localStorage.getItem("enrolledCourse");
+
+
+            document.getElementById("learning-student-name").textContent =
+                name || "Student";
+
+            document.getElementById("learning-course-name").textContent =
+                course || "Your Course";
+
+
+            document.getElementById("success-modal").classList.add("hidden");
+
+            document.getElementById("learning-dashboard").classList.remove("hidden");
+
+            document.body.classList.add("overflow-hidden");
+
+        });
+
+
+        /* =========================
+           CLOSE SUCCESS
+        ========================= */
+
+        function closeSuccessModal() {
+
+            document.getElementById("success-modal").classList.add("hidden");
+
         }
 
-        // Search courses in real-time
-        function filterCourses() {
-            const query = document.getElementById('course-search').value.toLowerCase();
-            const cards = document.querySelectorAll('.course-card');
-            cards.forEach(card => {
-                const text = card.innerText.toLowerCase();
-                if (text.includes(query)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+
+        /* =========================
+           CLOSE LEARNING
+        ========================= */
+
+        function closeLearningDashboard() {
+
+            document.getElementById("learning-dashboard").classList.add("hidden");
+
+            document.body.classList.remove("overflow-hidden");
+
+        }
+
+
+        /* =========================
+           WATCH LESSON
+        ========================= */
+
+        function watchLesson(lessonName) {
+
+            alert("Opening " + lessonName + " video...");
+
         }
 
     </script>
 
+    </script>
+
 </body>
+
 </html>
